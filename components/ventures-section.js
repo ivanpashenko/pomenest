@@ -21,8 +21,8 @@ class VenturesSection extends HTMLElement {
             ${items.map((item, index) => `
               <article class="overflow-hidden rounded-[22px] border border-[#DDDCD6] bg-white transition duration-300 hover:-translate-y-[2px] hover:border-[#C9C7C0] hover:shadow-[0_20px_60px_rgba(24,28,32,0.08)]">
                 <button class="venture-open flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
-                  <div class="flex min-h-[172px] items-center justify-center border-b border-[#EEEDE8] bg-white p-8 md:min-h-[188px] md:p-10">
-                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[84px] w-auto max-w-[82%] object-contain md:max-h-[96px]" />` : ''}
+                  <div class="flex min-h-[120px] items-center justify-center border-b border-[#EEEDE8] bg-white p-6 md:min-h-[140px] md:p-8">
+                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[64px] w-auto max-w-[82%] object-contain md:max-h-[72px]" />` : ''}
                   </div>
 
                   <div class="flex flex-1 flex-col p-5 md:p-6">
