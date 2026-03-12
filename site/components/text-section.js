@@ -28,6 +28,11 @@ class TextSection extends HTMLElement {
           </div>
           <div>
             <p class="max-w-xl text-base leading-8 ${bodyClass} md:text-lg">${body}</p>
+            ${this.getAttribute('cta-label') ? `
+              <div class="mt-8">
+                <a href="${this.getAttribute('cta-href')}" class="inline-flex rounded-full bg-[#20242A] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#111418]">${this.getAttribute('cta-label')}</a>
+              </div>
+            ` : ''}
           </div>
         </div>
       </section>
