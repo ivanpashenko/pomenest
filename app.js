@@ -13,7 +13,7 @@ const content = {
   nav: [
     { label: 'Services', href: '#services' },
     { label: 'For whom', href: '#for-whom' },
-    { label: 'Cases', href: '#cases' },
+    { label: 'Cases', href: '#ventures' },
     { label: 'Venture Studio', href: '#venture-studio' }
   ],
   hero: {
