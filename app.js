@@ -307,7 +307,7 @@ const content = {
     eyebrow: 'Venture Studio',
     title: 'More than execution. A different level of business interest.',
     body: 'POME Nest operates with a venture studio logic. That means market-entry work is led not by hired coordinators, but by entrepreneurs and investors who think in terms of business value, market creation and long-term upside. While providing market-entry support, we actively evaluate companies to identify future investment targets and long-term regional partners.',
-    ctaLabel: 'hello@pomenest.com',
+    ctaLabel: 'Send us your deck →',
     ctaHref: 'mailto:hello@pomenest.com'
   },
   cta: {
