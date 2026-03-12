@@ -311,7 +311,7 @@ const content = {
   cta: {
     eyebrow: 'Start the conversation',
     title: 'Discuss your Southeast Asia entry.',
-    body: 'If you are planning your first market-entry steps in Southeast Asia, POME Nest can help you choose the right service and move fast.',
+    body: 'If you are planning your first market-entry steps in Southeast Asia, POME Nest can help you structure your entry, validate demand, and move fast.',
     primaryLabel: 'Book a strategy call',
     primaryHref: 'mailto:hello@pomenest.com',
     secondaryLabel: 'Discuss your case',
