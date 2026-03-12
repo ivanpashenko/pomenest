@@ -24,7 +24,7 @@ const content = {
     primaryHref: '#contact',
     secondaryLabel: 'See services',
     secondaryHref: '#services',
-    energyImage: '/assets/images/hero_element_aperture_01.png',
+    energyImage: './assets/images/hero_element_aperture_01.png',
     logoImage: './assets/images/logo.png'
   },
   capabilities: {
@@ -237,7 +237,7 @@ const content = {
     items: [
       {
         name: 'AMMA',
-        logo: '/assets/images/amma.png',
+        logo: './assets/images/amma.png',
         brandDescription: 'Family-tech digital product',
         summary: 'Key meetings, product testing and strategic inspiration sessions for Southeast Asia planning.',
         servicesUsed: ['Key Partner Meetings', 'Early Market Validation', 'Immersive Strategic Sessions'],
@@ -247,7 +247,7 @@ const content = {
       },
       {
         name: 'Kilometer',
-        logo: '/assets/images/kilometer-studios.png',
+        logo: './assets/images/kilometer-studios.png',
         brandDescription: 'Running and commuter gear brand',
         summary: 'Immersive product testing, local B2B meetings and UGC testing for market trust.',
         servicesUsed: ['Immersive Strategic Sessions', 'Key Partner Meetings', 'Early Market Validation'],
@@ -257,7 +257,7 @@ const content = {
       },
       {
         name: 'Buzzaar',
-        logo: '/assets/images/buzzaar.png',
+        logo: './assets/images/buzzaar.png',
         brandDescription: 'Advocacy and recommendation platform',
         summary: 'A full-cycle market-entry case covering meetings, pilots and local consumer testing.',
         servicesUsed: ['Key Partner Meetings', 'Early Market Validation'],
@@ -267,7 +267,7 @@ const content = {
       },
       {
         name: 'Teleport',
-        logo: '/assets/images/teleport.png',
+        logo: './assets/images/teleport.png',
         brandDescription: 'Experience-led B2B offer',
         summary: 'Adapted the offer for corporate buyers and supported local client search.',
         servicesUsed: ['Key Partner Meetings'],
@@ -277,7 +277,7 @@ const content = {
       },
       {
         name: 'Buzz',
-        logo: '/assets/images/buzz.png',
+        logo: './assets/images/buzz.png',
         brandDescription: 'Mobile charging rental solution',
         summary: 'Market research and first partner negotiations for a location-based rollout model.',
         servicesUsed: ['Key Partner Meetings'],
@@ -287,7 +287,7 @@ const content = {
       },
       {
         name: 'Canal Creatures',
-        logo: '/assets/images/canal-creatures.png',
+        logo: './assets/images/canal-creatures.png',
         brandDescription: 'Consumer brand with production and distribution needs',
         summary: 'Production and distribution talks paired with local consumer and influencer testing.',
         servicesUsed: ['Key Partner Meetings', 'Early Market Validation'],
