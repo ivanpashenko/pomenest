@@ -22,7 +22,7 @@ class VenturesSection extends HTMLElement {
               <article class="overflow-hidden rounded-[22px] border border-[#DDDCD6] bg-white transition duration-300 hover:-translate-y-[2px] hover:border-[#C9C7C0] hover:shadow-[0_20px_60px_rgba(24,28,32,0.08)]">
                 <button class="venture-open flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
                   <div class="flex min-h-[120px] items-center justify-center border-b border-[#EEEDE8] bg-white p-6 md:min-h-[140px] md:p-8">
-                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[64px] w-auto max-w-[82%] object-contain md:max-h-[72px]" />` : ''}
+                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-auto w-auto max-h-[48px] max-w-[130px] object-contain md:max-h-[56px] md:max-w-[150px]" />` : ''}
                   </div>
 
                   <div class="flex flex-1 flex-col p-5 md:p-6">
@@ -71,7 +71,7 @@ class VenturesSection extends HTMLElement {
       modalContent.innerHTML = `
         <div class="grid gap-0 lg:grid-cols-[380px_minmax(0,1fr)]">
           <div class="flex min-h-[320px] items-center justify-center border-b border-[#EEEDE8] bg-[#F8F7F3] p-14 lg:min-h-full lg:border-b-0 lg:border-r lg:p-16">
-            ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[140px] w-auto max-w-[82%] object-contain lg:max-h-[170px]" />` : ''}
+            ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[80px] w-auto max-w-[240px] object-contain lg:max-h-[100px] lg:max-w-[280px]" />` : ''}
           </div>
 
           <div class="p-8 md:p-10 lg:p-12">
