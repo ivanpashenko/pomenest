@@ -75,32 +75,42 @@ class VenturesSection extends HTMLElement {
           </div>
 
           <div class="p-8 md:p-10 lg:p-12">
-            <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">${item.lens}</div>
-            <h3 class="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">${item.name}</h3>
-            <p class="mt-5 max-w-2xl text-lg leading-8 text-[#5B616A]">${item.summary}</p>
-
-            <div class="mt-10 grid gap-4 md:grid-cols-2">
-              <div class="rounded-[22px] bg-[#F8F7F3] p-6">
-                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">What POME unlocked</div>
-                <div class="mt-3 text-lg font-medium tracking-[-0.02em] text-[#20242A]">${item.unlock}</div>
-              </div>
-              <div class="rounded-[22px] bg-[#F8F7F3] p-6">
-                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">Why it matters in SEA</div>
-                <div class="mt-3 text-base leading-8 text-[#5B616A]">${item.region}</div>
-              </div>
+            <div class="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6A7078]">
+              ${item.country ? `<span class="rounded-full border border-[#D9D9D6] bg-[#F8F7F3] px-2.5 py-1">${item.country}</span>` : ''}
+              ${item.brandDescription ? `<span>${item.brandDescription}</span>` : ''}
             </div>
-
-            <div class="mt-10 border-t border-[#EEEDE8] pt-8">
-              <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">Case perspective</div>
-              <p class="mt-4 max-w-2xl text-base leading-8 text-[#5B616A]">${item.narrative}</p>
-            </div>
-
-            <div class="mt-8 border-t border-[#EEEDE8] pt-8">
-              <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">POME contribution</div>
-              <div class="mt-4 flex flex-wrap gap-2.5">
-                ${item.layers.map(layer => `<span class="rounded-full border border-[#D9D9D6] bg-white px-4 py-2 text-sm text-[#3A4047]">${layer}</span>`).join('')}
+            
+            <h3 class="mt-5 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">${item.name}</h3>
+            
+            ${item.challenge ? `
+              <div class="mt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">The Challenge</div>
+                <p class="mt-3 max-w-2xl text-base leading-8 text-[#20242A]">${item.challenge}</p>
               </div>
-            </div>
+            ` : ''}
+
+            ${item.whatWeDid ? `
+              <div class="mt-8 border-t border-[#EEEDE8] pt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">What We Did</div>
+                <p class="mt-3 max-w-2xl text-base leading-8 text-[#5B616A]">${item.whatWeDid}</p>
+              </div>
+            ` : ''}
+
+            ${item.outcome ? `
+              <div class="mt-8 rounded-[22px] bg-[#F8F7F3] p-6">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">The Outcome</div>
+                <div class="mt-3 text-lg font-medium tracking-[-0.02em] text-[#20242A]">${item.outcome}</div>
+              </div>
+            ` : ''}
+
+            ${item.servicesUsed?.length ? `
+              <div class="mt-8 border-t border-[#EEEDE8] pt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">Services Applied</div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  ${item.servicesUsed.map(service => `<span class="rounded-full border border-[#D9D9D6] bg-white px-3 py-1.5 text-xs font-medium text-[#3A4047]">${service}</span>`).join('')}
+                </div>
+              </div>
+            ` : ''}
           </div>
         </div>
       `;

@@ -214,19 +214,19 @@ const content = {
     title: 'Built for three market-entry situations.',
     items: [
       {
-        name: 'Need consumer feedback before launch',
-        title: 'Learn from real consumers before you commit harder.',
-        body: 'For teams with products already working outside Asia that need local testing, UGC and first buying signals without building local operations from scratch.'
+        name: 'You need real consumer traction, fast.',
+        title: 'Test demand without opening a local entity or importing stock.',
+        body: 'For marketing and growth teams who want to test the Asian market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.'
       },
       {
-        name: 'Need strategic reset and regional perspective',
-        title: 'Step out of routine and rethink what comes next.',
-        body: 'For founders and leadership teams that need a stronger environment for alignment, new vision and more ambitious strategic decisions in Asia.'
+        name: 'Your leadership needs a regional reset.',
+        title: 'Align vision through a cinematic, real-world business immersion.',
+        body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the Asian market to reset strategy, align the team, and unlock new business directions.'
       },
       {
-        name: 'Need real partner conversations fast',
-        title: 'Get qualified meetings without wasting time on cold travel.',
-        body: 'For founders and sales teams that need real local partner conversations, stronger trust and better follow-up potential in Southeast Asia.'
+        name: 'You are ready to negotiate, not just network.',
+        title: 'Peer-to-peer partner meetings without the wasted flights.',
+        body: 'For founders and sales teams who need to speak directly with qualified local decision-makers. We represent you on a founder-to-founder level, ensuring you only travel for warm, structured deals.'
       }
     ]
   },
@@ -240,66 +240,66 @@ const content = {
         logo: './assets/images/amma.png',
         country: 'Hong Kong based',
         brandDescription: 'Family-tech digital product',
-        summary: 'Key meetings, product testing and strategic inspiration sessions for Southeast Asia planning.',
-        servicesUsed: ['Key Partner Meetings', 'Early Market Validation', 'Immersive Strategic Sessions'],
-        challenge: 'AMMA needed partner conversations, local product feedback and higher-level strategic planning around Asia.',
-        whatWeDid: 'Arranged meetings with key and potential clients connected to global tenders, tested the product for Asian markets to identify relevant features and ran inspiration sessions with founders, investors and top management for annual planning.',
-        outcome: 'Sharper product direction, better commercial conversations and stronger strategic alignment.'
+        summary: 'Global tender meetings, app feature testing, and top management inspiration sessions.',
+        servicesUsed: ['Key Partner Meetings', 'Early Marketing Validation', 'Immersive Strategic Sessions'],
+        challenge: 'AMMA needed to connect with global tender clients, validate necessary app features for the Asian market, and align top management on annual regional planning.',
+        whatWeDid: 'Arranged meetings with key clients connected to global tenders. Conducted product testing to identify highly demanded local features. Ran inspiration and planning sessions for founders, investors, and management.',
+        outcome: 'Sharper product feature roadmap and strategic alignment for the upcoming year.'
       },
       {
         name: 'Kilometer',
         logo: './assets/images/kilometer-studios.png',
         country: 'Sweden',
         brandDescription: 'Running and commuter gear brand',
-        summary: 'Immersive product testing, local B2B meetings and UGC testing for market trust.',
-        servicesUsed: ['Immersive Strategic Sessions', 'Key Partner Meetings', 'Early Market Validation'],
-        challenge: 'Kilometer needed local product testing, stronger B2B conversations and more online trust in a market where the brand was still new.',
-        whatWeDid: 'Created small-group running immersions in Singapore for product testing, supported local B2B meetings to move partnerships forward and tested UGC on the local market to strengthen online presence and trust.',
-        outcome: 'Better product feedback, stronger partner progress and more credible local market presence.'
+        summary: 'Small-group immersive runs for B2B partners, UGC testing, and local B2B deal facilitation.',
+        servicesUsed: ['Immersive Strategic Sessions', 'Key Partner Meetings', 'Early Marketing Validation'],
+        challenge: 'Kilometer needed to introduce their commuter backpacks to B2B distributors in a memorable way, while simultaneously building online trust in a completely new market.',
+        whatWeDid: 'Created small-group immersive running events in Singapore for potential B2B partners to test the gear. Conducted local negotiations to advance distributor deals. Ran a UGC campaign to build initial online presence.',
+        outcome: 'Secured engaged B2B leads and established a credible local digital footprint.'
       },
       {
         name: 'Buzzaar',
         logo: './assets/images/buzzaar.png',
         country: 'Dutch',
-        brandDescription: 'Advocacy and recommendation platform',
-        summary: 'A full-cycle market-entry case covering meetings, pilots and local consumer testing.',
-        servicesUsed: ['Key Partner Meetings', 'Early Market Validation'],
-        challenge: 'Buzzaar needed business development support and local validation for both its service model and digital tools in Asia.',
-        whatWeDid: 'Set up meetings with key and potential clients already known from other markets, presented case studies, supported first pilot sales and created local consumer groups to test the platform and local digital tools.',
-        outcome: 'Early commercial traction and validation of local market fit.'
+        brandDescription: 'Advocacy and community marketing platform',
+        summary: 'Full-cycle entry covering pilot sales, consumer groups, and digital tool testing.',
+        servicesUsed: ['Key Partner Meetings', 'Early Marketing Validation'],
+        challenge: 'Buzzaar needed to validate both its service model and its digital toolset in Asian countries while securing early commercial traction.',
+        whatWeDid: 'Set up meetings with key and potential clients, presented global case studies, and sold the first pilot projects. Created local consumer groups to test the platform and localized digital tools.',
+        outcome: 'First pilot sales closed and technical validation of local consumer databases.'
       },
       {
         name: 'Teleport',
         logo: './assets/images/teleport.png',
         country: 'Dutch',
-        brandDescription: 'Experience-led B2B offer',
-        summary: 'Adapted the offer for corporate buyers and supported local client search.',
+        brandDescription: 'Experience-led B2B concept',
+        summary: 'B2B offer localization and corporate client search for a new experience-led product.',
         servicesUsed: ['Key Partner Meetings'],
-        challenge: 'Teleport needed a more locally relevant B2B offer and access to potential clients in the region.',
-        whatWeDid: 'Adapted the proposition for the corporate market, localized the offer and supported client search in Southeast Asia.',
-        outcome: 'A clearer local B2B angle and stronger starting point for client conversations.'
+        challenge: 'Teleport needed to adapt its European B2B offering for the Asian corporate market and find its first regional clients.',
+        whatWeDid: 'Adapted and localized the commercial proposition for the corporate segment. Conducted targeted client search and initial outreach in Southeast Asia.',
+        outcome: 'A localized B2B pitch and a warm pipeline of corporate leads.'
       },
       {
         name: 'Buzz',
         logo: './assets/images/buzz.png',
         country: 'Dutch',
         brandDescription: 'Mobile charging rental solution',
-        summary: 'Market research and first partner negotiations for a location-based rollout model.',
+        summary: 'Venue scouting, location negotiations, and entry hypothesis formation.',
         servicesUsed: ['Key Partner Meetings'],
-        challenge: 'Buzz needed to understand the local market for rental charging devices and explore its first placement opportunities in Asia.',
-        whatWeDid: 'Researched the local market, identified first potential venues and conducted early negotiations to shape entry and scaling hypotheses for the region.',
-        outcome: 'Better entry assumptions and first live commercial conversations.'
+        challenge: 'Buzz needed to test the viability of its hardware rental model in Asia before committing to shipping units and establishing operations.',
+        whatWeDid: 'Conducted local market research on rental charging habits. Scouted initial venue partners and held preliminary placement negotiations to form a scaling hypothesis.',
+        outcome: 'Clear data on venue readiness and a validated go-to-market rollout model.'
       },
       {
         name: 'Canal Creatures',
         logo: './assets/images/canal-creatures.png',
         country: 'Dutch',
-        brandDescription: 'Consumer brand with production and distribution needs',
-        summary: 'Production and distribution talks paired with local consumer and influencer testing.',
-        servicesUsed: ['Key Partner Meetings', 'Early Market Validation'],
-        challenge: 'Canal Creatures needed both local partners and early signals of consumer demand in the market.',
-        whatWeDid: 'Conducted negotiations with local partners across production and distribution, and found micro-influencers plus everyday consumers to test market demand.',
-        outcome: 'Stronger partner pathways and clearer demand signals.'
+        brandDescription: 'Consumer brand & IP',
+        summary: 'Production and distribution talks combined with micro-influencer demand testing.',
+        servicesUsed: ['Key Partner Meetings', 'Early Marketing Validation'],
+        challenge: 'Canal Creatures required both local manufacturing/distribution partners and early signals of consumer interest in their IP.',
+        whatWeDid: 'Led negotiations with local production facilities and distribution networks. Recruited micro- and nano-influencers alongside everyday consumers to test product demand.',
+        outcome: 'Established viable production/distribution pathways and confirmed local consumer appetite.'
       }
     ]
   },
