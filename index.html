@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POME Nest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              canvas: '#C9C9C7',
+              ink: '#F5F5F3',
+              soft: 'rgba(245,245,243,0.68)',
+              line: 'rgba(245,245,243,0.12)',
+              panel: '#33383F',
+              panel2: '#2D3138',
+              paper: '#F5F5F3',
+              black: '#000000',
+              amber: '#D89A2B',
+              blue: '#2693D1',
+              cyan: '#17C7D7',
+              pink: '#E85BC0',
+              green: '#74C365'
+            }
+          },
+          maxWidth: {
+            content: '1280px'
+          },
+          boxShadow: {
+            glow: '0 0 80px rgba(216,154,43,0.2)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-canvas text-brand-ink font-sans antialiased">
+  <div id="app"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
