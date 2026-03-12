@@ -1,0 +1,222 @@
+version: 0.1
+
+entity:
+  name: POME Nest
+  type: website system architecture
+  status: active working decision
+
+purpose:
+  statement: >
+    Capture the agreed technical architecture for the POME website system so the
+    repo has one editable source of truth for structure, routing, data flow and
+    scaling decisions.
+
+principles:
+  - keep the system simple and editable
+  - separate shared knowledge from concept presentation
+  - allow multiple design concepts without coupling their code
+  - optimize for fast iteration with minimal tooling
+  - keep architecture scalable from one concept to multiple concepts
+  - use the knowledge base as the main shared source of truth
+
+current_architecture:
+  summary: single concept static frontend with local server and shared kb
+
+  frontend:
+    rendering_model:
+      - Vanilla Web Components using custom HTML elements
+      - ES Modules using native browser imports
+      - Static and semi-static content rendered in browser via JavaScript
+    styling_model:
+      - Tailwind CSS via CDN
+      - no local build pipeline required for styling
+    bundling:
+      - zero-build frontend
+      - no Webpack
+      - no Vite
+      - no transpilation step
+
+  content_and_knowledge:
+    kb_role: >
+      The /kb folder stores brand strategy, positioning, visual identity,
+      open questions and future site content structures.
+    current_usage:
+      - AI context
+      - raw copy source
+      - shared project truth
+
+  deployment_shape:
+    mode: local static serving through one Node server
+    concept_count: 1
+    active_concept: c1
+
+next_architecture:
+  summary: one server with shared kb and multiple isolated site concepts
+
+  root_structure:
+    description: >
+      The root project folder holds the shared knowledge base, one local server,
+      shared utilities and one or more independent concept folders.
+    root_parts:
+      - kb
+      - server
+      - shared
+      - concepts
+      - package.json
+
+  knowledge_base:
+    role: single source of truth for shared text, structure and data
+    rules:
+      - all strategic content lives in /kb
+      - all concepts may read from /kb
+      - /kb should avoid design-specific layout implementation details where possible
+      - /kb files should stay editable and human-readable
+
+  server:
+    role: >
+      One local Node server serves concept folders, shared utilities and the
+      shared knowledge base.
+    responsibilities:
+      - serve concept routes
+      - serve shared browser utilities
+      - expose kb files over HTTP
+      - provide simple health route
+      - support local concept development from one entry point
+
+  concepts:
+    role: isolated static site implementations
+    rules:
+      - each concept is independent in markup, components and visual system
+      - concepts share business truth from /kb
+      - concepts may have local visual and content overrides
+      - concepts should be replaceable without changing shared kb structure
+
+scaling_plan:
+  phase_1:
+    concept_count: 1
+    active_routes:
+      - /
+      - /c1
+      - /kb/*
+      - /shared/*
+      - /health
+    goal: prove server plus kb plus one concept architecture
+
+  phase_2:
+    concept_count: 3
+    planned_routes:
+      - /
+      - /c1
+      - /c2
+      - /c3
+      - /kb/*
+      - /shared/*
+      - /health
+    goal: compare multiple isolated design concepts on one shared content base
+
+routing_model:
+  root:
+    path: /
+    behavior: redirect to active default concept route
+
+  concept_routes:
+    pattern: /c1, /c2, /c3
+    behavior: each route serves one isolated static concept site
+
+  kb_routes:
+    pattern: /kb/*
+    behavior: exposes shared yaml and related data files for browser fetch access
+
+  shared_routes:
+    pattern: /shared/*
+    behavior: exposes shared client-side utilities used by concepts
+
+  health_route:
+    path: /health
+    behavior: returns simple server status response
+
+concept_folder_contract:
+  description: minimum expected structure inside each concept folder
+  required_files:
+    - index.html
+    - app.js
+    - components/
+  optional_files:
+    - visual-identity.yaml
+    - content.yaml
+    - styles/
+    - assets/
+
+  file_roles:
+    index_html: unique page shell for the concept
+    app_js: bootstraps the concept, fetches kb data and renders components
+    components: reusable UI and layout blocks unique to the concept
+    visual_identity_yaml: concept-local design tokens and brand rules
+    content_yaml: concept-local copy overrides when needed
+    styles: concept-local CSS and optional Tailwind token script
+    assets: local images, icons and other concept assets
+
+shared_folder_contract:
+  description: shared browser-side utilities reused across concepts
+  likely_files:
+    - site-data.js
+    - yaml.js
+    - fetch-kb.js
+    - render-utils.js
+  rule: >
+    Shared files should solve repeated client-side problems without leaking one
+    concept's design decisions into another concept.
+
+content_model_rules:
+  source_of_truth:
+    - shared strategy, messaging and structural content live in /kb
+    - concept folders should not duplicate shared content unless overriding for presentation reasons
+  override_policy:
+    - concept-local content files are allowed as overrides
+    - overrides should be minimal and explicit
+    - shared copy should remain centralized when possible
+
+technology_choices:
+  frontend:
+    framework: none
+    component_model: Web Components
+    module_system: native ES Modules
+    styling: Tailwind CDN plus optional local CSS
+  backend:
+    runtime: Node.js
+    server_style: simple local HTTP server
+  data_format:
+    primary: YAML
+    secondary:
+      - JavaScript objects
+      - JSON when needed
+
+decision_log:
+  locked_decisions:
+    - one shared /kb folder acts as the main source of truth
+    - one local server serves all concepts and kb routes
+    - concept folders are isolated static implementations
+    - project starts with c1 only and expands later
+    - frontend stays zero-build for now
+    - Web Components are the main UI abstraction
+    - ES Modules are the main browser import system
+    - Tailwind CDN is used for fast concept iteration
+
+  not_locked_yet:
+    - final content model file split inside /kb
+    - final YAML parser strategy in browser or server
+    - whether Tailwind config should remain CDN-only or become generated from yaml
+    - whether concept-local visual_identity.yaml should be mandatory or optional
+    - whether server should stay custom http or move to Express later
+
+recommended_next_files:
+  - site-architecture.yaml
+  - content-model.yaml
+  - navigation.yaml
+  - homepage.yaml
+  - proof.yaml
+
+notes:
+  implementation_status: >
+    The current repo already partially reflects this architecture, but this file
+    exists to formalize the decisions so future edits stay aligned.

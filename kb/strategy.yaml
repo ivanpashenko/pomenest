@@ -1,0 +1,217 @@
+version: 0.3
+entity:
+  name: POME Nest Pte. Ltd.
+  type: venture marketing studio
+  legal_base: Singapore
+  operating_region: Southeast Asia
+
+business_strategy:
+  strategic_definition:
+    one_liner: >
+      POME Nest is a Singapore-based venture marketing studio creating the first
+      market-entry steps in Southeast Asia through productized services.
+    support_statement: >
+      The company helps brands and products enter Southeast Asia through three
+      focused offers: key partner meetings, early market validation and
+      immersive strategic sessions.
+    company_model: >
+      POME Nest combines a productized service model with an entrepreneurial,
+      founder-level approach to market entry. It does not operate as a generic
+      agency, consultancy or distributor.
+
+  mission:
+    statement: >
+      Help companies create their first real movement in Southeast Asia through
+      faster access, sharper market feedback and higher-trust local engagement.
+
+  core_insight:
+    statement: >
+      The first steps in a new market should happen before a full market launch.
+    explanation:
+      - companies need to test real demand before heavy market investment
+      - companies need qualified local conversations before building a full local operation
+      - leadership teams often need a strategic reset before making regional commitments
+      - founder-level representation creates more trust and sharper judgment than standard outsourced execution
+
+  strategic_focus:
+    primary_market:
+      geography:
+        - Singapore
+        - Indonesia
+        - Thailand
+        - Malaysia
+        - Vietnam
+        - Philippines
+      secondary_geography:
+        - Japan
+    primary_audience:
+      label: companies exploring or accelerating entry into Southeast Asia
+      priority_segments:
+        - consumer products and brands already selling outside Asia
+        - digital products and services testing demand in Asia
+        - founders and leadership teams exploring Southeast Asia as a growth region
+        - sales-led businesses seeking real local partner conversations
+    buying_situation:
+      - need first consumer feedback before market launch
+      - need first partner meetings without building a full local team
+      - need founder-level local representation in sensitive partner conversations
+      - need strategic alignment before committing to Southeast Asia expansion
+      - need first local purchase signals before formal market setup
+
+  value_proposition:
+    core_promise: >
+      POME Nest helps companies make the first market-entry steps in Southeast
+      Asia through productized services built around real meetings, real
+      feedback and real local context.
+    customer_outcomes:
+      - faster validation before full launch
+      - first real consumer signals from Southeast Asia
+      - first partner conversations with local support
+      - more confidence in regional decision-making
+      - reduced wasted time on unqualified outreach or premature expansion
+      - stronger entry decisions through entrepreneurial local representation
+
+  service_model:
+    architecture_type: three productized services plus one venture studio layer
+    principle: >
+      The company should be presented through three concrete services. Venture
+      Studio is a separate higher-level explanation of how and why POME Nest
+      works, not a fourth service.
+
+    core_services:
+      - id: early_market_validation
+        public_label: Early Market Validation
+        role: test demand and gather proof before launch
+        one_liner: Test your product or service with real consumers before entering the market fully.
+        client_value: >
+          Get feedback, reviews, UGC and first purchase signals before opening a
+          company, moving stock at scale or committing to a full launch.
+        process:
+          - define the target user profile and validation goals
+          - recruit relevant consumers through local audience sources and networks
+          - enable product access through compensated purchase or direct delivery
+          - collect structured feedback, reviews and user-generated content
+          - run first local purchase tests when relevant
+          - synthesize insights into clear market-entry learning
+        offer_modules:
+          - Consumer Testing and Insights
+          - Product Seeding Campaign
+          - First Local Purchases
+
+      - id: immersive_strategic_sessions
+        public_label: Immersive Strategic Sessions
+        role: create strategic reset, alignment and new perspective through immersive formats
+        one_liner: Immersive strategic experiences designed to unlock vision, alignment and movement.
+        client_value: >
+          Give founders and teams a high-impact format for regional thinking,
+          team alignment and deeper business reflection beyond standard workshop settings.
+        process:
+          - profile the team and clarify the desired transformation or decision goal
+          - design a tailored immersive scenario and narrative journey
+          - prepare locations, actors, prompts and facilitation structure
+          - deliver the immersive session across real-world environments
+          - debrief insights, decisions and next-step implications
+        offer_modules:
+          - Leadership Session
+          - Partner Immersion Event
+
+      - id: key_partner_meetings
+        public_label: Key Partner Meetings
+        role: create and support important partner conversations locally
+        one_liner: Founder-level local representation for qualified partner conversations in Southeast Asia.
+        client_value: >
+          Move important meetings forward quickly without building a local team or
+          flying in for every conversation.
+        process:
+          - hold an initial strategy session to understand goals, context and partner priorities
+          - identify or qualify the relevant people and arrange the meeting
+          - represent the client locally or join the meeting with the client
+          - capture commercial, relational and cultural signals from the conversation
+          - deliver a detailed debrief and next-step recommendation
+        offer_modules:
+          - Partner Mapping
+          - Meeting Setup
+
+  venture_studio_layer:
+    role: explain the operating model behind the services
+    summary: >
+      POME Nest works through an entrepreneurial model. Clients are not simply
+      buying outsourced execution from a hired account team. They are working
+      with entrepreneurs and investors who approach the market as business
+      partners, with stronger judgment, higher-context representation and longer-term upside thinking.
+    key_points:
+      - founder-level and investor-level conversations create a different quality of trust
+      - the work is approached through business value creation, not only task delivery
+      - productized services make this model easier to buy, test and deploy
+      - in selected cases, the relationship may grow into deeper strategic partnership
+
+  differentiation:
+    key_differentiators:
+      - productized services instead of vague consulting scope
+      - entrepreneurial and investor-level representation instead of standard agency staffing
+      - first-step market entry focus instead of full distribution or generic expansion consulting
+      - combines partner access, consumer validation and immersive strategic work
+      - built for real movement before full launch complexity
+
+  market_positioning:
+    recommended_position: venture marketing studio for Southeast Asia market entry
+    support_positions:
+      - Southeast Asia market-entry platform
+      - productized market-entry services
+    rejected_or_secondary_positions:
+      - full-service agency
+      - distribution partner
+      - traditional consultancy
+      - software platform
+    reason_for_recommended_position: >
+      This framing keeps the entrepreneurial edge of the business while staying
+      concrete through clear services and commercially understandable outcomes.
+
+  naming_strategy:
+    pome_meaning: Point of Marketing Entry
+    meaning_statement: >
+      POME stands for the moment and mechanism through which a company begins
+      real market entry: first meetings, first validation and first strategic movement.
+    naming_use_rule: >
+      Lead with the three public service names. Use Venture Studio as the higher-level
+      explanation of the model behind them.
+
+  commercial_model:
+    primary_business_goal: generate qualified inquiries for the three core services
+    likely_engagement_types:
+      - early market validation sprint
+      - immersive strategic session engagement
+      - key partner meeting mandate
+    pricing_logic_to_develop:
+      - packaged productized services
+      - clear module-based scope
+      - optional custom expansion for complex needs
+
+  proof_base:
+    existing_clients:
+      - Buzzaar
+      - Canal Creatures
+      - Kilometer
+      - Teleport
+      - Amma
+      - Bzzz
+    proof_structure_needed:
+      - short case summary for each brand
+      - service tags used in each case
+      - expandable detail on what was done
+      - outcomes or learnings where available
+
+  strategic_risks:
+    - sounding too much like a software platform when delivery is service-led
+    - sounding too much like an agency when the founder-level model is the real differentiator
+    - overexplaining immersive work without tying it to business outcomes
+    - making partner representation sound too generic or too operational
+    - lacking clear proof and pricing structure for productized offers
+
+  strategic_decisions_locked_from_current_material:
+    - lead with three core services
+    - position the offer as productized services
+    - use Venture Studio as an explanation layer, not a main service line
+    - emphasize founder-level and investor-level representation
+    - avoid framing the company as consultancy, agency or distributor
+    - tie immersive work to strategy, alignment and business movement

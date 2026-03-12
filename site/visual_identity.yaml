@@ -1,0 +1,224 @@
+version: 0.1
+
+entity:
+  name: POME Nest Pte. Ltd.
+  concept: c1
+
+source:
+  primary_reference: pome/input/c1/c1.png
+  asset_folder: pome/input/c1
+  note: >
+    This visual identity is derived from concept board c1.png and the supplied
+    logo and energy-mark assets for the main brand and sub-brands.
+
+concept:
+  name: Contained Energy
+  summary: >
+    A minimalist corporate shell containing a vivid energy core. The system
+    expresses control, precision and premium clarity on the outside, while the
+    center of the brand holds motion, warmth and expansion potential.
+  keywords:
+    - energy
+    - potential
+    - control
+    - contained
+    - precise
+    - premium
+    - minimal
+    - launchpad
+  core_metaphor: >
+    POME is a controlled point of entry: concentrated market energy held inside
+    a disciplined structure.
+
+brand_expression:
+  primary_message: Controlled energy for market entry.
+  emotional_effect:
+    - calm confidence
+    - strategic precision
+    - latent momentum
+    - premium clarity
+  tension_model:
+    outer_layer: dark architectural restraint
+    inner_layer: vibrant circular energy
+    resolution: disciplined systems that unlock growth
+
+logo_system:
+  masterbrand:
+    wordmark: pome
+    construction: >
+      Lowercase sans-serif wordmark with the circular energy mark replacing the
+      letter o.
+    meaning: >
+      The wordmark stays rational and clean while the center signals contained
+      motion and market ignition.
+    asset: pome/input/c1/logo.png
+  subbrands:
+    architecture: endorsed sub-brands using the same pome wordmark and colored energy core
+    items:
+      - name: POME Entry
+        role: market entry and business development
+        asset: pome/input/c1/logo_entry.png
+        energy_color: amber
+      - name: POME Marketing
+        role: community-led growth
+        asset: pome/input/c1/logo_marketing.png
+        energy_color: blue
+      - name: POME Experiences
+        role: experiential marketing
+        asset: pome/input/c1/logo_experiences.png
+        energy_color: cyan
+      - name: POME Labs
+        role: digital product expansion
+        asset: pome/input/c1/logo_labs.png
+        energy_color: pink
+  mark:
+    shape: circular vortex or energy nucleus
+    behavior: >
+      Always used as a concentrated focal point, never stretched or turned into
+      a decorative repeating pattern.
+    primary_asset: pome/input/c1/mark_energy_green.png
+
+design_principles:
+  - Use strong negative space and keep layouts sparse.
+  - Let one concentrated energy element carry the emotional intensity.
+  - Keep typography neutral, sharp and highly legible.
+  - Prefer centered or rigorously aligned compositions.
+  - Treat color as a signal, not as a fill-everywhere device.
+  - Build premium contrast between dark fields and bright energy moments.
+
+color_palette:
+  neutrals:
+    charcoal:
+      hex: "#33383F"
+      usage: primary background, large dark fields, footer, framing surfaces
+    black:
+      hex: "#000000"
+      usage: energy containment ring, deep contrast moments
+    white:
+      hex: "#F5F5F3"
+      usage: wordmark, cards, light backgrounds, body contrast
+    soft_gray:
+      hex: "#C9C9C7"
+      usage: canvas background behind presentation compositions
+  brand_energy:
+    amber:
+      hex: "#D89A2B"
+      usage: masterbrand core, POME Entry accent
+    blue:
+      hex: "#2693D1"
+      usage: POME Marketing accent
+    cyan:
+      hex: "#17C7D7"
+      usage: POME Experiences accent
+    pink:
+      hex: "#E85BC0"
+      usage: POME Labs accent
+    green:
+      hex: "#74C365"
+      usage: optional system mark accent or future expansion state
+  ratio_guidance:
+    neutrals: 85
+    energy_accents: 15
+
+typography:
+  direction: modern neo-grotesk sans serif
+  characteristics:
+    - clean lowercase forms
+    - geometric clarity
+    - medium to bold weights for headings
+    - generous tracking for small labels
+  recommendations:
+    primary: Inter
+    alternatives:
+      - Helvetica Now
+      - Suisse Int'l
+      - Neue Haas Grotesk
+  hierarchy:
+    eyebrow: uppercase, small, tracked out
+    headline: large, bold, tight leading
+    body: restrained, medium size, high readability
+    caption: tiny, wide tracking, quiet confidence
+
+layout_system:
+  structure:
+    - wide margins
+    - large empty fields
+    - strict grid alignment
+    - occasional centered focal compositions
+  preferred_compositions:
+    - one energy object centered in a dark field
+    - logo centered with generous breathing room
+    - simple card row on dark background for sub-brand or capability overview
+  corner_radius:
+    cards: soft rounded
+    buttons: pill-shaped
+  spacing_mood: generous and architectural
+
+imagery:
+  primary_style: abstract energy imagery as the hero visual language
+  image_behavior:
+    - use one vivid vortex or plasma-like image as focal object
+    - surround with dark calm space
+    - avoid busy montages
+  supporting_graphics:
+    - subtle glow
+    - contained circular crops
+    - minimal separators and thin strokes
+  avoid:
+    - stock office scenes
+    - cluttered collage layouts
+    - literal maps or flags
+    - overuse of gradients outside focal moments
+
+ui_language:
+  website_direction:
+    background_mode: predominantly charcoal with selective white sections or cards
+    interaction_style: minimal, crisp, premium
+    component_feel: >
+      Clean white cards or panels placed inside a dark system, with sub-brand
+      accents introduced through the energy marks.
+  cards:
+    look: rounded white or pale cards with sparse text and one accent moment
+  buttons:
+    primary: white or bright on dark background, compact and refined
+    secondary: outlined or low-contrast ghost style
+  dividers:
+    use: thin low-contrast lines only when needed
+
+subbrand_system:
+  principle: same structure, different energy color
+  visual_rule: >
+    Every sub-brand inherits the same wordmark architecture and swaps only the
+    core energy color and descriptor line.
+  mapping:
+    POME Entry: amber
+    POME Marketing: blue
+    POME Experiences: cyan
+    POME Labs: pink
+
+site_translation:
+  overall_art_direction: >
+    The site should feel like a premium dark control room with concentrated
+    energy nodes. Typography and spacing do most of the work. Color appears in
+    controlled bursts.
+  homepage_rules:
+    - Use the masterbrand logo in the header.
+    - Create a dark hero with a central energy emblem.
+    - Keep copy blocks narrow and spacious.
+    - Present capabilities as four white cards on a dark field.
+    - Use sub-brand logos or energy accents to distinguish the four offers.
+    - End with a strong dark CTA panel.
+
+do:
+  - use charcoal as the dominant website background
+  - use white typography for primary dark sections
+  - use amber as the main brand accent
+  - use blue, cyan and pink only to identify sub-brands or key moments
+  - keep sections visually quiet and uncluttered
+
+dont:
+  - do not turn the site into a colorful startup gradient layout
+  - do not use bright accents in every component
+  - do not add playful illustrations
+  - do not overfill sections with borders, icons or badges
+  - do not replace the centered energy motif with generic corporate imagery

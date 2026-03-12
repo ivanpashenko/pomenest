@@ -1,0 +1,192 @@
+version: 0.3
+
+entity:
+  name: POME Nest Pte. Ltd.
+  brand_name: POME Nest
+
+positioning:
+  category:
+    primary: venture marketing studio for Southeast Asia market entry
+    secondary:
+      - productized market-entry services
+      - Southeast Asia market-entry platform
+      - founder-led market entry support
+    avoid:
+      - generic marketing agency
+      - traditional consultancy
+      - distribution company
+      - pure software platform
+      - vague service ecosystem
+
+  core_positioning:
+    one_liner: >
+      POME Nest creates the first market-entry steps in Southeast Asia through
+      key partner meetings, early market validation and immersive strategic sessions.
+
+    short_version: >
+      Southeast Asia market entry with structure and less guesswork.
+
+    expanded_version: >
+      POME Nest is a Singapore-based venture marketing studio helping companies
+      create the first real movement in Southeast Asia. It does this through
+      three productized services: key partner meetings, early market validation
+      and immersive strategic sessions. Behind these services is a founder-led,
+      investor-minded approach built around real access, real feedback and real
+      business context.
+
+  strategic_frame:
+    market_problem: >
+      Companies exploring Southeast Asia often face the same early-stage gap:
+      they need local partner access, real consumer signals and better strategic
+      clarity before they are ready for a full launch. Most alternatives are too
+      slow, too vague or too operational.
+
+    core_insight: >
+      Before full expansion, companies need the first real signals: real meetings,
+      real feedback and real context.
+
+    solution_frame: >
+      POME Nest turns early market entry into a set of productized services that
+      help companies test demand, unlock key conversations and create strategic
+      movement in Southeast Asia.
+
+  target_audiences:
+    primary:
+      label: companies making first moves into Southeast Asia
+      segments:
+        - consumer products already selling outside Asia
+        - digital products and services testing demand in Asia
+        - founders and leadership teams exploring Southeast Asia growth
+        - sales-led businesses seeking local partner conversations
+      buying_moments:
+        - before committing to a full launch
+        - before building a local team
+        - when fast partner access is needed
+        - when first consumer proof is needed
+        - when leadership needs regional alignment
+
+    secondary:
+      segments:
+        - brands seeking local representation in sensitive partner meetings
+        - teams looking for a non-standard strategic offsite with real business relevance
+
+  value_proposition:
+    core_promise: >
+      POME Nest helps companies take the first meaningful steps into Southeast
+      Asia through productized services designed around access, validation and
+      high-context local engagement.
+
+    functional_value:
+      - test market response before full launch complexity
+      - meet local partners faster and with stronger preparation
+      - gather feedback, reviews and user-generated content from relevant consumers
+      - generate first local purchase signals
+      - create stronger leadership alignment around Southeast Asia decisions
+      - access founder-level local representation in important conversations
+
+    emotional_value:
+      - less guesswork before expansion
+      - more confidence in market-entry decisions
+      - stronger sense of local traction and reality
+      - more trust that the first steps are happening in the right way
+
+  differentiators:
+    primary:
+      - productized services instead of vague advisory work
+      - founder-level and investor-level representation instead of standard account management
+      - focused on first market-entry steps, not on pretending to be full distribution
+      - combines partner access, consumer validation and immersive strategic work in one model
+      - designed for real movement before heavy market setup
+
+    reasons_to_believe:
+      - Singapore-based regional presence
+      - entrepreneurial approach to market entry and partnership building
+      - ability to combine local execution with strategic judgment
+      - existing client work across validation, meetings and market development
+
+  services:
+    primary_service_system: Three productized services for Southeast Asia market entry
+    service_tracks:
+      - name: Key Partner Meetings
+        one_liner: Founder-level local representation for qualified partner conversations.
+      - name: Early Market Validation
+        one_liner: Test your product or service with real consumers before entering fully.
+      - name: Immersive Strategic Sessions
+        one_liner: High-impact strategic experiences designed to unlock alignment, vision and movement.
+
+  venture_studio_role:
+    summary: >
+      Venture Studio is not a fourth service. It is the higher-level operating
+      model behind POME Nest. It explains why the work is approached by
+      entrepreneurs and investors with business-partner judgment rather than by
+      standard hired teams executing a brief.
+    use_case: >
+      Use this layer to explain why POME Nest has a different quality of
+      representation, sharper commercial instincts and a longer-term view than
+      agency or consultancy alternatives.
+
+  messaging:
+    headline_options:
+      - Southeast Asia market entry with structure and less guesswork.
+      - Create the first market-entry steps in Southeast Asia.
+      - Real meetings. Real feedback. Real movement.
+      - Enter Southeast Asia through productized services.
+
+    support_lines:
+      - POME Nest creates the first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.
+      - Productized services for companies that need real market signals before full expansion.
+      - Founder-led market entry support built around access, validation and local context.
+
+    tagline_options:
+      - Point of Marketing Entry
+      - Real Signals Before Expansion
+      - First Steps Into Southeast Asia
+      - Access. Validation. Movement.
+      - Enter With Less Guesswork
+
+  positioning_statement:
+    classic_format: >
+      For companies making first moves into Southeast Asia, POME Nest is a
+      venture marketing studio that provides productized services across key
+      partner meetings, early market validation and immersive strategic
+      sessions. Unlike traditional agencies, consultancies or distribution-led
+      providers, POME Nest helps companies create real market movement before a
+      full launch.
+
+  narrative:
+    concise_story: >
+      Entering Southeast Asia should not begin with blind expansion. It should
+      begin with the right first steps: meeting the right people, testing real
+      market response and gaining sharper strategic clarity. POME Nest packages
+      these first steps into concrete services, delivered with founder-level
+      judgment and local context.
+
+  language_rules:
+    say:
+      - venture marketing studio
+      - productized services
+      - Southeast Asia market entry
+      - first market-entry steps
+      - key partner meetings
+      - early market validation
+      - immersive strategic sessions
+      - founder-level representation
+      - Point of Marketing Entry
+
+    avoid:
+      - full-service agency
+      - traditional consultancy
+      - distributor
+      - software tool
+      - growth hacking
+      - experiential marketing as a standalone label
+      - abstract innovation language without business meaning
+
+  proof_hooks:
+    trust_elements_to_use:
+      - founder credibility and entrepreneurial background
+      - examples of local partner conversations
+      - examples of early validation and consumer testing
+      - case summaries with service tags
+      - Singapore base and regional market context
+      - commercial outcomes or strategic learnings where available

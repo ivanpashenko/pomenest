@@ -1,0 +1,81 @@
+version: 0.3
+
+entity:
+  name: POME Nest Pte. Ltd.
+
+brand_idea:
+  core_essence: "Point of Entry"
+  core_metaphor: "A high-context point where business enters a new market through access, validation and movement."
+  bridge_from_positioning: >
+    Positioning says productized market-entry services. Brand meaning translates
+    this into a clear sense of entrepreneurial entry: the moment where a company
+    gets real local conversations, real market signals and real strategic momentum
+    in Southeast Asia.
+
+brand_tensions:
+  - pole_a: "Business ambition (growth, expansion, commercial upside)"
+    pole_b: "Market uncertainty (distance, ambiguity, local friction)"
+    resolution: "A clear point of entry that reduces uncertainty through real-world movement."
+  - pole_a: "Founder logic (speed, judgment, ownership)"
+    pole_b: "Corporate complexity (process, caution, internal alignment)"
+    resolution: "Entrepreneurial execution with enough structure to be trusted by teams and companies."
+  - pole_a: "Strategy (reflection, alignment, decisions)"
+    pole_b: "Action (meetings, testing, exposure, traction)"
+    resolution: "Strategic movement. Thinking that becomes visible in the market."
+
+symbolic_fields:
+  entry_point:
+    meaning: "The moment and mechanism through which a company enters a new market."
+    associations: "Thresholds, gateways, first steps, openings, transition into action."
+  partner_access:
+    meaning: "Qualified local contact and human access to the right people."
+    associations: "Introductions, proximity, presence, conversation, trust."
+  market_signals:
+    meaning: "Early proof from real consumers, real behavior and real feedback."
+    associations: "Signals, response, traction markers, reviews, feedback loops."
+  immersive_shift:
+    meaning: "A strategic reset that happens through lived experience, not only discussion."
+    associations: "Immersion, perspective shift, narrative, scene, momentum, transformation."
+  venture_judgment:
+    meaning: "The work is carried by entrepreneurial stakes and business judgment, not only execution."
+    associations: "Ownership, conviction, value creation, investor instinct, founder presence."
+
+sensory_direction:
+  feel: "Sharp, premium, high-context and quietly ambitious."
+  weight: "Grounded in business reality, but not corporate-heavy."
+  temperature: "Cool precision with moments of vivid signal and cinematic tension."
+  texture: "Clean structure, directional cues, subtle friction and controlled energy."
+
+visual_translation_primitives:
+  shapes:
+    - "Thresholds, apertures and openings that suggest entry into a new context"
+    - "Geometric frames that feel deliberate, structured and premium"
+  lines:
+    - "Directional paths, signal traces and meeting-point logic"
+    - "Routes and intersections that suggest movement, not static systems"
+  space:
+    - "High negative space for confidence and precision"
+    - "Focused focal points that suggest where attention and action begin"
+  contrast:
+    - "Calm structural surfaces contrasted with sharp signal moments"
+    - "A premium strategic frame with selective bursts of motion and intensity"
+
+banned_cliches:
+  - "Generic Asian market tropes or stereotypical regional motifs"
+  - "Startup SaaS visuals that imply a software dashboard product"
+  - "Stock business imagery with handshakes, boardrooms or generic networking"
+  - "Overly soft wellness-retreat aesthetics for immersive work"
+  - "Abstract innovation graphics with no commercial or strategic meaning"
+
+tone_of_voice_foundation:
+  character: "An entrepreneurial local operator with founder-level judgment."
+  traits:
+    - "Commercially sharp"
+    - "Human and high-context"
+    - "Structured but not corporate"
+    - "Confident without hype"
+  writing_principle: >
+    Speak like someone who knows how market entry really begins: not with big
+    theory, but with the right first steps. Keep the language clear, grounded,
+    specific and commercially meaningful. Use emotion carefully, especially in
+    immersive contexts, and always tie it back to business movement.

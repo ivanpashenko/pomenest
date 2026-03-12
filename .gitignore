@@ -1,0 +1,5 @@
+input/
+chats/
+gen/
+.DS_Store
+node_modules/

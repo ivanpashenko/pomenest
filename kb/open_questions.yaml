@@ -1,0 +1,42 @@
+version: 0.2
+entity:
+  name: POME Nest Pte. Ltd.
+
+open_questions:
+  positioning:
+    - should venture marketing studio be a primary homepage label or a secondary explanatory layer?
+    - how strongly should we lead with productized services versus market-entry platform language?
+    - how explicit should founder-level and investor-level representation be in public messaging?
+    - should Singapore be emphasized on every key page or only where trust/context matters?
+
+  services:
+    - how do we package each core service into clear paid offers or tiers?
+    - which modules should be shown publicly under each service, and which should stay inside sales conversations?
+    - how far can we promise first local purchases without legal or logistics caveats?
+    - should Partner Immersion Event stay under Immersive Strategic Sessions or be reframed more commercially?
+
+  pricing:
+    - should pricing be shown as starting-from packages, fixed sprints or custom quotes?
+    - which service is the easiest low-friction entry offer?
+    - do we need a visible paid discovery step before the main services?
+
+  proof:
+    - which cases map cleanly to the 3-service model?
+    - which cases have strong enough outcomes or learnings to publish now?
+    - where do we have proof of real partner access versus only exploratory conversations?
+    - where do we have proof of real consumer validation versus only research?
+
+  venture_studio:
+    - how explicitly do we want to describe the long-term upside or partnership angle?
+    - do we mention possible deeper strategic partnership publicly or keep that for sales conversations?
+    - how do we explain the investor-entrepreneur angle without sounding vague or inflated?
+
+  immersive:
+    - how strongly should we describe the theatrical and psychological dimension on the public site?
+    - what business outcomes should always be attached to immersive work?
+    - do we need separate language for founder/team immersions and partner-facing immersive events?
+
+  visual_identity:
+    - how much cinematic tension should appear in the visual system versus keeping it mostly structured and restrained?
+    - how do we signal Southeast Asia context without cliché regional codes?
+    - how far should we lean into premium productized-service aesthetics versus venture-studio personality?

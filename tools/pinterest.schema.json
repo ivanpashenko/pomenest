@@ -1,0 +1,11 @@
+{
+  "description": "Search Pinterest for images based on a visual query using SerpApi (Google Images)",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": { "type": "string", "description": "Visual style or aesthetic to search for" },
+      "limit": { "type": "number", "description": "Number of images to return (default 5)" }
+    },
+    "required": ["query"]
+  }
+}
