@@ -1,12 +1,12 @@
-import '/components/site-shell.js';
-import '/components/site-header.js';
-import '/components/hero-section.js';
-import '/components/text-section.js';
-import '/components/capabilities-section.js';
-import '/components/markets-section.js';
-import '/components/ventures-section.js';
-import '/components/cta-section.js';
-import '/components/site-footer.js';
+import './components/site-shell.js';
+import './components/site-header.js';
+import './components/hero-section.js';
+import './components/text-section.js';
+import './components/capabilities-section.js';
+import './components/markets-section.js';
+import './components/ventures-section.js';
+import './components/cta-section.js';
+import './components/site-footer.js';
 
 const content = {
   brand: 'POME Nest',
