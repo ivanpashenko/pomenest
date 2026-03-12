@@ -17,24 +17,32 @@ class VenturesSection extends HTMLElement {
             <p class="mt-6 max-w-2xl text-base leading-8 text-[#5B616A] md:text-lg">${body}</p>
           </div>
 
-          <div class="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div class="mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             ${items.map((item, index) => `
-              <article class="overflow-hidden rounded-[28px] border border-[#DDDCD6] bg-white transition duration-300 hover:-translate-y-[2px] hover:border-[#C9C7C0] hover:shadow-[0_24px_80px_rgba(24,28,32,0.08)]">
+              <article class="overflow-hidden rounded-[22px] border border-[#DDDCD6] bg-white transition duration-300 hover:-translate-y-[2px] hover:border-[#C9C7C0] hover:shadow-[0_20px_60px_rgba(24,28,32,0.08)]">
                 <button class="venture-open flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
-                  <div class="flex min-h-[320px] items-center justify-center border-b border-[#EEEDE8] bg-white p-16 md:min-h-[360px]">
-                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[120px] w-auto max-w-[84%] object-contain md:max-h-[150px]" />` : ''}
+                  <div class="flex min-h-[172px] items-center justify-center border-b border-[#EEEDE8] bg-white p-8 md:min-h-[188px] md:p-10">
+                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[84px] w-auto max-w-[82%] object-contain md:max-h-[96px]" />` : ''}
                   </div>
 
-                  <div class="flex flex-1 flex-col p-7 md:p-8">
-                    <div class="flex items-center justify-between gap-4">
-                      <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">${item.lens}</div>
-                      <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#DDDCD6] text-base leading-none text-[#6A7078]">↗</span>
+                  <div class="flex flex-1 flex-col p-5 md:p-6">
+                    <div class="flex items-start justify-between gap-3">
+                      <span class="rounded-full border border-[#D9D9D6] bg-[#F8F7F3] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6A7078]">Backed by POME</span>
+                      <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#DDDCD6] text-sm leading-none text-[#6A7078]">↗</span>
                     </div>
 
-                    <h3 class="mt-5 text-2xl font-semibold tracking-[-0.03em]">${item.name}</h3>
-                    <p class="mt-3 max-w-[28ch] text-base leading-7 text-[#5B616A]">${item.summary}</p>
+                    <h3 class="mt-4 text-xl font-semibold tracking-[-0.03em]">${item.name}</h3>
+                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6A7078]">
+                      ${item.country ? `<span class="rounded-full border border-[#D9D9D6] bg-[#F8F7F3] px-2.5 py-1">${item.country}</span>` : ''}
+                      ${item.brandDescription ? `<span>${item.brandDescription}</span>` : ''}
+                    </div>
+                    <p class="mt-3 text-sm leading-6 text-[#5B616A]">${item.summary}</p>
 
-                    <div class="mt-6 pt-5 text-sm font-medium text-[#20242A]">Open case</div>
+                    ${item.servicesUsed?.length ? `
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        ${item.servicesUsed.map(service => `<span class="rounded-full border border-[#D9D9D6] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#3F464E]">${service}</span>`).join('')}
+                      </div>
+                    ` : ''}
                   </div>
                 </button>
               </article>
