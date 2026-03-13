@@ -128,7 +128,7 @@ const content = {
         name: 'Immersive Sessions',
         title: 'Create clarity, alignment and new perspective',
         body: 'Singapore-based strategic immersion sessions for founders and leadership teams to understand the Southeast Asian market landscape and unlock clearer strategic decisions.',
-        image: './assets/images/service_immersion_01.png',
+        image: './assets/images/service_immersion_03.png',
         buttons: [
           {
             label: 'Leadership Session',
@@ -181,7 +181,7 @@ const content = {
         name: 'Key Partner Meetings',
         title: 'Move partner conversations forward with local founder-level representation',
         body: 'Identify the right partners, distributors and operators. We map the ecosystem and arrange key meetings locally with speed, context and trust.',
-        image: './assets/images/service_partners_01.png',
+        image: './assets/images/service_partners_02.png',
         buttons: [
           {
             label: 'Partner Mapping',
