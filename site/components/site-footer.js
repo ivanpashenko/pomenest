@@ -10,16 +10,30 @@ class SiteFooter extends HTMLElement {
     const email = this.getAttribute('email') || '';
 
     this.innerHTML = `
-      <footer class="bg-brand-canvas py-12 border-t border-brand-line">
-        <div class="mx-auto flex max-w-content flex-col gap-6 px-6 text-sm text-brand-muted md:flex-row md:items-center md:justify-between md:px-10">
-          <div class="flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-              ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-6 w-auto opacity-40 grayscale" />` : `<div class="font-bold text-brand-ink uppercase tracking-widest">${brand}</div>`}
+      <footer class="bg-brand-canvas py-16 border-t border-brand-line">
+        <div class="mx-auto max-w-content px-6 md:px-10 flex flex-col gap-10">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="flex flex-col gap-4 min-w-0">
+              <div class="flex items-center gap-4 min-w-0">
+                <a href="#" class="inline-flex shrink-0 transition-opacity hover:opacity-100">
+                  ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-5 w-auto mix-blend-multiply opacity-40" />` : `<div class="font-bold text-brand-ink text-xl uppercase tracking-widest opacity-40">${brand}</div>`}
+                </a>
+                ${note ? `<p class="text-sm text-brand-muted leading-relaxed whitespace-nowrap">${note}</p>` : ''}
+              </div>
             </div>
-            ${company ? `<div class="text-xs font-medium">${company}</div>` : ''}
-            ${email ? `<div class="text-xs font-medium mt-1"><a href="mailto:${email}" class="hover:text-brand-ink transition">${email}</a></div>` : ''}
+
+            ${email ? `
+            <div class="md:text-right">
+              <a href="mailto:${email}" class="text-sm font-medium text-brand-muted hover:text-brand-ink transition-colors">${email}</a>
+            </div>
+            ` : ''}
           </div>
-          <div class="max-w-md md:text-right leading-relaxed">${note}</div>
+
+          ${company ? `
+          <div class="text-sm text-brand-muted">
+            ${company}
+          </div>
+          ` : ''}
         </div>
       </footer>
     `;
