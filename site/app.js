@@ -12,10 +12,24 @@ import './components/site-footer.js';
 const content = {
   brand: 'POME Nest',
   nav: [
-    { label: 'Services', href: '#services' },
+    { 
+      label: 'Services', 
+      items: [
+        { label: 'Early Market Validation', href: '#/service/early-market-validation' },
+        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions' },
+        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings' }
+      ]
+    },
     { label: 'For whom', href: '#for-whom' },
     { label: 'Cases', href: '#ventures' },
-    { label: 'Pricing', href: '#pricing' },
+    { 
+      label: 'Pricing', 
+      items: [
+        { label: 'Early Market Validation', href: '#/service/early-market-validation#pricing' },
+        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions#pricing' },
+        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings#pricing' }
+      ]
+    },
     { label: 'Venture Studio', href: '#venture-studio' }
   ],
   hero: {
@@ -27,7 +41,7 @@ const content = {
     secondaryLabel: 'See services',
     secondaryHref: '#services',
     energyImage: './assets/images/hero_img.png',
-    logoImage: './assets/images/logo-pome.png'
+    logoImage: './assets/images/logo_tagline.svg'
   },
   capabilities: {
     eyebrow: 'Services',
@@ -243,7 +257,8 @@ const content = {
       {
         name: 'AMMA',
         logo: './assets/images/amma.png',
-        country: 'China',
+        country: 'China, HK',
+        link: 'https://amma.family',
         brandDescription: 'Pregnancy & parenting app',
         summary: 'A pregnancy and parenting app that helps women get pregnant, track pregnancy, follow baby development, and connect with other moms through expert-backed content and community support.',
         challenge: 'The company needed to process global tenders, understand which specific app features are demanded in Asia, and align the top management on annual regional planning.',
@@ -255,6 +270,7 @@ const content = {
         name: 'Kilometer Studios',
         logo: './assets/images/kilometer-studios.png',
         country: 'Sweden',
+        link: 'https://kilometer.studio',
         brandDescription: 'Premium gear brand',
         summary: 'A premium gear brand creating backpacks, bags, and kits for run commuters and active urban athletes.',
         challenge: 'The brand needed to test physical products with the target audience in Asia, advance pending B2B deals, and build an online presence to increase brand trust in a new market.',
@@ -266,6 +282,7 @@ const content = {
         name: 'Buzzaar',
         logo: './assets/images/buzzaar.png',
         country: 'Netherlands',
+        link: 'https://buzzaar.eu',
         brandDescription: 'Word-of-mouth marketing agency',
         summary: 'A word-of-mouth marketing agency that helps brands drive authentic product trials, reviews, recommendations, and advocacy through everyday influencers and brand communities.',
         challenge: 'The agency wanted to expand into Asia, pitch case studies to potential regional clients, sell first pilot projects, and test its digital community-building tools in a new geography.',
@@ -277,6 +294,7 @@ const content = {
         name: 'Teleport',
         logo: './assets/images/teleport.png',
         country: 'Netherlands',
+        link: 'https://teleportme.nl',
         brandDescription: 'Luxury experience company',
         summary: 'A luxury experience company that creates bespoke immersive journeys where reality, storytelling, and live performance blend into unforgettable real-life adventures.',
         challenge: 'The company needed to adapt its luxury experience offering for the Asian corporate and B2B market, localize the proposition, and find the first regional clients.',
@@ -288,6 +306,7 @@ const content = {
         name: 'Buzz',
         logo: './assets/images/buzz.png',
         country: 'Netherlands',
+        link: 'https://buzzpowerbanks.nl',
         brandDescription: 'Power bank sharing service',
         summary: 'A power bank sharing service that lets people rent portable chargers and return them at any station across the city.',
         challenge: 'The startup needed to evaluate the Asian market landscape for power bank rentals and validate hypotheses for regional expansion and scaling.',
@@ -458,89 +477,183 @@ const content = {
   },
   footer: {
     note: 'Point of Marketing Entry • Productized services for Southeast Asia market entry.',
-    logoImage: './assets/images/logo-pome.png'
+    company: '© Pome Nest Pte.Ltd.',
+    logoImage: './assets/images/logo.svg'
   }
 };
 
 const app = document.querySelector('#app');
 
-app.innerHTML = `
-  <site-shell>
-    <site-header
-      brand="${content.brand}"
-      links='${JSON.stringify(content.nav)}'
-      cta-label="Book a strategy call"
-      logo-image="${content.hero.logoImage}"
-    ></site-header>
+function renderHome() {
+  app.innerHTML = `
+    <site-shell>
+      <site-header
+        brand="${content.brand}"
+        links='${JSON.stringify(content.nav)}'
+        cta-label="Book a strategy call"
+        logo-image="${content.hero.logoImage}"
+      ></site-header>
 
-    <hero-section
-      eyebrow="${content.hero.eyebrow}"
-      title="${content.hero.title}"
-      body="${content.hero.body}"
-      primary-label="${content.hero.primaryLabel}"
-      primary-href="${content.hero.primaryHref}"
-      secondary-label="${content.hero.secondaryLabel}"
-      secondary-href="${content.hero.secondaryHref}"
-      energy-image="${content.hero.energyImage}"
-      logo-image="${content.hero.logoImage}"
-    ></hero-section>
+      <hero-section
+        eyebrow="${content.hero.eyebrow}"
+        title="${content.hero.title}"
+        body="${content.hero.body}"
+        primary-label="${content.hero.primaryLabel}"
+        primary-href="${content.hero.primaryHref}"
+        secondary-label="${content.hero.secondaryLabel}"
+        secondary-href="${content.hero.secondaryHref}"
+        energy-image="${content.hero.energyImage}"
+        logo-image="${content.hero.logoImage}"
+      ></hero-section>
 
-    <capabilities-section
-      eyebrow="${content.capabilities.eyebrow}"
-      title="${content.capabilities.title}"
-      items='${JSON.stringify(content.capabilities.items)}'
-    ></capabilities-section>
+      <capabilities-section
+        eyebrow="${content.capabilities.eyebrow}"
+        title="${content.capabilities.title}"
+        items='${JSON.stringify(content.capabilities.items)}'
+      ></capabilities-section>
 
+      <capabilities-section
+        section-id="for-whom"
+        eyebrow="${content.audience.eyebrow}"
+        title="${content.audience.title}"
+        items='${JSON.stringify(content.audience.items)}'
+        variant="audience"
+      ></capabilities-section>
 
+      <ventures-section
+        eyebrow="${content.ventures.eyebrow}"
+        title="${content.ventures.title}"
+        body="${content.ventures.body}"
+        items='${JSON.stringify(content.ventures.items)}'
+      ></ventures-section>
 
-    <capabilities-section
-      section-id="for-whom"
-      eyebrow="${content.audience.eyebrow}"
-      title="${content.audience.title}"
-      items='${JSON.stringify(content.audience.items)}'
-      variant="audience"
-    ></capabilities-section>
+      <text-section
+        section-id="venture-studio"
+        eyebrow="${content.ventureStudio.eyebrow}"
+        title="${content.ventureStudio.title}"
+        body="${content.ventureStudio.body}"
+        cta-label="${content.ventureStudio.ctaLabel}"
+        cta-href="${content.ventureStudio.ctaHref}"
+        light="true"
+      ></text-section>
 
-    <ventures-section
-      eyebrow="${content.ventures.eyebrow}"
-      title="${content.ventures.title}"
-      body="${content.ventures.body}"
-      items='${JSON.stringify(content.ventures.items)}'
-    ></ventures-section>
+      <cta-section
+        eyebrow="${content.cta.eyebrow}"
+        title="${content.cta.title}"
+        body="${content.cta.body}"
+        primary-label="${content.cta.primaryLabel}"
+        primary-href="${content.cta.primaryHref}"
+        secondary-label="${content.cta.secondaryLabel}"
+        secondary-href="${content.cta.secondaryHref}"
+      ></cta-section>
 
-    <pricing-section
-      section-id="pricing"
-      eyebrow="${content.pricing.eyebrow}"
-      title="${content.pricing.title}"
-      body="${content.pricing.body}"
-      services='${JSON.stringify(content.pricing.services)}'
-    ></pricing-section>
+      <site-footer
+        brand="${content.brand}"
+        note="${content.footer.note}"
+        company="${content.footer.company}"
+        logo-image="${content.footer.logoImage}"
+      ></site-footer>
+    </site-shell>
+  `;
+}
 
-    <text-section
-      section-id="venture-studio"
-      eyebrow="${content.ventureStudio.eyebrow}"
-      title="${content.ventureStudio.title}"
-      body="${content.ventureStudio.body}"
-      cta-label="${content.ventureStudio.ctaLabel}"
-      cta-href="${content.ventureStudio.ctaHref}"
-      light="true"
-    ></text-section>
+function renderService(serviceId) {
+  const idMap = {
+    'early-market-validation': 0,
+    'immersive-strategic-sessions': 1,
+    'key-partner-meetings': 2
+  };
+  const index = idMap[serviceId];
+  if (index === undefined) return renderHome();
 
+  const serviceCap = content.capabilities.items[index];
+  const servicePrice = content.pricing.services[index];
 
-    <cta-section
-      eyebrow="${content.cta.eyebrow}"
-      title="${content.cta.title}"
-      body="${content.cta.body}"
-      primary-label="${content.cta.primaryLabel}"
-      primary-href="${content.cta.primaryHref}"
-      secondary-label="${content.cta.secondaryLabel}"
-      secondary-href="${content.cta.secondaryHref}"
-    ></cta-section>
+  app.innerHTML = `
+    <site-shell>
+      <site-header
+        brand="${content.brand}"
+        links='${JSON.stringify(content.nav)}'
+        cta-label="Book a strategy call"
+        logo-image="${content.hero.logoImage}"
+      ></site-header>
 
-    <site-footer
-      brand="${content.brand}"
-      note="${content.footer.note}"
-      logo-image="${content.footer.logoImage}"
-    ></site-footer>
-  </site-shell>
-`;
+      <section class="bg-brand-canvas pt-32 pb-8 px-6 md:px-10 max-w-content mx-auto">
+        <div class="max-w-3xl">
+          <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Service Details</div>
+          <h1 class="mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${serviceCap.name}</h1>
+          <p class="mt-5 text-xl text-brand-ink/80 leading-relaxed">${serviceCap.title}</p>
+          <p class="mt-4 text-lg text-brand-muted leading-relaxed">${serviceCap.body}</p>
+        </div>
+      </section>
+
+      <capabilities-section
+        section-id="solutions"
+        eyebrow="Solutions"
+        title="What is included"
+        items='${JSON.stringify([serviceCap])}'
+        variant="detailed"
+      ></capabilities-section>
+
+      <pricing-section
+        section-id="pricing"
+        eyebrow="Pricing"
+        title="Pricing for ${serviceCap.name}"
+        body="Concrete tiers help qualify scope early. Final pricing depends on market and complexity."
+        services='${JSON.stringify([servicePrice])}'
+      ></pricing-section>
+
+      <cta-section
+        eyebrow="${content.cta.eyebrow}"
+        title="${content.cta.title}"
+        body="${content.cta.body}"
+        primary-label="${content.cta.primaryLabel}"
+        primary-href="${content.cta.primaryHref}"
+        secondary-label="${content.cta.secondaryLabel}"
+        secondary-href="${content.cta.secondaryHref}"
+      ></cta-section>
+
+      <site-footer
+        brand="${content.brand}"
+        note="${content.footer.note}"
+        company="${content.footer.company}"
+        logo-image="${content.footer.logoImage}"
+      ></site-footer>
+    </site-shell>
+  `;
+}
+
+function router() {
+  const hash = window.location.hash;
+  if (hash.startsWith('#/service/')) {
+    const parts = hash.split('#');
+    const path = parts[1]; // /service/...
+    const serviceId = path.split('/')[2];
+    
+    renderService(serviceId);
+    
+    // Auto-scroll to pricing if requested
+    if (parts.length > 2 && parts[2] === 'pricing') {
+      setTimeout(() => {
+        const el = document.getElementById('pricing');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  } else {
+    renderHome();
+    // Scroll to section if standard anchor
+    if (hash && hash !== '#top') {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+}
+
+window.addEventListener('hashchange', router);
+router();

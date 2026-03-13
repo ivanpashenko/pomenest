@@ -9,6 +9,7 @@ class CapabilitiesSection extends HTMLElement {
     const items = JSON.parse(this.getAttribute('items') || '[]');
     const variant = this.getAttribute('variant') || 'default';
     const isAudience = variant === 'audience';
+    const isDetailed = variant === 'detailed';
     const sectionClass = 'bg-brand-canvas py-16 md:py-24 border-b border-brand-line';
     const eyebrowClass = 'text-xs font-semibold uppercase tracking-widest text-brand-muted';
     const titleClass = 'mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl max-w-2xl';
@@ -42,26 +43,91 @@ class CapabilitiesSection extends HTMLElement {
           `}).join('')}
         </div>
       `;
+    } else if (isDetailed) {
+      // DETAILED layout (for service pages)
+      const service = items[0];
+      if (service && service.buttons) {
+        gridHtml = `
+          <div class="mt-12 flex flex-col gap-8">
+            ${service.buttons.map(buttonData => `
+              <article class="rounded-[32px] bg-white p-8 md:p-12 shadow-sm">
+                <h3 class="max-w-2xl text-3xl font-bold md:text-4xl">${buttonData.label || ''}</h3>
+                ${buttonData.subtitle ? `<p class="mt-5 max-w-2xl text-lg leading-relaxed text-brand-muted">${buttonData.subtitle}</p>` : ''}
+
+                ${buttonData.description ? `
+                  <div class="mt-8 border-t border-brand-line pt-8">
+                    <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What it is</div>
+                    <p class="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">${buttonData.description}</p>
+                  </div>
+                ` : ''}
+
+                ${buttonData.steps?.length ? `
+                  <div class="mt-8 border-t border-brand-line pt-8">
+                    <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">How it works</div>
+                    <div class="mt-5 grid gap-4 md:grid-cols-${Math.min(buttonData.steps.length, 3)}">
+                      ${buttonData.steps.map((step, index) => `
+                        <div class="rounded-2xl bg-brand-canvas/30 p-5">
+                          <div class="text-sm font-bold text-brand-ink">Step ${index + 1}</div>
+                          <p class="mt-2 text-sm leading-relaxed text-brand-muted">${step}</p>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+
+                ${(buttonData.outputs?.length || buttonData.idealFor?.length) ? `
+                  <div class="mt-8 grid gap-4 border-t border-brand-line pt-8 md:grid-cols-2">
+                    ${buttonData.outputs?.length ? `
+                      <div class="rounded-2xl bg-brand-canvas/30 p-6">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What you get</div>
+                        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
+                          ${buttonData.outputs.map(output => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${output}</span></li>`).join('')}
+                        </ul>
+                      </div>
+                    ` : ''}
+                    ${buttonData.idealFor?.length ? `
+                      <div class="rounded-2xl bg-brand-canvas/30 p-6">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Ideal for</div>
+                        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
+                          ${buttonData.idealFor.map(target => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${target}</span></li>`).join('')}
+                        </ul>
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+              </article>
+            `).join('')}
+          </div>
+        `;
+      }
     } else {
-      // SERVICES layout
+      // SERVICES layout (homepage)
       gridHtml = `
         <div class="mt-12 grid gap-6 md:grid-cols-3">
-          ${items.map((item, itemIndex) => `
+          ${items.map((item) => {
+            const serviceSlug = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            return `
             <article class="flex flex-col rounded-[24px] bg-white p-8 md:p-10 shadow-sm">
               <h3 class="text-3xl font-bold leading-tight text-brand-ink">${item.name}</h3>
               <p class="mt-5 text-sm leading-relaxed text-brand-muted">${item.body}</p>
               
               ${item.buttons?.length ? `
                 <div class="mt-auto pt-8 flex flex-col gap-3">
-                  ${item.buttons.map((button, buttonIndex) => `
-                    <button class="service-open text-left font-semibold text-brand-primary text-sm flex items-center gap-1 hover:opacity-80 transition" type="button" data-item-index="${itemIndex}" data-button-index="${buttonIndex}">
-                      ${button.label || button} &rarr;
-                    </button>
+                  ${item.buttons.map((button) => `
+                    <div class="text-left text-sm text-brand-ink/80 flex items-start gap-2">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span>
+                      <span>${button.label || button}</span>
+                    </div>
                   `).join('')}
+                </div>
+                <div class="mt-8 pt-6 border-t border-brand-line">
+                  <a href="#/service/${serviceSlug}" class="inline-flex font-semibold text-brand-primary text-sm items-center gap-1 hover:opacity-80 transition">
+                    Explore this service &rarr;
+                  </a>
                 </div>
               ` : ''}
             </article>
-          `).join('')}
+          `}).join('')}
         </div>
       `;
     }
@@ -75,110 +141,8 @@ class CapabilitiesSection extends HTMLElement {
           </div>
           ${gridHtml}
         </div>
-
-        <div class="service-modal fixed inset-0 z-50 hidden overflow-y-auto">
-          <div class="service-backdrop fixed inset-0 bg-brand-ink/40 backdrop-blur-sm"></div>
-          <div class="relative flex min-h-screen items-start justify-center p-4 md:p-8">
-            <div class="relative my-8 w-full max-w-3xl overflow-hidden rounded-[30px] bg-white shadow-2xl">
-              <button class="service-close absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-brand-canvas/50 text-xl text-brand-ink transition hover:bg-brand-canvas" type="button" aria-label="Close service">×</button>
-              <div class="service-modal-content"></div>
-            </div>
-          </div>
-        </div>
       </section>
     `;
-
-    const modal = this.querySelector('.service-modal');
-    const modalContent = this.querySelector('.service-modal-content');
-    const closeButton = this.querySelector('.service-close');
-    const backdrop = this.querySelector('.service-backdrop');
-
-    const openModal = (item, button) => {
-      const buttonData = typeof button === 'string' ? { label: button } : button;
-      modalContent.innerHTML = `
-        <div class="p-8 md:p-10 lg:p-12 text-brand-ink bg-white">
-          <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${item.name}</div>
-          <h3 class="mt-4 max-w-2xl text-3xl font-bold md:text-4xl">${buttonData.label || ''}</h3>
-          ${buttonData.subtitle ? `<p class="mt-5 max-w-2xl text-lg leading-relaxed text-brand-muted">${buttonData.subtitle}</p>` : ''}
-
-          ${buttonData.description ? `
-            <div class="mt-8 border-t border-brand-line pt-8">
-              <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What it is</div>
-              <p class="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">${buttonData.description}</p>
-            </div>
-          ` : ''}
-
-          ${buttonData.steps?.length ? `
-            <div class="mt-8 border-t border-brand-line pt-8">
-              <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">How it works</div>
-              <div class="mt-5 space-y-4">
-                ${buttonData.steps.map((step, index) => `
-                  <div class="rounded-2xl bg-brand-canvas/30 p-5">
-                    <div class="text-sm font-bold text-brand-ink">Step ${index + 1}</div>
-                    <p class="mt-2 text-sm leading-relaxed text-brand-muted">${step}</p>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          ` : ''}
-
-          ${(buttonData.outputs?.length || buttonData.idealFor?.length) ? `
-            <div class="mt-8 grid gap-4 border-t border-brand-line pt-8 md:grid-cols-2">
-              ${buttonData.outputs?.length ? `
-                <div class="rounded-2xl bg-brand-canvas/30 p-6">
-                  <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What you get</div>
-                  <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
-                    ${buttonData.outputs.map(output => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${output}</span></li>`).join('')}
-                  </ul>
-                </div>
-              ` : ''}
-              ${buttonData.idealFor?.length ? `
-                <div class="rounded-2xl bg-brand-canvas/30 p-6">
-                  <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Ideal for</div>
-                  <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
-                    ${buttonData.idealFor.map(target => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${target}</span></li>`).join('')}
-                  </ul>
-                </div>
-              ` : ''}
-            </div>
-          ` : ''}
-
-          ${(buttonData.ctaLabel && buttonData.ctaHref) ? `
-            <div class="mt-8 border-t border-brand-line pt-8">
-              <a href="${buttonData.ctaHref}" class="inline-flex rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-primary/90">${buttonData.ctaLabel}</a>
-            </div>
-          ` : ''}
-        </div>
-      `;
-
-      modal.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-    };
-
-    const closeModal = () => {
-      modal.classList.add('hidden');
-      modalContent.innerHTML = '';
-      document.body.classList.remove('overflow-hidden');
-    };
-
-    this.querySelectorAll('.service-open').forEach((buttonEl) => {
-      buttonEl.addEventListener('click', () => {
-        const itemIndex = Number(buttonEl.getAttribute('data-item-index'));
-        const buttonIndex = Number(buttonEl.getAttribute('data-button-index'));
-        const item = items[itemIndex];
-        const button = item.buttons?.[buttonIndex];
-        openModal(item, button);
-      });
-    });
-
-    closeButton?.addEventListener('click', closeModal);
-    backdrop?.addEventListener('click', closeModal);
-
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
   }
 }
 

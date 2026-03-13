@@ -15,7 +15,24 @@ class SiteHeader extends HTMLElement {
             ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-8 w-auto" />` : `<span class="text-sm font-semibold tracking-[0.18em] uppercase">${brand}</span>`}
           </a>
           <nav class="hidden items-center gap-6 md:flex">
-            ${links.map(link => `<a href="${link.href}" class="text-sm font-medium text-brand-ink/70 transition hover:text-brand-ink">${link.label}</a>`).join('')}
+            ${links.map(link => {
+              if (link.items) {
+                return `
+                  <div class="relative group py-2">
+                    <button class="flex items-center gap-1 text-sm font-medium text-brand-ink/70 transition hover:text-brand-ink">
+                      ${link.label}
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full mt-0 hidden w-64 flex-col rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5 group-hover:flex">
+                      ${link.items.map(subItem => `
+                        <a href="${subItem.href}" class="block rounded-lg px-4 py-2 text-sm text-brand-ink/70 hover:bg-brand-canvas hover:text-brand-ink">${subItem.label}</a>
+                      `).join('')}
+                    </div>
+                  </div>
+                `;
+              }
+              return `<a href="${link.href}" class="text-sm font-medium text-brand-ink/70 transition hover:text-brand-ink py-2">${link.label}</a>`;
+            }).join('')}
           </nav>
           <a href="#contact" class="rounded-full border border-brand-ink px-5 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-brand-surface">${ctaLabel}</a>
         </div>
