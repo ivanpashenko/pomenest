@@ -36,7 +36,7 @@ const content = {
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
     title: 'Enter Southeast Asia with structure and less guesswork',
-    body: 'POME Nest creates the first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
+    body: 'POME Nest helps companies take their first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
     primaryLabel: 'Book a strategy call',
     primaryHref: '#contact',
     secondaryLabel: 'See services',
@@ -46,12 +46,13 @@ const content = {
   },
   capabilities: {
     eyebrow: 'Services',
-    title: 'Three productized services for the first market-entry steps',
+    title: 'Three services to launch your first steps in Southeast Asia',
     items: [
       {
         name: 'Early Market Validation',
         title: 'Test real demand before you build local operations',
-        body: 'Test your product or service with real consumers in Southeast Asia. Get feedback, UGC and first buying signals before a full market launch.',
+        body: 'Validate your product with real consumers in Southeast Asia before committing to a full market launch. Generate early feedback, UGC and first buying signals.',
+        image: './assets/images/service_validation_01.png',
         buttons: [
           {
             label: 'Consumer Testing & Insights',
@@ -122,9 +123,10 @@ const content = {
         ]
       },
       {
-        name: 'Immersive Strategic Sessions',
+        name: 'Immersive Sessions',
         title: 'Create clarity, alignment and new perspective',
-        body: 'Singapore-based immersive sessions for founders and teams designed to unlock sharper decisions, stronger alignment and a new regional point of view.',
+        body: 'Singapore-based strategic immersion sessions for founders and leadership teams to understand the Southeast Asian market landscape and unlock clearer strategic decisions.',
+        image: './assets/images/service_immersion_01.png',
         buttons: [
           {
             label: 'Leadership Session',
@@ -133,7 +135,7 @@ const content = {
             steps: [
               'We begin with a profiling phase, using interviews and preparation sessions to understand the team dynamic, business context and the core strategic question behind the session.',
               'We design a tailored immersive scenario around the desired outcome, such as strategic alignment, renewed vision, team cohesion or a major decision point.',
-              'We prepare and run the live experience across selected Singapore locations, using guided movement, atmosphere and staged interactions to create a more transformative strategic session.'
+              'We design and run immersive strategic experiences across selected Singapore locations, combining guided movement, atmosphere and carefully staged interactions. Professional actors and realistic scenarios are woven into everyday environments, creating situations that feel indistinguishable from real life.'
             ],
             outputs: [
               'Sharper leadership alignment',
@@ -175,7 +177,8 @@ const content = {
       {
         name: 'Key Partner Meetings',
         title: 'Move partner conversations forward with local founder-level representation',
-        body: 'Map the right partner landscape, set up critical meetings and conduct conversations locally with more speed, context and trust.',
+        body: 'Identify the right partners, distributors and operators. We map the ecosystem and arrange key meetings locally with speed, context and trust.',
+        image: './assets/images/service_partners_01.png',
         buttons: [
           {
             label: 'Partner Mapping',
@@ -283,7 +286,7 @@ const content = {
         name: 'Buzzaar',
         logo: './assets/images/buzzaar.png',
         country: 'Netherlands',
-        link: 'https://buzzaar.eu',
+        link: 'https://client.buzzaar.eu/',
         brandDescription: 'Word-of-mouth marketing agency',
         summary: 'A word-of-mouth marketing agency that helps brands drive authentic product trials, reviews, recommendations, and advocacy through everyday influencers and brand communities.',
         challenge: 'The agency wanted to expand into Asia, pitch case studies to potential regional clients, sell first pilot projects, and test its digital community-building tools in a new geography.',
@@ -338,39 +341,38 @@ const content = {
         description: 'Test market response, generate UGC and validate demand before launching fully.',
         meta: 'USD · productized tiers',
         baseMetrics: [
-          'Consumer Testing & Insights — $30 per consumer',
+          'Consumer Testing & Insights — $20 per consumer',
           'Product Seeding Campaign — $40 per participant',
           'First Local Purchases — $50 per purchase · ad budget not included'
         ],
         tiers: [
           {
             name: 'Test',
-            price: 'Starting at $3,900',
+            price: 'Starting at $2,400',
             target: 'For brands exploring the market, testing a first batch or deciding whether to go deeper.',
             features: [
               '100 Consumer Testing & Insights',
-              '10 Product Seeding participants',
-              '10 First Local Purchases'
+              '10 Product Seeding participants'
             ]
           },
           {
             name: 'Start',
-            price: 'Starting at $12,500',
+            price: 'Starting at $9,950',
             target: 'For brands with a budget approved and a clear first step into the market.',
             features: [
               '200 Consumer Testing & Insights',
               '100 Product Seeding participants',
-              '50 First Local Purchases'
+              '40 First Local Purchases'
             ]
           },
           {
             name: 'Grow',
-            price: 'Starting at $37,500',
+            price: 'Starting at $29,950',
             target: 'For brands launching or already present that need more scale, feedback and visibility.',
             features: [
-              '500 Consumer Testing & Insights',
+              '400 Consumer Testing & Insights',
               '500 Product Seeding participants',
-              '50 First Local Purchases'
+              '40 First Local Purchases'
             ]
           }
         ],
@@ -381,8 +383,8 @@ const content = {
         ]
       },
       {
-        name: 'Immersive Strategic Sessions',
-        description: 'Transformative Singapore-based immersions for founders and leadership teams.',
+        name: 'Immersive Sessions',
+        description: 'Transformative Singapore-based immersions for founders, leadership teams and brand’s partners.',
         meta: 'USD · per person / per day',
         tiers: [
           {
@@ -582,14 +584,18 @@ function renderService(serviceId) {
         logo-image="${content.hero.logoImage}"
       ></site-header>
 
-      <section class="bg-brand-canvas pt-32 pb-8 px-6 md:px-10 max-w-content mx-auto">
-        <div class="max-w-3xl">
-          <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Service Details</div>
-          <h1 class="mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${serviceCap.name}</h1>
-          <p class="mt-5 text-xl text-brand-ink/80 leading-relaxed">${serviceCap.title}</p>
-          <p class="mt-4 text-lg text-brand-muted leading-relaxed">${serviceCap.body}</p>
-        </div>
-      </section>
+      <div class="pt-16 md:pt-20 bg-brand-canvas"></div>
+      <split-section
+        section-id="service-intro"
+        eyebrow="Service Details"
+        title="${serviceCap.name}"
+        body="${serviceCap.title}. ${serviceCap.body}"
+        image="${serviceCap.image}"
+        cta-label="Book a strategy call"
+        cta-href="mailto:hello@pomenest.com"
+        secondary-cta-label="See prices"
+        secondary-cta-href="#/service/${serviceId}#pricing"
+      ></split-section>
 
       <capabilities-section
         section-id="solutions"
