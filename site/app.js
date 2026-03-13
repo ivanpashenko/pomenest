@@ -41,7 +41,7 @@ const content = {
     primaryHref: '#contact',
     secondaryLabel: 'See services',
     secondaryHref: '#services',
-    energyImage: './assets/images/hero_editorial_agency_daylight_woman_01.png',
+    energyImage: './assets/images/hero-img2.png',
     logoImage: './assets/images/logo_tagline.svg'
   },
   capabilities: {

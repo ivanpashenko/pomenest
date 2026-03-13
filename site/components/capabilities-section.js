@@ -24,21 +24,14 @@ class CapabilitiesSection extends HTMLElement {
             const isEven = index % 2 !== 0;
             return `
             <article class="flex flex-col md:flex-row items-stretch rounded-[32px] bg-white overflow-hidden min-h-[400px]">
-              ${isEven ? `
-                <div class="w-full md:w-1/2 overflow-hidden">
-                  <img src="${item.image || ''}" class="w-full h-full object-cover" alt="" />
-                </div>
-              ` : ''}
-              <div class="flex w-full md:w-1/2 flex-col justify-center px-10 py-16 text-center">
+              <div class="w-full md:w-1/2 overflow-hidden order-1 ${isEven ? 'md:order-1' : 'md:order-2'}">
+                <img src="${item.image || ''}" class="w-full h-full object-cover" alt="" />
+              </div>
+              <div class="flex w-full md:w-1/2 flex-col justify-center px-10 py-16 text-center order-2 ${isEven ? 'md:order-2' : 'md:order-1'}">
                 <div class="text-[10px] font-semibold uppercase tracking-widest text-brand-muted">${item.name}</div>
                 <h3 class="mx-auto mt-6 max-w-md text-3xl font-bold leading-tight text-brand-ink">${item.title}</h3>
                 <p class="mx-auto mt-4 max-w-md text-sm leading-relaxed text-brand-muted">${item.body}</p>
               </div>
-              ${!isEven ? `
-                <div class="w-full md:w-1/2 overflow-hidden">
-                  <img src="${item.image || ''}" class="w-full h-full object-cover" alt="" />
-                </div>
-              ` : ''}
             </article>
           `}).join('')}
         </div>
