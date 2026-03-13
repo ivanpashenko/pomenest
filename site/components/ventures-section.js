@@ -86,6 +86,7 @@ class VenturesSection extends HTMLElement {
             </div>
             
             <h3 class="mt-4 text-3xl font-bold md:text-4xl text-brand-ink">${item.name}</h3>
+            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline transition-all">Visit website <span class="text-[10px]">↗</span></a>` : ''}
             
             ${item.fullStory ? `
               <div class="mt-8">
