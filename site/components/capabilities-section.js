@@ -109,22 +109,19 @@ class CapabilitiesSection extends HTMLElement {
             const serviceSlug = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             return `
             <article class="flex flex-col rounded-[24px] bg-white p-8 md:p-10 shadow-sm">
-              <h3 class="text-3xl font-bold leading-tight text-brand-ink">${item.name}</h3>
+              <h3 class="text-3xl font-bold leading-tight text-brand-ink">${item.id === 'immersive-strategic-sessions' ? 'Immersive<br>Sessions' : item.name}</h3>
               <p class="mt-5 text-sm leading-relaxed text-brand-muted">${item.body}</p>
               
               ${item.buttons?.length ? `
-                <div class="mt-auto pt-8 flex flex-col gap-3">
-                  ${item.buttons.map((button) => `
-                    <div class="text-left text-sm text-brand-ink/80 flex items-start gap-2">
-                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span>
-                      <span>${button.label || button}</span>
-                    </div>
-                  `).join('')}
-                </div>
-                <div class="mt-8 pt-6 border-t border-brand-line">
-                  <a href="#/service/${serviceSlug}" class="inline-flex font-semibold text-brand-primary text-sm items-center gap-1 hover:opacity-80 transition">
-                    Explore this service &rarr;
-                  </a>
+                <div class="mt-auto pt-8 flex flex-col gap-4">
+                  ${item.buttons.map((button) => {
+                    const solutionSlug = (button.label || button).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return `
+                    <a href="#/service/${item.id || serviceSlug}#${solutionSlug}" class="inline-flex font-semibold text-brand-primary text-sm items-center gap-1 hover:opacity-80 transition">
+                      ${button.label || button} &rarr;
+                    </a>
+                    `;
+                  }).join('')}
                 </div>
               ` : ''}
             </article>

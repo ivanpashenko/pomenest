@@ -49,6 +49,7 @@ const content = {
     title: 'Three services to launch your first steps in Southeast Asia',
     items: [
       {
+        id: 'early-market-validation',
         name: 'Early Market Validation',
         title: 'Test real demand before you build local operations',
         body: 'Validate your product with real consumers in Southeast Asia before committing to a full market launch. Generate early feedback, UGC and first buying signals.',
@@ -123,6 +124,7 @@ const content = {
         ]
       },
       {
+        id: 'immersive-strategic-sessions',
         name: 'Immersive Sessions',
         title: 'Create clarity, alignment and new perspective',
         body: 'Singapore-based strategic immersion sessions for founders and leadership teams to understand the Southeast Asian market landscape and unlock clearer strategic decisions.',
@@ -175,6 +177,7 @@ const content = {
         ]
       },
       {
+        id: 'key-partner-meetings',
         name: 'Key Partner Meetings',
         title: 'Move partner conversations forward with local founder-level representation',
         body: 'Identify the right partners, distributors and operators. We map the ecosystem and arrange key meetings locally with speed, context and trust.',
@@ -646,10 +649,10 @@ function router() {
     
     renderService(serviceId);
     
-    // Auto-scroll to pricing if requested
-    if (parts.length > 2 && parts[2] === 'pricing') {
+    // Auto-scroll to anchor if requested
+    if (parts.length > 2 && parts[2]) {
       setTimeout(() => {
-        const el = document.getElementById('pricing');
+        const el = document.getElementById(parts[2]);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     } else {
