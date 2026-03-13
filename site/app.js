@@ -2,6 +2,7 @@ import './components/site-shell.js';
 import './components/site-header.js';
 import './components/hero-section.js';
 import './components/text-section.js';
+import './components/split-section.js';
 import './components/capabilities-section.js';
 import './components/markets-section.js';
 import './components/ventures-section.js';
@@ -463,8 +464,9 @@ const content = {
     eyebrow: 'Venture Studio',
     title: 'More than execution. A different level of business interest',
     body: 'POME Nest operates with a venture studio logic. That means market-entry work is led not by hired coordinators, but by entrepreneurs and investors who think in terms of business value, market creation and long-term upside. While providing market-entry support, we actively evaluate companies to identify future investment targets and long-term regional partners.',
-    ctaLabel: 'Send us your deck →',
-    ctaHref: 'mailto:hello@pomenest.com'
+    ctaLabel: 'Send us your deck',
+    ctaHref: 'mailto:hello@pomenest.com',
+    image: './assets/images/for_whom_leadership_01.png'
   },
   cta: {
     eyebrow: 'Start the conversation',
@@ -528,15 +530,15 @@ function renderHome() {
         items='${JSON.stringify(content.ventures.items)}'
       ></ventures-section>
 
-      <text-section
+      <split-section
         section-id="venture-studio"
         eyebrow="${content.ventureStudio.eyebrow}"
         title="${content.ventureStudio.title}"
         body="${content.ventureStudio.body}"
         cta-label="${content.ventureStudio.ctaLabel}"
         cta-href="${content.ventureStudio.ctaHref}"
-        light="true"
-      ></text-section>
+        image="${content.ventureStudio.image}"
+      ></split-section>
 
       <cta-section
         eyebrow="${content.cta.eyebrow}"
