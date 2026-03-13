@@ -14,11 +14,11 @@ class SiteFooter extends HTMLElement {
         <div class="mx-auto max-w-content px-6 md:px-10 flex flex-col gap-10">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div class="flex flex-col gap-4 min-w-0">
-              <div class="flex items-center gap-4 min-w-0">
+              <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 min-w-0">
                 <a href="#" class="inline-flex shrink-0 transition-opacity hover:opacity-100">
                   ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-5 w-auto mix-blend-multiply opacity-40" />` : `<div class="font-bold text-brand-ink text-xl uppercase tracking-widest opacity-40">${brand}</div>`}
                 </a>
-                ${note ? `<p class="text-sm text-brand-muted leading-relaxed whitespace-nowrap">${note}</p>` : ''}
+                ${note ? `<p class="text-sm text-brand-muted leading-relaxed break-words">${note}</p>` : ''}
               </div>
             </div>
 
