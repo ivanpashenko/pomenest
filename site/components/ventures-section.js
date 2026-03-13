@@ -20,27 +20,32 @@ class VenturesSection extends HTMLElement {
           <div class="mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             ${items.map((item, index) => `
               <article class="overflow-hidden rounded-[22px] border border-[#DDDCD6] bg-white transition duration-300 hover:-translate-y-[2px] hover:border-[#C9C7C0] hover:shadow-[0_20px_60px_rgba(24,28,32,0.08)]">
-                <button class="venture-open flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
-                  <div class="flex min-h-[120px] items-center justify-center border-b border-[#EEEDE8] bg-white p-6 md:min-h-[140px] md:p-8">
+                <button class="venture-open group flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
+                  <div class="relative flex min-h-[160px] items-center justify-center border-b border-[#EEEDE8] bg-[#F8F7F3] p-6 md:min-h-[180px] md:p-8">
+                    <div class="absolute left-4 top-4">
+                      <span class="rounded-full border border-[#D9D9D6] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6A7078]">Backed by POME</span>
+                    </div>
+                    <div class="absolute right-4 top-4">
+                      <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#D9D9D6] bg-white text-sm leading-none text-[#6A7078] transition-colors group-hover:border-[#B7B7B4] group-hover:text-[#20242A]">↗</span>
+                    </div>
                     ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-auto w-auto max-h-[48px] max-w-[130px] object-contain md:max-h-[56px] md:max-w-[150px]" />` : ''}
                   </div>
 
-                  <div class="flex flex-1 flex-col p-5 md:p-6">
-                    <div class="flex items-start justify-between gap-3">
-                      <span class="rounded-full border border-[#D9D9D6] bg-[#F8F7F3] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6A7078]">Backed by POME</span>
-                      <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#DDDCD6] text-sm leading-none text-[#6A7078]">↗</span>
-                    </div>
-
-                    <h3 class="mt-4 text-xl font-semibold tracking-[-0.03em]">${item.name}</h3>
-                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6A7078]">
+                  <div class="flex flex-1 flex-col p-6 md:p-8">
+                    <div class="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6A7078]">
                       ${item.country ? `<span class="rounded-full border border-[#D9D9D6] bg-[#F8F7F3] px-2.5 py-1">${item.country}</span>` : ''}
-                      ${item.brandDescription ? `<span>${item.brandDescription}</span>` : ''}
                     </div>
-                    <p class="mt-3 text-sm leading-6 text-[#5B616A]">${item.summary}</p>
+                    
+                    <h3 class="text-xl font-semibold tracking-[-0.03em] text-[#20242A] md:text-2xl">${item.name}</h3>
+                    ${item.brandDescription ? `<div class="mt-1 text-sm font-medium text-[#8A9097]">${item.brandDescription}</div>` : ''}
+                    
+                    <p class="mt-4 text-sm leading-6 text-[#5B616A]">${item.summary}</p>
 
                     ${item.servicesUsed?.length ? `
-                      <div class="mt-4 flex flex-wrap gap-2">
-                        ${item.servicesUsed.map(service => `<span class="rounded-full border border-[#D9D9D6] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#3F464E]">${service}</span>`).join('')}
+                      <div class="mt-auto pt-6">
+                        <div class="flex flex-wrap gap-2">
+                          ${item.servicesUsed.map(service => `<span class="rounded-full border border-[#D9D9D6] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#3F464E]">${service}</span>`).join('')}
+                        </div>
                       </div>
                     ` : ''}
                   </div>
@@ -82,8 +87,15 @@ class VenturesSection extends HTMLElement {
             
             <h3 class="mt-5 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">${item.name}</h3>
             
-            ${item.challenge ? `
+            ${item.fullStory ? `
               <div class="mt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">About the Brand</div>
+                <p class="mt-3 max-w-2xl text-base leading-8 text-[#20242A]">${item.fullStory}</p>
+              </div>
+            ` : ''}
+
+            ${item.challenge ? `
+              <div class="mt-8 border-t border-[#EEEDE8] pt-8">
                 <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">The Challenge</div>
                 <p class="mt-3 max-w-2xl text-base leading-8 text-[#20242A]">${item.challenge}</p>
               </div>
@@ -92,14 +104,14 @@ class VenturesSection extends HTMLElement {
             ${item.whatWeDid ? `
               <div class="mt-8 border-t border-[#EEEDE8] pt-8">
                 <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">What We Did</div>
-                <p class="mt-3 max-w-2xl text-base leading-8 text-[#5B616A]">${item.whatWeDid}</p>
+                <p class="mt-3 max-w-2xl text-base leading-8 text-[#20242A]">${item.whatWeDid}</p>
               </div>
             ` : ''}
 
             ${item.outcome ? `
-              <div class="mt-8 rounded-[22px] bg-[#F8F7F3] p-6">
+              <div class="mt-8 border-t border-[#EEEDE8] pt-8">
                 <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">The Outcome</div>
-                <div class="mt-3 text-lg font-medium tracking-[-0.02em] text-[#20242A]">${item.outcome}</div>
+                <p class="mt-3 max-w-2xl text-base leading-8 text-[#20242A]">${item.outcome}</p>
               </div>
             ` : ''}
 

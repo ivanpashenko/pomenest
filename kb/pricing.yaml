@@ -1,0 +1,104 @@
+version: 0.1
+
+entity:
+  name: POME Nest Pte. Ltd.
+
+pricing_logic:
+  currency: USD
+  presentation_style: "Transparent starting prices to qualify leads, structured as concrete productized tiers."
+
+services:
+  early_market_validation:
+    title: "Early Market Validation"
+    description: "Test market response, generate UGC, and validate demand before launching fully."
+    base_metrics:
+      - label: "Consumer Test & Insight"
+        value: "$30 per user"
+      - label: "Product Seeding (UGC/Review)"
+        value: "$40 per user"
+      - label: "First Local Purchase"
+        value: "$50 per transaction (ad budget not included)"
+    tiers:
+      - name: "Test"
+        target: "For brands exploring the market or testing a first batch."
+        features:
+          - "100 Consumer Tests & Insights"
+          - "10 Product Seedings (UGC/Reviews)"
+          - "10 First Local Purchases"
+        price_indication: "Starting at $3,900"
+      - name: "Start"
+        target: "For brands with an approved budget taking their first committed steps."
+        features:
+          - "200 Consumer Tests & Insights"
+          - "100 Product Seedings"
+          - "50 First Local Purchases"
+        price_indication: "Starting at $12,500"
+      - name: "Grow"
+        target: "For brands launching or scaling that need mass feedback and visibility."
+        features:
+          - "500 Consumer Tests & Insights"
+          - "500 Product Seedings"
+          - "50 First Local Purchases"
+        price_indication: "Starting at $37,500"
+    add_ons:
+      - "In-home qualitative tests with photo/video documentation"
+      - "Deep analytical research report based on collected data"
+      - "E-com Competitor Analysis & Asian rollout roadmap"
+
+  immersive_strategic_sessions:
+    title: "Immersive Strategic Sessions"
+    description: "Transformative Singapore-based immersions for founders and leadership teams."
+    pricing_basis: "Priced per person, per day. Complexity and scale determine the tier."
+    tiers:
+      - name: "Base Immersion"
+        target: "Focused strategic reset with foundational immersive elements."
+        features:
+          - "Psychological profiling & scenario design"
+          - "Core Singapore business/cultural locations"
+          - "Standard professional actors/facilitators"
+        price_indication: "From $5,000 / person per day"
+      - name: "Deep Immersion"
+        target: "Higher complexity, wider geography, and deeper psychodramatic tension."
+        features:
+          - "Complex multi-location narrative"
+          - "Specialized transport and scene logistics"
+          - "Advanced business scenario simulations"
+        price_indication: "From $10,000 / person per day"
+      - name: "Full Cinematic"
+        target: "Maximum scale, parallel-life simulation, and premium environments."
+        features:
+          - "Parallel-life / alternate reality simulation"
+          - "Premium exclusive locations and high-end production"
+          - "Highest level of immersive detail"
+        price_indication: "From $25,000 / person per day"
+    add_ons:
+      - "Celebrity-level actor participation (Price TBD)"
+      - "Full concierge service (hotels, dining, entertainment - billed on commission)"
+
+  key_partner_meetings:
+    title: "Key Partner Meetings"
+    description: "Founder-level representation in critical Southeast Asian partner negotiations."
+    pricing_basis: "Priced per meeting/engagement based on preparation depth."
+    tiers:
+      - name: "Representation"
+        target: "When you have the contact and the context, but need someone in the room."
+        features:
+          - "You provide the contact and brief"
+          - "We conduct the meeting as your local representative"
+          - "Basic post-meeting summary"
+        price_indication: "$1,000 per meeting"
+      - name: "Alignment & Execution"
+        target: "When you have the contact, but need strategic alignment before we pitch."
+        features:
+          - "Pre-meeting coaching & strategy session"
+          - "Meeting execution"
+          - "Detailed debrief and next-step roadmap session"
+        price_indication: "$2,000 per meeting"
+      - name: "Full Market Access"
+        target: "When you need us to find the partners, learn your complex product, and close the meeting."
+        features:
+          - "Partner mapping and outreach (we find the contacts)"
+          - "Deep product immersion and pitch training"
+          - "Pre-meeting strategy & Meeting execution"
+          - "Comprehensive strategic debrief"
+        price_indication: "$5,000 per engagement"
