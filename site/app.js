@@ -256,7 +256,7 @@ const content = {
   ventures: {
     eyebrow: 'Use Cases',
     title: 'How brands apply our services',
-    body: 'See how companies rely on our Early Market Validation, Key Partner Meetings, and Immersive Strategic Sessions to confidently test new markets, adapt products, and close B2B deals.',
+    body: '',
     items: [
       {
         name: 'AMMA',
@@ -575,6 +575,11 @@ function renderService(serviceId) {
   const serviceCap = content.capabilities.items[index];
   const servicePrice = content.pricing.services[index];
 
+  const introButtons = serviceCap.buttons.map(btn => ({
+    label: btn.label,
+    targetId: btn.label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  }));
+
   app.innerHTML = `
     <site-shell>
       <site-header
@@ -582,19 +587,17 @@ function renderService(serviceId) {
         links='${JSON.stringify(content.nav)}'
         cta-label="Book a strategy call"
         logo-image="${content.hero.logoImage}"
+        bg="white"
       ></site-header>
 
-      <div class="pt-16 md:pt-20 bg-brand-canvas"></div>
       <split-section
+        bg="white"
         section-id="service-intro"
         eyebrow="Service Details"
         title="${serviceCap.name}"
         body="${serviceCap.title}. ${serviceCap.body}"
         image="${serviceCap.image}"
-        cta-label="Book a strategy call"
-        cta-href="mailto:hello@pomenest.com"
-        secondary-cta-label="See prices"
-        secondary-cta-href="#/service/${serviceId}#pricing"
+        buttons='${JSON.stringify(introButtons)}'
       ></split-section>
 
       <capabilities-section

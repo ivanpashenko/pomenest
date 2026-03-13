@@ -7,9 +7,10 @@ class SiteHeader extends HTMLElement {
     const links = JSON.parse(this.getAttribute('links') || '[]');
     const ctaLabel = this.getAttribute('cta-label') || 'Book a strategy call';
     const logoImage = this.getAttribute('logo-image') || '';
+    const bg = this.getAttribute('bg') === 'white' ? 'bg-white/90' : 'bg-brand-canvas/90';
 
     this.innerHTML = `
-      <header class="sticky top-0 z-20 bg-brand-canvas/90 backdrop-blur">
+      <header class="sticky top-0 z-20 ${bg} backdrop-blur">
         <div class="mx-auto flex max-w-content items-center justify-between px-6 py-6 md:px-10">
           <a href="#top" class="flex items-center gap-3">
             ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-8 w-auto" />` : `<span class="text-sm font-semibold tracking-[0.18em] uppercase">${brand}</span>`}

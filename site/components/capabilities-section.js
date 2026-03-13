@@ -48,27 +48,28 @@ class CapabilitiesSection extends HTMLElement {
       const service = items[0];
       if (service && service.buttons) {
         gridHtml = `
-          <div class="mt-12 flex flex-col gap-8">
-            ${service.buttons.map(buttonData => `
-              <article class="rounded-[32px] bg-white p-8 md:p-12 shadow-sm">
-                <h3 class="max-w-2xl text-3xl font-bold md:text-4xl">${buttonData.label || ''}</h3>
-                ${buttonData.subtitle ? `<p class="mt-5 max-w-2xl text-lg leading-relaxed text-brand-muted">${buttonData.subtitle}</p>` : ''}
+          <div class="mt-12 flex flex-col gap-16 md:gap-24">
+            ${service.buttons.map((buttonData, i) => `
+              <article id="${buttonData.label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}" class="group">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Solution ${i + 1}</div>
+                <h3 class="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-brand-ink md:text-5xl">${buttonData.label || ''}</h3>
+                ${buttonData.subtitle ? `<p class="mt-6 max-w-2xl text-xl leading-relaxed text-brand-muted">${buttonData.subtitle}</p>` : ''}
 
                 ${buttonData.description ? `
-                  <div class="mt-8 border-t border-brand-line pt-8">
+                  <div class="mt-10 border-t border-brand-line pt-10">
                     <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What it is</div>
-                    <p class="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">${buttonData.description}</p>
+                    <p class="mt-4 max-w-2xl text-lg leading-relaxed text-brand-muted">${buttonData.description}</p>
                   </div>
                 ` : ''}
 
                 ${buttonData.steps?.length ? `
-                  <div class="mt-8 border-t border-brand-line pt-8">
+                  <div class="mt-10 border-t border-brand-line pt-10">
                     <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">How it works</div>
-                    <div class="mt-5 grid gap-4 md:grid-cols-${Math.min(buttonData.steps.length, 3)}">
+                    <div class="mt-6 grid gap-6 md:grid-cols-${Math.min(buttonData.steps.length, 3)}">
                       ${buttonData.steps.map((step, index) => `
-                        <div class="rounded-2xl bg-brand-canvas/30 p-5">
+                        <div class="rounded-[24px] bg-white p-6 shadow-sm">
                           <div class="text-sm font-bold text-brand-ink">Step ${index + 1}</div>
-                          <p class="mt-2 text-sm leading-relaxed text-brand-muted">${step}</p>
+                          <p class="mt-3 text-sm leading-relaxed text-brand-muted">${step}</p>
                         </div>
                       `).join('')}
                     </div>
@@ -76,20 +77,20 @@ class CapabilitiesSection extends HTMLElement {
                 ` : ''}
 
                 ${(buttonData.outputs?.length || buttonData.idealFor?.length) ? `
-                  <div class="mt-8 grid gap-4 border-t border-brand-line pt-8 md:grid-cols-2">
+                  <div class="mt-10 grid gap-6 border-t border-brand-line pt-10 md:grid-cols-2">
                     ${buttonData.outputs?.length ? `
-                      <div class="rounded-2xl bg-brand-canvas/30 p-6">
+                      <div class="rounded-[24px] bg-brand-surfaceAlt p-8 shadow-sm">
                         <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What you get</div>
-                        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
-                          ${buttonData.outputs.map(output => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${output}</span></li>`).join('')}
+                        <ul class="mt-6 space-y-4 text-sm leading-relaxed text-brand-muted">
+                          ${buttonData.outputs.map(output => `<li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${output}</span></li>`).join('')}
                         </ul>
                       </div>
                     ` : ''}
                     ${buttonData.idealFor?.length ? `
-                      <div class="rounded-2xl bg-brand-canvas/30 p-6">
+                      <div class="rounded-[24px] bg-brand-surfaceAlt p-8 shadow-sm">
                         <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Ideal for</div>
-                        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
-                          ${buttonData.idealFor.map(target => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${target}</span></li>`).join('')}
+                        <ul class="mt-6 space-y-4 text-sm leading-relaxed text-brand-muted">
+                          ${buttonData.idealFor.map(target => `<li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${target}</span></li>`).join('')}
                         </ul>
                       </div>
                     ` : ''}
@@ -135,10 +136,12 @@ class CapabilitiesSection extends HTMLElement {
     this.innerHTML = `
       <section id="${sectionId}" class="${sectionClass}">
         <div class="mx-auto max-w-content px-6 md:px-10">
+          ${!isDetailed ? `
           <div class="max-w-3xl">
             <div class="${eyebrowClass}">${eyebrow}</div>
             <h2 class="${titleClass}">${title}</h2>
           </div>
+          ` : ''}
           ${gridHtml}
         </div>
       </section>
