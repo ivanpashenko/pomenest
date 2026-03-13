@@ -1,0 +1,176 @@
+version: 0.2
+
+entity:
+  name: POME Nest Pte. Ltd.
+  concept: modern-light-b2b
+
+source:
+  primary_reference: landing-hero.png, landing-services.png, landing-for-whom.png
+  asset_folder: pome/input
+  note: >
+    Visual identity updated to match the new light, modern, and structured B2B layout.
+    Focus is on clean canvases, vibrant primary actions, and large soft-rounded imagery and cards.
+
+concept:
+  name: Bright Structure
+  summary: >
+    A light, approachable, yet highly structured corporate identity. The system
+    relies on a warm canvas background, crisp white structural cards, high-contrast dark typography,
+    and a single vibrant blue accent for primary actions.
+  keywords:
+    - clear
+    - structured
+    - approachable
+    - bright
+    - modern
+    - premium
+    - launchpad
+  core_metaphor: >
+    POME is a clean slate and a structured environment for market entry. Clarity is achieved through generous space, soft geometry, and bold typography.
+
+brand_expression:
+  primary_message: Structure and clarity for Southeast Asia market entry.
+  emotional_effect:
+    - professional trust
+    - high clarity
+    - modern pragmatism
+    - optimistic momentum
+  tension_model:
+    outer_layer: soft, warm canvas background
+    inner_layer: crisp white content containers
+    resolution: clear reading flow and obvious action paths
+
+logo_system:
+  masterbrand:
+    wordmark: pome
+    construction: >
+      Lowercase sans-serif wordmark "pome" with minimal tracking, accompanied by "POINT OF MARKET ENTRY" descriptor.
+    meaning: >
+      The wordmark stays bold and highly legible, acting as an anchor in a spacious layout.
+    asset: pome/input/logo-pome.png
+
+design_principles:
+  - Use generous whitespace and large padding.
+  - Rely on scale and font-weight for hierarchy instead of multiple colors.
+  - Keep layouts structured using distinct, large white cards on a tinted canvas.
+  - Use vibrant blue strictly for primary actions (buttons/links) to guide the user.
+  - Soften the B2B feel with large border radii on all containers and images.
+
+color_palette:
+  ui_colors:
+    canvas:
+      hex: "#E6E8E1"
+      usage: primary website background, warm off-white/beige tone
+    surface:
+      hex: "#FFFFFF"
+      usage: content cards, floating elements, modals
+    ink:
+      hex: "#1A1A1A"
+      usage: primary typography, headings, high-contrast text, dark buttons
+    muted:
+      hex: "#6B7280"
+      usage: secondary text, eyebrows, descriptions, subtle labels
+    primary:
+      hex: "#0B4AFA"
+      usage: vivid blue for primary CTAs, text links, active states
+    line:
+      hex: "#D1D5DB"
+      usage: subtle section dividers, card borders
+
+typography:
+  direction: modern geometric sans-serif
+  characteristics:
+    - extremely clean and readable at all sizes
+    - high contrast in font weights (bold headings, regular body)
+    - wide tracking for small uppercase labels
+  recommendations:
+    primary: Plus Jakarta Sans
+  hierarchy:
+    eyebrow: uppercase, tiny text, wide tracking (tracking-widest), text-brand-muted
+    headline: very large, bold weight, tight leading (leading-tight, tracking-tight), text-brand-ink
+    body: readable, relaxed leading (leading-relaxed), text-brand-muted
+    interactive: bold or semibold, clean, no underlines unless hovered
+
+layout_system:
+  structure:
+    - central max-width containment (e.g., 1280px)
+    - distinct visual separation between sections using thin grey borders or background contrast
+    - grid-based card layouts for services and portfolio
+  preferred_compositions:
+    - centered hero text above a massive, edge-to-edge rounded hero image
+    - alternating 50/50 split (image/text) for narrative sections
+    - uniform 3-column or 2-column grids for service offerings
+  corner_radius:
+    cards: very large (24px to 32px / 2rem)
+    images: very large (2rem)
+    buttons: pill-shaped (full rounded)
+  spacing_mood: airy, open, and deliberate
+
+imagery:
+  primary_style: Premium Editorial & Cinematic Realism
+  core_vibe: >
+    Photography must feel like a feature in Monocle magazine or a flagship case study from top-tier 
+    branding agencies (like Wolff Olins or Landor). It captures "in-the-room authenticity" and the 
+    cinematic reality of doing business in Southeast Asia. POME images should be instantly recognizable 
+    by their premium quality, quiet confidence, and interplay of natural light and modern architecture.
+  emotions_captured:
+    - quiet confidence (leaders in deep thought or focused conversation)
+    - authentic traction (real consumers interacting with products naturally)
+    - cinematic pragmatism (beautifully lit real-world business environments)
+  lighting_and_grading:
+    - strong, directional natural light (e.g., sharp sunlight casting architectural shadows through glass)
+    - cinematic depth of field, keeping focus on the subject while softening busy backgrounds
+    - sophisticated, true-to-life color grading (avoiding hyper-saturated, artificial stock filters)
+  subjects_and_scenes:
+    leaders_and_partners:
+      - candid moments of focus, negotiation, or reflection
+      - real premium environments (modern Asian offices, high-end lobbies, architectural concrete/glass spaces)
+      - natural posture, never posing artificially for the camera
+    consumers:
+      - vibrant, authentic street-level or in-home Southeast Asian contexts
+      - genuine product interaction, resembling high-end user-generated content captured professionally
+  supporting_graphics:
+    - floating UI elements or badges overlaying images (e.g., reviews, metrics) to bridge physical and digital
+  avoid:
+    - staged corporate handshakes or generic networking poses
+    - fake, exaggerated smiles directed straight at the lens
+    - flat, evenly lit studio photography or subjects isolated on white backgrounds
+    - generic business clip-art metaphors (e.g., puzzle pieces, globes, floating graphs)
+    - anything that feels like cheap, easily recognizable stock photography
+
+ui_language:
+  website_direction:
+    background_mode: light canvas background overall, with pure white cards providing structure
+    interaction_style: smooth, frictionless, subtle hover lifts and shadow expansions
+    component_feel: >
+      Friendly but highly professional. The large border radii make it feel modern and consumer-grade, while the typography keeps it grounded in B2B.
+  cards:
+    look: stark white, large border radius, subtle border or soft drop shadow
+  buttons:
+    primary: vibrant blue pill, white text, no glowing shadows
+    secondary: outlined in dark ink, or dark ink fill with white text
+  dividers:
+    use: subtle, thin grey lines between major vertical sections
+
+site_translation:
+  overall_art_direction: >
+    The site functions as a clean, illuminated space. It should feel like a premium, modern SaaS or agency landing page. Content is king, framed by white cards and soft canvas backgrounds.
+  homepage_rules:
+    - Light header with dark logo and text.
+    - Hero section is text-first, centered, followed by a massive rounded photo.
+    - Use grey borders (`border-brand-line`) to separate main sections.
+    - Services are displayed as white cards with blue action links inside.
+    - For Whom section uses alternating image/text rounded blocks.
+
+do:
+  - use the warm canvas (#E6E8E1) as the base foundation
+  - use pure white (#FFFFFF) to lift content and create structure
+  - rely on Plus Jakarta Sans for a modern, geometric tech feel
+  - apply large border radii (24px+) to all images and major cards
+  - use vibrant blue strictly for actions
+
+dont:
+  - do not use the dark charcoal/black backgrounds from the old concept
+  - do not use glowing button shadows or neon effects
+  - do not make text unreadable by lowering contrast too much
+  - do not use sharp, 0px border-radius corners for images or cards

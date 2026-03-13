@@ -14,23 +14,23 @@ class HeroSection extends HTMLElement {
     const logoImage = this.getAttribute('logo-image') || '';
 
     this.innerHTML = `
-      <section id="top" class="border-b border-brand-line bg-brand-panel">
-        <div class="mx-auto grid min-h-[88vh] max-w-content gap-14 px-6 py-16 md:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] md:px-10 md:py-24 lg:items-center lg:gap-10">
-          <div>
-            <div class="text-xs font-semibold uppercase tracking-[0.28em] text-brand-soft">${eyebrow}</div>
-            <h1 class="mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.05em] md:text-7xl">${title}</h1>
-            <p class="mt-8 max-w-xl text-base leading-8 text-brand-soft md:text-lg">${body}</p>
-            <div class="mt-10 flex flex-wrap gap-3">
-              <a href="${primaryHref}" class="rounded-full bg-brand-paper px-5 py-3 text-sm font-medium text-brand-panel">${primaryLabel}</a>
-              <a href="${secondaryHref}" class="rounded-full border border-white/18 px-5 py-3 text-sm font-medium text-brand-ink">${secondaryLabel}</a>
-            </div>
+      <section id="top" class="pt-20 pb-24 md:pt-32 md:pb-32 bg-brand-canvas border-b border-brand-line">
+        <div class="mx-auto max-w-content px-6 md:px-10 text-center">
+          <h1 class="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-[64px]">
+            ${title}
+          </h1>
+          <p class="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-brand-muted leading-relaxed">
+            ${body}
+          </p>
+          <div class="mt-10 flex justify-center">
+            <a href="${primaryHref}" class="rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">
+              ${primaryLabel}
+            </a>
           </div>
-          <div class="flex items-center justify-center lg:justify-end">
-            ${energyImage ? `
-              <div class="relative w-full max-w-[780px]">
-                <img src="${energyImage}" alt="Contained energy aperture" class="w-full h-auto object-contain" />
-              </div>
-            ` : ''}
+          <div class="mt-20 flex justify-center">
+            <div class="relative w-full max-w-5xl rounded-[2rem] overflow-hidden">
+               <img src="${energyImage}" alt="Market Entry" class="w-full h-auto object-cover" />
+            </div>
           </div>
         </div>
       </section>

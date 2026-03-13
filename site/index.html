@@ -7,36 +7,31 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
             brand: {
-              canvas: '#C9C9C7',
-              ink: '#F5F5F3',
-              soft: 'rgba(245,245,243,0.68)',
-              line: 'rgba(245,245,243,0.12)',
-              panel: '#33383F',
-              panel2: '#2D3138',
-              paper: '#F5F5F3',
-              black: '#000000',
-              amber: '#D89A2B',
-              blue: '#2693D1',
-              cyan: '#17C7D7',
-              pink: '#E85BC0',
-              green: '#74C365'
+              canvas: '#E6E8E1', /* Светлый фон */
+              ink: '#1A1A1A', /* Основной темный текст */
+              surface: '#FFFFFF', /* Белые карточки */
+              primary: '#0B4AFA', /* Синий для кнопок и ссылок */
+              muted: '#6B7280', /* Серый текст (субтитры, описание) */
+              line: '#D1D5DB' /* Линии/Бордеры */
             }
           },
           maxWidth: {
             content: '1280px'
           },
-          boxShadow: {
-            glow: '0 0 80px rgba(216,154,43,0.2)'
+          borderRadius: {
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+            '4xl': '2rem',
           }
         }
       }

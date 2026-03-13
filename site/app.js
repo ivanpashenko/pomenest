@@ -26,8 +26,8 @@ const content = {
     primaryHref: '#contact',
     secondaryLabel: 'See services',
     secondaryHref: '#services',
-    energyImage: './assets/images/hero_element_aperture_01.png',
-    logoImage: './assets/images/logo.png'
+    energyImage: './assets/images/hero_img.png',
+    logoImage: './assets/images/logo-pome.png'
   },
   capabilities: {
     eyebrow: 'Services',
@@ -218,17 +218,20 @@ const content = {
       {
         name: 'You need real consumer traction, fast.',
         title: 'Test demand without opening a local entity or importing stock.',
-        body: 'For marketing and growth teams who want to test the Asian market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.'
+        body: 'For marketing and growth teams who want to test the Asian market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.',
+        image: './assets/images/for_whom_marketing_01.png'
       },
       {
         name: 'Your leadership needs a regional reset.',
         title: 'Align vision through a cinematic, real-world business immersion.',
-        body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the Asian market to reset strategy, align the team, and unlock new business directions.'
+        body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the Asian market to reset strategy, align the team, and unlock new business directions.',
+        image: './assets/images/for_whom_leadership_03.png'
       },
       {
         name: 'You are ready to negotiate, not just network.',
         title: 'Peer-to-peer partner meetings without the wasted flights.',
-        body: 'For founders and sales teams who need to speak directly with qualified local decision-makers. We represent you on a founder-to-founder level, ensuring you only travel for warm, structured deals.'
+        body: 'For founders and sales teams who need to speak directly with qualified local decision-makers. We represent you on a founder-to-founder level, ensuring you only travel for warm, structured deals.',
+        image: './assets/images/for_whom_partners_01.png'
       }
     ]
   },
@@ -455,7 +458,7 @@ const content = {
   },
   footer: {
     note: 'Point of Marketing Entry • Productized services for Southeast Asia market entry.',
-    logoImage: './assets/images/logo.png'
+    logoImage: './assets/images/logo-pome.png'
   }
 };
 

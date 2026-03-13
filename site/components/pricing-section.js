@@ -10,28 +10,28 @@ class PricingSection extends HTMLElement {
     const services = JSON.parse(this.getAttribute('services') || '[]');
 
     this.innerHTML = `
-      <section id="${sectionId}" class="border-b border-[#B7B7B4] bg-brand-paper text-[#20242A]">
-        <div class="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+      <section id="${sectionId}" class="bg-brand-canvas py-16 md:py-24 border-b border-brand-line">
+        <div class="mx-auto max-w-content px-6 md:px-10">
           <div class="max-w-3xl">
-            <div class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6A7078]">${eyebrow}</div>
-            <h2 class="mt-5 text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">${title}</h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-[#5B616A] md:text-lg">${body}</p>
+            <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${eyebrow}</div>
+            <h2 class="mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${title}</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-brand-muted">${body}</p>
           </div>
 
-          <div class="mt-12 grid gap-5">
+          <div class="mt-12 grid gap-8">
             ${services.map((service) => `
-              <article class="rounded-[24px] border border-[#DDDCD6] bg-white p-6 md:p-8">
-                <div class="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)]">
+              <article class="rounded-[32px] bg-white p-8 md:p-12 shadow-sm">
+                <div class="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)]">
                   <div>
-                    <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">${service.meta || ''}</div>
-                    <h3 class="mt-3 text-2xl font-semibold tracking-[-0.03em]">${service.name}</h3>
-                    <p class="mt-4 max-w-xl text-base leading-7 text-[#5B616A]">${service.description || ''}</p>
+                    <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${service.meta || ''}</div>
+                    <h3 class="mt-3 text-3xl font-bold text-brand-ink">${service.name}</h3>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-brand-muted">${service.description || ''}</p>
 
                     ${service.baseMetrics?.length && service.name === 'Early Market Validation' ? `
-                      <div class="mt-6 border-t border-[#E7E5DF] pt-6">
-                        <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">Base pricing logic</div>
-                        <ul class="mt-4 space-y-3 text-sm leading-6 text-[#3F464E]">
-                          ${service.baseMetrics.map(metric => `<li class="flex gap-3"><span class="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#20242A]"></span><span>${metric}</span></li>`).join('')}
+                      <div class="mt-8 border-t border-brand-line pt-8">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Base pricing logic</div>
+                        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
+                          ${service.baseMetrics.map(metric => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${metric}</span></li>`).join('')}
                         </ul>
                       </div>
                     ` : ''}
@@ -39,13 +39,13 @@ class PricingSection extends HTMLElement {
 
                   <div class="grid gap-4 md:grid-cols-3">
                     ${service.tiers.map((tier) => `
-                      <div class="rounded-[20px] bg-[#F8F7F3] p-5">
-                        <div class="text-sm font-semibold uppercase tracking-[0.14em] text-[#6A7078]">${tier.name}</div>
-                        <div class="mt-4 text-2xl font-semibold tracking-[-0.03em] text-[#20242A]">${tier.price}</div>
-                        <p class="mt-4 text-sm leading-7 text-[#5B616A]">${tier.target}</p>
+                      <div class="rounded-2xl bg-brand-canvas/30 p-6">
+                        <div class="text-xs font-bold uppercase tracking-widest text-brand-muted">${tier.name}</div>
+                        <div class="mt-4 text-2xl font-bold text-brand-ink">${tier.price}</div>
+                        <p class="mt-4 text-sm leading-relaxed text-brand-muted">${tier.target}</p>
                         ${tier.features?.length ? `
-                          <ul class="mt-5 space-y-3 border-t border-[#E7E5DF] pt-5 text-sm leading-6 text-[#3F464E]">
-                            ${tier.features.map(feature => `<li class="flex gap-3"><span class="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#20242A]"></span><span>${feature}</span></li>`).join('')}
+                          <ul class="mt-6 space-y-3 border-t border-brand-line pt-6 text-sm leading-relaxed text-brand-muted">
+                            ${tier.features.map(feature => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-ink"></span><span>${feature}</span></li>`).join('')}
                           </ul>
                         ` : ''}
                       </div>
@@ -53,10 +53,10 @@ class PricingSection extends HTMLElement {
                   </div>
                 </div>
                 ${service.addOns?.length ? `
-                  <div class="mt-8 border-t border-[#E7E5DF] pt-6">
-                    <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A9097]">Add-ons</div>
-                    <ul class="mt-4 grid gap-3 text-sm leading-6 text-[#3F464E] md:grid-cols-2">
-                      ${service.addOns.map(addOn => `<li class="flex gap-3"><span class="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#20242A]"></span><span>${addOn}</span></li>`).join('')}
+                  <div class="mt-10 border-t border-brand-line pt-8">
+                    <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Add-ons</div>
+                    <ul class="mt-4 grid gap-4 text-sm leading-relaxed text-brand-muted md:grid-cols-2">
+                      ${service.addOns.map(addOn => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span><span>${addOn}</span></li>`).join('')}
                     </ul>
                   </div>
                 ` : ''}

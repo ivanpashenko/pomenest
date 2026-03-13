@@ -12,18 +12,16 @@ class CtaSection extends HTMLElement {
     const secondaryHref = this.getAttribute('secondary-href') || '#';
 
     this.innerHTML = `
-      <section id="contact" class="border-b border-brand-line bg-brand-panel text-white">
-        <div class="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
-          <div class="rounded-[28px] border border-white/10 bg-brand-black px-8 py-10 md:px-12 md:py-14">
-            <div class="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
-              <div>
-                <div class="text-xs font-semibold uppercase tracking-[0.22em] text-white/55">${eyebrow}</div>
-                <h2 class="mt-5 max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">${title}</h2>
-                <p class="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">${body}</p>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                <a href="${primaryHref}" class="rounded-full bg-brand-paper px-5 py-3 text-sm font-medium text-brand-panel">${primaryLabel}</a>
-                <a href="${secondaryHref}" class="rounded-full border border-white/20 px-5 py-3 text-sm font-medium text-white">${secondaryLabel}</a>
+      <section id="contact" class="bg-brand-canvas py-16 md:py-24">
+        <div class="mx-auto max-w-content px-6 md:px-10">
+          <div class="rounded-[32px] border border-brand-line bg-white px-8 py-16 md:px-16 md:py-20 shadow-xl">
+            <div class="flex flex-col items-center text-center">
+              <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${eyebrow}</div>
+              <h2 class="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${title}</h2>
+              <p class="mt-6 max-w-2xl text-lg leading-relaxed text-brand-muted">${body}</p>
+              <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="${primaryHref}" class="rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">${primaryLabel}</a>
+                <a href="${secondaryHref}" class="rounded-full border border-brand-ink px-7 py-3.5 text-base font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-white">${secondaryLabel}</a>
               </div>
             </div>
           </div>
