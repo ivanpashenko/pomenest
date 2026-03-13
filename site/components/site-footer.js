@@ -7,6 +7,7 @@ class SiteFooter extends HTMLElement {
     const note = this.getAttribute('note') || '';
     const company = this.getAttribute('company') || '';
     const logoImage = this.getAttribute('logo-image') || '';
+    const email = this.getAttribute('email') || '';
 
     this.innerHTML = `
       <footer class="bg-brand-canvas py-12 border-t border-brand-line">
@@ -16,6 +17,7 @@ class SiteFooter extends HTMLElement {
               ${logoImage ? `<img src="${logoImage}" alt="${brand}" class="h-6 w-auto opacity-40 grayscale" />` : `<div class="font-bold text-brand-ink uppercase tracking-widest">${brand}</div>`}
             </div>
             ${company ? `<div class="text-xs font-medium">${company}</div>` : ''}
+            ${email ? `<div class="text-xs font-medium mt-1"><a href="mailto:${email}" class="hover:text-brand-ink transition">${email}</a></div>` : ''}
           </div>
           <div class="max-w-md md:text-right leading-relaxed">${note}</div>
         </div>

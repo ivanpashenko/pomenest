@@ -34,7 +34,7 @@ class SiteHeader extends HTMLElement {
               return `<a href="${link.href}" class="text-sm font-medium text-brand-ink/70 transition hover:text-brand-ink py-2">${link.label}</a>`;
             }).join('')}
           </nav>
-          <a href="#contact" class="rounded-full border border-brand-ink px-5 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-brand-surface">${ctaLabel}</a>
+          <a href="#contact" target="_blank" class="rounded-full border border-brand-ink px-5 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-brand-surface">${ctaLabel}</a>
         </div>
       </header>
     `;

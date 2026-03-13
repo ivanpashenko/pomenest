@@ -19,33 +19,24 @@ class VenturesSection extends HTMLElement {
 
           <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             ${items.map((item, index) => `
-              <article class="overflow-hidden rounded-[24px] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <article class="overflow-hidden rounded-[24px] bg-white p-8 md:p-10 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl border border-brand-line/50">
                 <button class="venture-open group flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
-                  <div class="relative flex min-h-[160px] items-center justify-center border-b border-brand-line bg-brand-canvas/30 p-6 md:min-h-[180px] md:p-8">
-                    <div class="absolute left-4 top-4">
-                      <span class="rounded-full border border-brand-line bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-brand-muted">Backed by POME</span>
-                    </div>
-                    <div class="absolute right-4 top-4">
-                      <span class="flex h-8 w-8 items-center justify-center rounded-full border border-brand-line bg-white text-sm leading-none text-brand-muted transition-colors group-hover:border-brand-ink group-hover:text-brand-ink">↗</span>
-                    </div>
-                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-auto w-auto max-h-[48px] max-w-[130px] object-contain md:max-h-[56px] md:max-w-[150px]" />` : ''}
+                  
+                  <div class="flex w-full justify-between items-start mb-8 md:mb-10 h-[48px]">
+                    ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-full w-auto max-w-[130px] object-contain object-left ${item.name === 'Canal Creatures' ? 'scale-[1.4] origin-left' : ''}" />` : `<h3 class="text-2xl font-bold">${item.name}</h3>`}
+                    <span class="text-blue-600 text-2xl leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
                   </div>
 
-                  <div class="flex flex-1 flex-col p-6 md:p-8">
-                    <div class="mb-3 flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-brand-muted">
-                      ${item.country ? `<span class="rounded-full border border-brand-line bg-brand-canvas/30 px-2.5 py-1">${item.country}</span>` : ''}
-                    </div>
+                  <div class="flex flex-1 flex-col">
+                    ${item.country ? `<div class="text-[11px] font-medium uppercase tracking-widest text-brand-muted mb-3">${item.country}</div>` : ''}
                     
-                    <h3 class="text-2xl font-bold text-brand-ink">${item.name}</h3>
-                    ${item.brandDescription ? `<div class="mt-1 text-sm font-semibold text-brand-muted">${item.brandDescription}</div>` : ''}
+                    ${item.brandDescription ? `<h4 class="text-base text-brand-ink font-medium mb-1">${item.brandDescription}</h4>` : ''}
                     
-                    <p class="mt-4 text-sm leading-relaxed text-brand-muted">${item.summary}</p>
+                    <p class="text-base text-brand-muted leading-relaxed mb-6">${item.summary}</p>
 
                     ${item.servicesUsed?.length ? `
-                      <div class="mt-auto pt-6">
-                        <div class="flex flex-wrap gap-2">
-                          ${item.servicesUsed.map(service => `<span class="rounded-full border border-brand-line bg-brand-canvas/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-brand-ink">${service}</span>`).join('')}
-                        </div>
+                      <div class="mt-auto flex flex-wrap gap-2">
+                        ${item.servicesUsed.map(service => `<span class="rounded-full bg-[#E6F0FF] px-4 py-2 text-[10px] md:text-[11px] font-semibold uppercase tracking-widest text-slate-500">${service}</span>`).join('')}
                       </div>
                     ` : ''}
                   </div>
@@ -74,57 +65,52 @@ class VenturesSection extends HTMLElement {
 
     const openModal = (item) => {
       modalContent.innerHTML = `
-        <div class="grid gap-0 lg:grid-cols-[380px_minmax(0,1fr)]">
-          <div class="flex min-h-[320px] items-center justify-center border-b border-brand-line bg-brand-canvas/30 p-14 lg:min-h-full lg:border-b-0 lg:border-r lg:p-16">
-            ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="max-h-[80px] w-auto max-w-[240px] object-contain lg:max-h-[100px] lg:max-w-[280px]" />` : ''}
-          </div>
-
-          <div class="p-8 md:p-10 lg:p-12 bg-white">
-            <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-muted">
-              ${item.country ? `<span class="rounded-full border border-brand-line bg-brand-canvas/30 px-2.5 py-1">${item.country}</span>` : ''}
-              ${item.brandDescription ? `<span>${item.brandDescription}</span>` : ''}
+        <div class="bg-white p-8 md:p-12 lg:p-16 w-full">
+          <div class="flex flex-col md:flex-row w-full justify-between items-start mb-10 md:mb-12">
+            <div>
+              ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-auto w-auto max-h-[64px] max-w-[200px] object-contain object-left mb-6 ${item.name === 'Canal Creatures' ? 'scale-[1.4] origin-left' : ''}" />` : `<h3 class="text-3xl font-bold mb-6">${item.name}</h3>`}
+              
+              ${item.country ? `<div class="text-[12px] font-medium uppercase tracking-widest text-brand-muted mb-2">${item.country}</div>` : ''}
+              ${item.brandDescription ? `<h4 class="text-lg md:text-xl text-brand-ink font-medium">${item.brandDescription}</h4>` : ''}
             </div>
             
-            <h3 class="mt-4 text-3xl font-bold md:text-4xl text-brand-ink">${item.name}</h3>
-            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline transition-all">Visit website <span class="text-[10px]">↗</span></a>` : ''}
-            
-            ${item.fullStory ? `
-              <div class="mt-8">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">About the Brand</div>
-                <p class="mt-3 max-w-2xl text-base leading-relaxed text-brand-muted">${item.fullStory}</p>
+            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:underline transition-all">Visit website <span class="text-[10px]">↗</span></a>` : ''}
+          </div>
+
+          <div class="space-y-10">
+            ${item.summary ? `
+              <div>
+                <p class="text-lg leading-relaxed text-brand-muted">${item.summary}</p>
               </div>
             ` : ''}
 
             ${item.challenge ? `
-              <div class="mt-8 border-t border-brand-line pt-8">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">The Challenge</div>
-                <p class="mt-3 max-w-2xl text-base leading-relaxed text-brand-muted">${item.challenge}</p>
+              <div class="border-t border-brand-line/50 pt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-widest text-brand-muted mb-3">The Challenge</div>
+                <p class="text-lg leading-relaxed text-brand-muted">${item.challenge}</p>
               </div>
             ` : ''}
 
             ${item.whatWeDid ? `
-              <div class="mt-8 border-t border-brand-line pt-8">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">What We Did</div>
-                <p class="mt-3 max-w-2xl text-base leading-relaxed text-brand-muted">${item.whatWeDid}</p>
+              <div class="border-t border-brand-line/50 pt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-widest text-brand-muted mb-3">What We Did</div>
+                <p class="text-lg leading-relaxed text-brand-muted">${item.whatWeDid}</p>
               </div>
             ` : ''}
 
             ${item.outcome ? `
-              <div class="mt-8 border-t border-brand-line pt-8">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">The Outcome</div>
-                <p class="mt-3 max-w-2xl text-base leading-relaxed text-brand-muted">${item.outcome}</p>
-              </div>
-            ` : ''}
-
-            ${item.servicesUsed?.length ? `
-              <div class="mt-8 border-t border-brand-line pt-8">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">Services Applied</div>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  ${item.servicesUsed.map(service => `<span class="rounded-full border border-brand-line bg-brand-canvas/30 px-3 py-1.5 text-xs font-medium text-brand-ink">${service}</span>`).join('')}
-                </div>
+              <div class="border-t border-brand-line/50 pt-8">
+                <div class="text-[11px] font-semibold uppercase tracking-widest text-brand-muted mb-3">The Outcome</div>
+                <p class="text-lg leading-relaxed text-brand-muted">${item.outcome}</p>
               </div>
             ` : ''}
           </div>
+
+          ${item.servicesUsed?.length ? `
+            <div class="mt-12 flex flex-wrap gap-2">
+              ${item.servicesUsed.map(service => `<span class="rounded-full bg-[#E6F0FF] px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-slate-500">${service}</span>`).join('')}
+            </div>
+          ` : ''}
         </div>
       `;
 

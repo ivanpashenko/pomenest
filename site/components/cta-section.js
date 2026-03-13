@@ -20,8 +20,8 @@ class CtaSection extends HTMLElement {
               <h2 class="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${title}</h2>
               <p class="mt-6 max-w-2xl text-lg leading-relaxed text-brand-muted">${body}</p>
               <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a href="${primaryHref}" class="rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">${primaryLabel}</a>
-                <a href="${secondaryHref}" class="rounded-full border border-brand-ink px-7 py-3.5 text-base font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-white">${secondaryLabel}</a>
+                <a href="${primaryHref}" target="_blank" class="rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">${primaryLabel}</a>
+                <a href="${secondaryHref}" target="_blank" class="rounded-full border border-brand-ink px-7 py-3.5 text-base font-semibold text-brand-ink transition hover:bg-brand-ink hover:text-white">${secondaryLabel}</a>
               </div>
             </div>
           </div>
