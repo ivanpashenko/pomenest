@@ -34,22 +34,22 @@ const content = {
   ],
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
-    title: 'Enter Southeast Asia with structure and less guesswork.',
+    title: 'Enter Southeast Asia with structure and less guesswork',
     body: 'POME Nest creates the first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
     primaryLabel: 'Book a strategy call',
     primaryHref: '#contact',
     secondaryLabel: 'See services',
     secondaryHref: '#services',
-    energyImage: './assets/images/hero_img.png',
+    energyImage: './assets/images/hero_editorial_agency_daylight_woman_01.png',
     logoImage: './assets/images/logo_tagline.svg'
   },
   capabilities: {
     eyebrow: 'Services',
-    title: 'Three productized services for the first market-entry steps.',
+    title: 'Three productized services for the first market-entry steps',
     items: [
       {
         name: 'Early Market Validation',
-        title: 'Test real demand before you build local operations.',
+        title: 'Test real demand before you build local operations',
         body: 'Test your product or service with real consumers in Southeast Asia. Get feedback, UGC and first buying signals before a full market launch.',
         buttons: [
           {
@@ -122,7 +122,7 @@ const content = {
       },
       {
         name: 'Immersive Strategic Sessions',
-        title: 'Create clarity, alignment and new perspective.',
+        title: 'Create clarity, alignment and new perspective',
         body: 'Singapore-based immersive sessions for founders and teams designed to unlock sharper decisions, stronger alignment and a new regional point of view.',
         buttons: [
           {
@@ -173,7 +173,7 @@ const content = {
       },
       {
         name: 'Key Partner Meetings',
-        title: 'Move partner conversations forward with local founder-level representation.',
+        title: 'Move partner conversations forward with local founder-level representation',
         body: 'Map the right partner landscape, set up critical meetings and conduct conversations locally with more speed, context and trust.',
         buttons: [
           {
@@ -227,37 +227,37 @@ const content = {
 
   audience: {
     eyebrow: 'For whom',
-    title: 'Built for three market-entry situations.',
+    title: 'Built for three market-entry situations',
     items: [
       {
         name: 'You need real consumer traction, fast.',
-        title: 'Test demand without opening a local entity or importing stock.',
+        title: 'Test demand without opening a local entity or importing stock',
         body: 'For marketing and growth teams who want to test the Asian market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.',
         image: './assets/images/for_whom_marketing_01.png'
       },
       {
         name: 'Your leadership needs a regional reset.',
-        title: 'Align vision through a cinematic, real-world business immersion.',
+        title: 'Align vision through a cinematic, real-world business immersion',
         body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the Asian market to reset strategy, align the team, and unlock new business directions.',
         image: './assets/images/for_whom_leadership_03.png'
       },
       {
         name: 'You are ready to negotiate, not just network.',
-        title: 'Peer-to-peer partner meetings without the wasted flights.',
+        title: 'Peer-to-peer partner meetings without the wasted flights',
         body: 'For founders and sales teams who need to speak directly with qualified local decision-makers. We represent you on a founder-to-founder level, ensuring you only travel for warm, structured deals.',
         image: './assets/images/for_whom_partners_01.png'
       }
     ]
   },
   ventures: {
-    eyebrow: 'Portfolio',
-    title: 'Brands Backed by POME.',
-    body: 'We partner with and support a selection of brands stepping into new markets. These companies represent our focus across consumer products, family-tech and immersive experiences.',
+    eyebrow: 'Use Cases',
+    title: 'How brands apply our services',
+    body: 'See how companies rely on our Early Market Validation, Key Partner Meetings, and Immersive Strategic Sessions to confidently test new markets, adapt products, and close B2B deals.',
     items: [
       {
         name: 'AMMA',
         logo: './assets/images/amma.png',
-        country: 'China, HK',
+        country: 'Hong Kong',
         link: 'https://amma.family',
         brandDescription: 'Pregnancy & parenting app',
         summary: 'A pregnancy and parenting app that helps women get pregnant, track pregnancy, follow baby development, and connect with other moms through expert-backed content and community support.',
@@ -329,7 +329,7 @@ const content = {
   },
   pricing: {
     eyebrow: 'Pricing',
-    title: 'Transparent starting prices for the first market-entry steps.',
+    title: 'Transparent starting prices for the first market-entry steps',
     body: 'Concrete tiers help qualify scope early. Final pricing depends on market, complexity and rollout setup.',
     services: [
       {
@@ -461,14 +461,14 @@ const content = {
   },
   ventureStudio: {
     eyebrow: 'Venture Studio',
-    title: 'More than execution. A different level of business interest.',
+    title: 'More than execution. A different level of business interest',
     body: 'POME Nest operates with a venture studio logic. That means market-entry work is led not by hired coordinators, but by entrepreneurs and investors who think in terms of business value, market creation and long-term upside. While providing market-entry support, we actively evaluate companies to identify future investment targets and long-term regional partners.',
     ctaLabel: 'Send us your deck →',
     ctaHref: 'mailto:hello@pomenest.com'
   },
   cta: {
     eyebrow: 'Start the conversation',
-    title: 'Discuss your Southeast Asia entry.',
+    title: 'Discuss your Southeast Asia entry',
     body: 'If you are planning your first market-entry steps in Southeast Asia, POME Nest can help you structure your entry, validate demand, and move fast.',
     primaryLabel: 'Book a strategy call',
     primaryHref: 'mailto:hello@pomenest.com',
@@ -478,6 +478,7 @@ const content = {
   footer: {
     note: 'Point of Marketing Entry • Productized services for Southeast Asia market entry.',
     company: '© Pome Nest Pte.Ltd.',
+    email: 'hello@pomenest.com',
     logoImage: './assets/images/logo.svg'
   }
 };
@@ -551,6 +552,7 @@ function renderHome() {
         brand="${content.brand}"
         note="${content.footer.note}"
         company="${content.footer.company}"
+        email="${content.footer.email}"
         logo-image="${content.footer.logoImage}"
       ></site-footer>
     </site-shell>
@@ -617,6 +619,7 @@ function renderService(serviceId) {
         brand="${content.brand}"
         note="${content.footer.note}"
         company="${content.footer.company}"
+        email="${content.footer.email}"
         logo-image="${content.footer.logoImage}"
       ></site-footer>
     </site-shell>
