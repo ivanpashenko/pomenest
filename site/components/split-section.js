@@ -22,17 +22,36 @@ class SplitSection extends HTMLElement {
     }
 
     const bg = this.getAttribute('bg') === 'white' ? 'bg-white' : 'bg-brand-canvas';
+    const imagePosition = this.getAttribute('image-position') === 'left' ? 'left' : 'right';
+    const textColumnClass = imagePosition === 'left' ? 'order-2 md:order-2' : 'order-1 md:order-1';
+    const imageColumnClass = imagePosition === 'left' ? 'order-1 md:order-1' : 'order-2 md:order-2';
+
+    const tagsAttr = this.getAttribute('tags');
+    let tags = null;
+    if (tagsAttr) {
+      try {
+        tags = JSON.parse(tagsAttr);
+      } catch(e) {}
+    }
 
     this.innerHTML = `
       <section ${id ? `id="${id}"` : ''} class="${bg} py-16 md:py-24 border-b border-brand-line">
         <div class="mx-auto max-w-content px-6 md:px-10">
           <div class="grid gap-12 md:grid-cols-2 md:items-start md:gap-16 lg:gap-24">
             
-            <div class="order-1 md:order-1 flex flex-col h-full">
+            <div class="${textColumnClass} flex flex-col h-full">
               <div class="pt-4 md:pt-0">
                 <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${eyebrow}</div>
                 <h2 class="mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl lg:text-[54px] lg:leading-[1.1]">${title}</h2>
                 <p class="mt-6 text-lg md:text-xl leading-relaxed text-brand-muted">${body}</p>
+                
+                ${tags && tags.length > 0 ? `
+                  <div class="mt-10 flex flex-wrap gap-2 md:gap-3">
+                    ${tags.map(tag => `
+                      <ui-tag variant="${tag.active ? 'active' : 'neutral'}">${tag.label}</ui-tag>
+                    `).join('')}
+                  </div>
+                ` : ''}
               </div>
               
               ${buttons && buttons.length > 0 ? `
@@ -59,7 +78,7 @@ class SplitSection extends HTMLElement {
               ` : ''}
             </div>
 
-            <div class="order-2 md:order-2 w-full">
+            <div class="${imageColumnClass} w-full">
               ${image ? `
                 <div class="relative w-full overflow-hidden rounded-[32px] md:rounded-[40px] shadow-sm aspect-square bg-white">
                   <img src="${image}" alt="${title}" class="h-full w-full object-cover object-center" />

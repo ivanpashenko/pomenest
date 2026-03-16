@@ -36,7 +36,7 @@ class VenturesSection extends HTMLElement {
 
                     ${item.servicesUsed?.length ? `
                       <div class="mt-auto flex flex-wrap gap-2">
-                        ${item.servicesUsed.map(service => `<span class="rounded-full bg-[#E6F0FF] px-4 py-2 text-[10px] md:text-[11px] font-semibold uppercase tracking-widest text-slate-500">${service}</span>`).join('')}
+                        ${item.servicesUsed.map(service => `<ui-tag variant="active">${service}</ui-tag>`).join('')}
                       </div>
                     ` : ''}
                   </div>
@@ -108,7 +108,7 @@ class VenturesSection extends HTMLElement {
 
           ${item.servicesUsed?.length ? `
             <div class="mt-12 flex flex-wrap gap-2">
-              ${item.servicesUsed.map(service => `<span class="rounded-full bg-[#E6F0FF] px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-slate-500">${service}</span>`).join('')}
+              ${item.servicesUsed.map(service => `<ui-tag variant="active">${service}</ui-tag>`).join('')}
             </div>
           ` : ''}
         </div>

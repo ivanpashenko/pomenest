@@ -101,23 +101,36 @@ class CapabilitiesSection extends HTMLElement {
           ${items.map((item) => {
             const serviceSlug = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             return `
-            <article class="flex flex-col rounded-[24px] bg-white p-8 md:p-10 shadow-sm">
-              <h3 class="text-3xl font-bold leading-tight text-brand-ink">${item.id === 'immersive-strategic-sessions' ? 'Immersive<br>Sessions' : item.name}</h3>
-              <p class="mt-5 text-sm leading-relaxed text-brand-muted">${item.body}</p>
-              
-              ${item.buttons?.length ? `
-                <div class="mt-auto pt-8 flex flex-col gap-4">
-                  ${item.buttons.map((button) => {
-                    const solutionSlug = (button.label || button).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    return `
-                    <a href="#/service/${item.id || serviceSlug}#${solutionSlug}" class="inline-flex font-semibold text-brand-primary text-sm items-center gap-1 hover:opacity-80 transition">
-                      ${button.label || button} &rarr;
-                    </a>
-                    `;
-                  }).join('')}
+            <div class="flex h-full flex-col gap-0">
+              <article class="flex flex-1 flex-col rounded-[24px] bg-white p-8 md:p-10 shadow-sm">
+                <h3 class="text-3xl font-bold leading-tight text-brand-ink">${item.id === 'immersive-strategic-sessions' ? 'Immersive<br>Sessions' : item.name}</h3>
+                <p class="mt-5 text-sm leading-relaxed text-brand-muted">${item.body}</p>
+                
+                ${item.buttons?.length ? `
+                  <div class="pt-8 flex flex-col gap-4">
+                    ${item.buttons.map((button) => {
+                      const solutionSlug = (button.label || button).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      return `
+                      <a href="#/service/${item.id || serviceSlug}#${solutionSlug}" class="inline-flex font-semibold text-brand-primary text-sm items-center gap-1 hover:opacity-80 transition">
+                        ${button.label || button} &rarr;
+                      </a>
+                      `;
+                    }).join('')}
+                  </div>
+                ` : '<div class="pt-8"></div>'}
+              </article>
+
+              ${item.proof ? `
+                <div class="min-h-[132px] px-8 md:px-10 py-4 flex flex-col justify-center">
+                  ${item.proof.logos?.length ? `
+                    <div class="flex flex-wrap items-center gap-4 md:gap-5 grayscale opacity-50 mix-blend-multiply ${item.id === 'early-market-validation' ? 'md:flex-nowrap' : ''}">
+                      ${item.proof.logos.map((logo) => logo.image ? `<img src="${logo.image}" alt="${logo.alt || ''}" class="${item.id === 'early-market-validation' ? (logo.alt === 'Nestlé' ? 'h-6 md:h-5' : 'h-5 md:h-4') : (logo.alt === 'Kilometer Studios' ? 'h-6 md:h-5' : 'h-7')} w-auto object-contain" />` : '').join('')}
+                    </div>
+                  ` : ''}
+                  ${item.proof.caption ? `<div class="mt-4 text-xs leading-relaxed text-brand-muted">${item.proof.caption}</div>` : ''}
                 </div>
-              ` : ''}
-            </article>
+              ` : '<div class="min-h-[132px]"></div>'}
+            </div>
           `}).join('')}
         </div>
       `;

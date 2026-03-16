@@ -9,6 +9,8 @@ import './components/ventures-section.js';
 import './components/pricing-section.js';
 import './components/cta-section.js';
 import './components/site-footer.js';
+import './components/proof-section.js';
+import './components/ui-tag.js';
 
 const content = {
   brand: 'POME Nest',
@@ -35,7 +37,7 @@ const content = {
   ],
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
-    title: 'Enter Southeast Asia with structure and less guesswork',
+    title: 'Make your first market moves with structure, not guesswork',
     body: 'POME Nest helps companies take their first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
     primaryLabel: 'Book a strategy call',
     primaryHref: '#contact',
@@ -43,6 +45,53 @@ const content = {
     secondaryHref: '#services',
     energyImage: './assets/images/hero-img2.png',
     logoImage: './assets/images/logo_tagline.svg'
+  },
+  proof: {
+    eyebrow: 'Impact',
+    title: 'What early market entry looks like with POME Nest',
+    items: [
+      {
+        type: 'stat',
+        eyebrow: 'Brands and ventures',
+        value: '6+',
+        title: 'Projects supported across market entry and validation',
+        body: 'Work across ventures and brands including Amma, Teleport, Buzzaar, Kilometer, Buzz and Canal Creatures.',
+        tone: 'blue'
+      },
+      {
+        type: 'facts',
+        eyebrow: 'Operating region',
+        title: 'Built for Southeast Asia market entry',
+        facts: ['Singapore', 'Indonesia', 'Thailand', 'Malaysia', 'Vietnam', 'Philippines']
+      },
+      {
+        type: 'logo-cloud',
+        eyebrow: 'Worked with',
+        title: 'Real brands, real ventures, real first steps',
+        logos: [
+          { image: './assets/images/amma.png', alt: 'Amma' },
+          { image: './assets/images/teleport.png', alt: 'Teleport' },
+          { image: './assets/images/buzzaar.png', alt: 'Buzzaar' },
+          { image: './assets/images/kilometer-studios.png', alt: 'Kilometer Studios' },
+          { image: './assets/images/buzz.png', alt: 'Buzz' },
+          { image: './assets/images/canal-creatures.png', alt: 'Canal Creatures' }
+        ]
+      },
+      {
+        type: 'quote',
+        eyebrow: 'Why POME',
+        quote: 'Real meetings. Real feedback. Real movement before full expansion.',
+        author: 'POME Nest',
+        role: 'Point of Market Entry'
+      },
+      {
+        type: 'wide-image-quote',
+        eyebrow: 'Founder-level partner support',
+        image: './assets/images/for_whom_partners_01.png',
+        quote: 'Founder-level local representation helps move important conversations faster and with more context.',
+        author: 'Key Partner Meetings'
+      }
+    ]
   },
   capabilities: {
     eyebrow: 'Services',
@@ -54,6 +103,14 @@ const content = {
         title: 'Test real demand before you build local operations',
         body: 'Validate your product with real consumers in Southeast Asia before committing to a full market launch. Generate early feedback, UGC and first buying signals.',
         image: './assets/images/service_validation_01.png',
+        proof: {
+          logos: [
+            { image: './assets/images/logo-pg.png', alt: 'P&G' },
+            { image: './assets/images/logo-nestle.png', alt: 'Nestlé' },
+            { image: './assets/images/logo-alcon.png', alt: 'Alcon' }
+          ],
+          caption: 'Consumer testing infrastructure proven with global brands.'
+        },
         buttons: [
           {
             label: 'Consumer Testing & Insights',
@@ -127,8 +184,14 @@ const content = {
         id: 'immersive-strategic-sessions',
         name: 'Immersive Sessions',
         title: 'Create clarity, alignment and new perspective',
-        body: 'Singapore-based strategic immersion sessions for founders and leadership teams to understand the Southeast Asian market landscape and unlock clearer strategic decisions.',
+        body: 'Create clarity, alignment and new perspective. Singapore-based strategic immersion sessions for founders and leadership teams unlock clearer strategic decisions.',
         image: './assets/images/service_immersion_03.png',
+        proof: {
+          logos: [
+            { image: './assets/images/logo-raw-fury.png', alt: 'Raw Fury' }
+          ],
+          caption: 'Immersive brand experience built for emotionally resonant worlds.'
+        },
         buttons: [
           {
             label: 'Leadership Session',
@@ -182,6 +245,13 @@ const content = {
         title: 'Move partner conversations forward with local founder-level representation',
         body: 'Identify the right partners, distributors and operators. We map the ecosystem and arrange key meetings locally with speed, context and trust.',
         image: './assets/images/service_partners_02.png',
+        proof: {
+          logos: [
+            { image: './assets/images/kilometer-studios.png', alt: 'Kilometer Studios' },
+            { image: './assets/images/amma.png', alt: 'Amma' }
+          ],
+          caption: 'Founder-led support for real products and real market conversations.'
+        },
         buttons: [
           {
             label: 'Partner Mapping',
@@ -239,13 +309,13 @@ const content = {
       {
         name: 'You need real consumer traction, fast.',
         title: 'Test demand without opening a local entity or importing stock',
-        body: 'For marketing and growth teams who want to test the Asian market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.',
+        body: 'For marketing and growth teams who want to test the market. Skip the agency briefs and blind guessing—get direct UGC, local feedback, and early sales data to prove product-market fit.',
         image: './assets/images/for_whom_marketing_01.png'
       },
       {
         name: 'Your leadership needs a regional reset.',
         title: 'Align vision through a cinematic, real-world business immersion',
-        body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the Asian market to reset strategy, align the team, and unlock new business directions.',
+        body: 'For founders and top management who need to break out of the boardroom. Step into the reality of the market to reset strategy, align the team, and unlock new business directions.',
         image: './assets/images/for_whom_leadership_03.png'
       },
       {
@@ -473,17 +543,31 @@ const content = {
     ctaHref: 'mailto:hello@pomenest.com',
     image: './assets/images/for_whom_leadership_01.png'
   },
+  regions: {
+    eyebrow: 'Operating Region',
+    title: 'Built for Southeast Asia, starting from Singapore',
+    body: 'POME Nest helps companies open their first market-entry steps across Southeast Asia. Singapore is our active operating base today, while other key regional markets are in focus for future expansion.',
+    tags: [
+      { label: 'Singapore', active: true },
+      { label: 'Indonesia', active: false },
+      { label: 'Thailand', active: false },
+      { label: 'Malaysia', active: false },
+      { label: 'Vietnam', active: false },
+      { label: 'Philippines', active: false }
+    ],
+    image: './assets/images/region_map_01.png'
+  },
   cta: {
     eyebrow: 'Start the conversation',
-    title: 'Discuss your Southeast Asia entry',
-    body: 'If you are planning your first market-entry steps in Southeast Asia, POME Nest can help you structure your entry, validate demand, and move fast.',
+    title: 'Reduce guesswork before entering a new market',
+    body: 'We help you validate demand, access the right partners and make the first market moves with more clarity, speed and local context.',
     primaryLabel: 'Book a strategy call',
     primaryHref: 'mailto:hello@pomenest.com',
     secondaryLabel: 'Discuss your case',
     secondaryHref: 'mailto:hello@pomenest.com'
   },
   footer: {
-    note: 'Point of Marketing Entry • Productized services for Southeast Asia market entry.',
+    note: 'Point of Market Entry',
     company: '© Pome Nest Pte.Ltd.',
     email: 'hello@pomenest.com',
     logoImage: './assets/images/logo.svg'
@@ -544,6 +628,14 @@ function renderHome() {
         cta-href="${content.ventureStudio.ctaHref}"
         image="${content.ventureStudio.image}"
       ></split-section>
+
+      <proof-section
+        eyebrow="${content.proof.eyebrow}"
+        title="${content.proof.title}"
+        items='${JSON.stringify(content.proof.items)}'
+        style="display:none;"
+        hidden
+      ></proof-section>
 
       <cta-section
         eyebrow="${content.cta.eyebrow}"
@@ -649,11 +741,20 @@ function router() {
     
     renderService(serviceId);
     
+    const scrollToTarget = (el) => {
+      if (!el) return;
+      const header = document.getElementById('main-header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const extraOffset = 24;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    };
+
     // Auto-scroll to anchor if requested
     if (parts.length > 2 && parts[2]) {
       setTimeout(() => {
         const el = document.getElementById(parts[2]);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        scrollToTarget(el);
       }, 100);
     } else {
       window.scrollTo(0, 0);
