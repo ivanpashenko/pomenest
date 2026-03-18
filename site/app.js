@@ -33,7 +33,8 @@ const content = {
         { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings#pricing' }
       ]
     },
-    { label: 'Venture Studio', href: '#venture-studio' }
+    { label: 'Venture Studio', href: '#venture-studio' },
+    { label: 'FAQ', href: '#/faq' }
   ],
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
@@ -566,6 +567,61 @@ const content = {
     secondaryLabel: 'Discuss your case',
     secondaryHref: 'mailto:hello@pomenest.com'
   },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Questions before entering a new market',
+    intro: 'A short guide to how POME Nest works, what to expect, and when our model is the right fit.',
+    items: [
+      {
+        question: 'What exactly is POME Nest?',
+        answer: 'POME Nest is a venture marketing studio that helps companies take their first market-entry steps in Southeast Asia through three focused services: early market validation, immersive strategic sessions and key partner meetings.'
+      },
+      {
+        question: 'Do you work like an agency or a consultancy?',
+        answer: 'Not exactly. We work through productized services with a founder-level, investor-minded approach. The goal is not endless advisory scope, but real movement: better conversations, better signals and better decisions before full expansion.'
+      },
+      {
+        question: 'Who is this for?',
+        answer: 'Usually for founders, leadership teams, consumer brands and product companies that want to test demand, access partners or sharpen strategy before committing to a larger Southeast Asia rollout.'
+      },
+      {
+        question: 'What markets do you cover?',
+        answer: 'POME Nest is based in Singapore and focused on Southeast Asia, especially Singapore, Indonesia, Thailand, Malaysia, Vietnam and the Philippines.'
+      },
+      {
+        question: 'What is Early Market Validation?',
+        answer: 'It is a focused sprint that helps you test how people respond to your product, offer or concept before a full launch. Depending on the case, it can include consumer testing, message testing, UGC-style feedback and first purchase or intent signals.'
+      },
+      {
+        question: 'What is an Immersive Strategic Session?',
+        answer: 'It is a one-day curated experience in Singapore designed to create strategic clarity through real-world situations, movement, atmosphere and reflection. It is not a workshop and not consulting in the usual sense.'
+      },
+      {
+        question: 'What are Key Partner Meetings?',
+        answer: 'This service helps create relevant conversations with operators, distributors and ecosystem players when there is a real fit. We focus on opening the right doors, not generating meeting volume for its own sake.'
+      },
+      {
+        question: 'Do I need a local company or team before working with you?',
+        answer: 'No. In many cases the point is to learn before you build local infrastructure. We help companies create their first signals and conversations before they commit to a full setup.'
+      },
+      {
+        question: 'Can we start with one service only?',
+        answer: 'Yes. The model is designed so you can start with a single service based on your immediate need: validation, strategic immersion or partner access.'
+      },
+      {
+        question: 'How do you price engagements?',
+        answer: 'Each service has starting packages and pricing logic on the site. Final scope depends on market, complexity and how tailored the engagement needs to be.'
+      },
+      {
+        question: 'Do you only work with large brands?',
+        answer: 'No. The same approach can work for ventures, scale-ups and established companies. The main requirement is that there is a real market-entry question to answer.'
+      },
+      {
+        question: 'What happens after the first step?',
+        answer: 'Depending on the case, the relationship can end with clear recommendations, continue into another productized service, or grow into a deeper strategic partnership.'
+      }
+    ]
+  },
   footer: {
     note: 'Point of Market Entry',
     company: '© Pome Nest Pte.Ltd.',
@@ -575,6 +631,68 @@ const content = {
 };
 
 const app = document.querySelector('#app');
+
+function renderFaq() {
+  app.innerHTML = `
+    <site-shell>
+      <site-header
+        brand="${content.brand}"
+        links='${JSON.stringify(content.nav)}'
+        cta-label="Book a strategy call"
+        logo-image="${content.hero.logoImage}"
+        bg="white"
+      ></site-header>
+
+      <split-section
+        bg="white"
+        section-id="faq-intro"
+        eyebrow="${content.faq.eyebrow}"
+        title="${content.faq.title}"
+        body="${content.faq.intro}"
+        image="./assets/images/for_whom_leadership_03.png"
+      ></split-section>
+
+      <pricing-section
+        section-id="faq-list"
+        eyebrow=""
+        title="Frequently Asked Questions"
+        body="A practical overview of how POME Nest works, what each service is designed to do, and what to expect before starting a conversation with us."
+        layout="stack"
+        services='${JSON.stringify([
+          {
+            name: '',
+            meta: '',
+            description: '',
+            tiers: content.faq.items.map((item) => ({
+              name: item.question,
+              price: '',
+              target: item.answer,
+              features: []
+            }))
+          }
+        ])}'
+      ></pricing-section>
+
+      <cta-section
+        eyebrow="Start the conversation"
+        title="Still have questions?"
+        body="Tell us what you are exploring and we will suggest the right first step into Southeast Asia."
+        primary-label="Book a strategy call"
+        primary-href="mailto:hello@pomenest.com"
+        secondary-label="Email us"
+        secondary-href="mailto:hello@pomenest.com"
+      ></cta-section>
+
+      <site-footer
+        brand="${content.brand}"
+        note="${content.footer.note}"
+        company="${content.footer.company}"
+        email="${content.footer.email}"
+        logo-image="${content.footer.logoImage}"
+      ></site-footer>
+    </site-shell>
+  `;
+}
 
 function renderHome() {
   app.innerHTML = `
@@ -633,8 +751,6 @@ function renderHome() {
         eyebrow="${content.proof.eyebrow}"
         title="${content.proof.title}"
         items='${JSON.stringify(content.proof.items)}'
-        style="display:none;"
-        hidden
       ></proof-section>
 
       <cta-section
@@ -734,7 +850,10 @@ function renderService(serviceId) {
 
 function router() {
   const hash = window.location.hash;
-  if (hash.startsWith('#/service/')) {
+  if (hash === '#/faq') {
+    renderFaq();
+    window.scrollTo(0, 0);
+  } else if (hash.startsWith('#/service/')) {
     const parts = hash.split('#');
     const path = parts[1]; // /service/...
     const serviceId = path.split('/')[2];
