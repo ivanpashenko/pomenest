@@ -14,7 +14,7 @@ class CtaSection extends HTMLElement {
     this.innerHTML = `
       <section id="contact" class="bg-brand-canvas py-16 md:py-24">
         <div class="mx-auto max-w-content px-6 md:px-10">
-          <div class="rounded-[32px] border border-brand-line bg-white px-8 py-16 md:px-16 md:py-20 shadow-xl">
+          <div class="rounded-[32px] border border-brand-line bg-white px-8 py-16 md:px-16 md:py-20">
             <div class="flex flex-col items-center text-center">
               <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${eyebrow}</div>
               <h2 class="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-brand-ink md:text-5xl">${title}</h2>

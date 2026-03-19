@@ -18,9 +18,9 @@ const content = {
     { 
       label: 'Services', 
       items: [
-        { label: 'Early Market Validation', href: '#/service/early-market-validation' },
-        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions' },
-        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings' }
+        { label: 'Market Validation Sprint', href: '#/service/early-market-validation' },
+        { label: 'Strategic Immersion', href: '#/service/immersive-strategic-sessions' },
+        { label: 'Partner Access', href: '#/service/key-partner-meetings' }
       ]
     },
     { label: 'For whom', href: '#for-whom' },
@@ -28,9 +28,9 @@ const content = {
     { 
       label: 'Pricing', 
       items: [
-        { label: 'Early Market Validation', href: '#/service/early-market-validation#pricing' },
-        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions#pricing' },
-        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings#pricing' }
+        { label: 'Market Validation Sprint', href: '#/service/early-market-validation#pricing' },
+        { label: 'Strategic Immersion', href: '#/service/immersive-strategic-sessions#pricing' },
+        { label: 'Partner Access', href: '#/service/key-partner-meetings#pricing' }
       ]
     },
     { label: 'Venture Studio', href: '#venture-studio' },
@@ -38,8 +38,8 @@ const content = {
   ],
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
-    title: 'Make your first market moves with structure, not guesswork',
-    body: 'POME Nest helps companies take their first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
+    title: 'Your first customers, partners and strategy in Asia — built through real market experience',
+    body: 'POME Nest helps companies enter new markets through customer validation, strategic immersion and direct partner access.',
     primaryLabel: 'Book a strategy call',
     primaryHref: '#contact',
     secondaryLabel: 'See services',
@@ -114,7 +114,7 @@ const content = {
       {
         id: 'early-market-validation',
         name: 'Market Validation Sprint',
-        title: 'Test real demand before committing to a full launch.',
+        title: 'Test real demand before committing to a full launch',
         body: 'Test real demand before committing to a full launch.',
         bullets: [
           '20–500 consumer tests',
@@ -136,7 +136,7 @@ const content = {
           sections: [
             {
               eyebrow: 'What we do',
-              title: 'We design a focused validation sprint around your product, offer or concept.',
+              title: 'We design a focused validation sprint around your product, offer or concept',
               list: [
                 '20–500 consumer interactions',
                 'Product or concept testing',
@@ -159,6 +159,7 @@ const content = {
             },
             {
               eyebrow: 'How it works',
+              title: 'A simple four-step process to move from assumption to signal',
               steps: [
                 {
                   title: '1. Alignment',
@@ -180,6 +181,7 @@ const content = {
             },
             {
               eyebrow: 'Deliverables',
+              title: 'A clear output package you can use for the next decision',
               list: [
                 'Validation summary',
                 'Key customer insights',
@@ -189,7 +191,7 @@ const content = {
               ]
             }
           ],
-          closingTitle: 'Real signals are more useful than early optimism.',
+          closingTitle: 'Real signals are more useful than early optimism',
           closingBody: 'Use validation to reduce risk, sharpen your positioning and decide your next move with more confidence.',
           ctaLabel: 'Explore market validation'
         }
@@ -197,7 +199,7 @@ const content = {
       {
         id: 'immersive-strategic-sessions',
         name: 'Strategic Immersion',
-        title: 'Shape your strategy through real-world experience.',
+        title: 'Shape your strategy through real-world experience',
         body: 'Shape your strategy through real-world experience.',
         bullets: [
           '1-day immersive experience with staged real-life scenarios in Singapore',
@@ -217,7 +219,7 @@ const content = {
           sections: [
             {
               eyebrow: 'What happens',
-              title: 'We design a one-day immersive experience around the city and its environment.',
+              title: 'We design a one-day immersive experience around the city and its environment',
               list: [
                 'Guided movement through different locations',
                 'Staged or semi-scripted interactions',
@@ -228,6 +230,7 @@ const content = {
             },
             {
               eyebrow: 'What you take from it',
+              title: 'What stays with you after the session',
               list: [
                 'A different way of seeing your business or idea',
                 'Unexpected insights that don’t come from analysis',
@@ -237,7 +240,7 @@ const content = {
               ]
             }
           ],
-          closingTitle: 'Some clarity only appears when you step into a different context.',
+          closingTitle: 'Some clarity only appears when you step into a different context',
           closingBody: 'This experience is designed to create that shift.',
           ctaLabel: 'Explore immersive experience'
         }
@@ -245,7 +248,7 @@ const content = {
       {
         id: 'key-partner-meetings',
         name: 'Partner Access',
-        title: 'Connect with the people who actually move markets.',
+        title: 'Connect with the people who actually move markets',
         body: 'Connect with the people who actually move markets.',
         bullets: [
           'Curated partner introductions',
@@ -266,8 +269,7 @@ const content = {
           sections: [
             {
               eyebrow: 'What we do',
-              title: 'We help arrange meetings when there is a relevant fit.',
-              body: 'We focus on relevance, not volume.',
+              title: 'We help arrange meetings when there is a relevant fit',
               list: [
                 'Introductions to people we know',
                 'Connecting you with operators or ecosystem players',
@@ -277,6 +279,7 @@ const content = {
             },
             {
               eyebrow: 'What you get',
+              title: 'Relevance over volume',
               list: [
                 'Access to real people in the market',
                 'Unfiltered conversations',
@@ -287,15 +290,28 @@ const content = {
             },
             {
               eyebrow: 'How it works',
-              list: [
-                'You share who or what you’re interested in',
-                'We check where we can create relevant connections',
-                'Meetings are arranged based on availability and fit',
-                'You meet, explore and decide what to do next'
+              title: 'A simple four-step flow from interest to real conversation',
+              steps: [
+                {
+                  title: '1. Brief',
+                  body: 'You share who you want to meet, what kind of partner you are looking for, or what market angle you want to explore.'
+                },
+                {
+                  title: '2. Fit check',
+                  body: 'We assess where relevant introductions are possible based on our network, context and the real fit on both sides.'
+                },
+                {
+                  title: '3. Meeting setup',
+                  body: 'We coordinate the conversation, align expectations and join when useful to help the discussion move forward.'
+                },
+                {
+                  title: '4. Next move',
+                  body: 'After the meeting, you leave with clearer signals, practical context and a better sense of what to do next.'
+                }
               ]
             }
           ],
-          closingTitle: 'Markets are understood through people, not slides.',
+          closingTitle: 'Markets are understood through people, not slides',
           closingBody: 'We help you access those conversations.',
           ctaLabel: 'Explore partner meetings'
         }
@@ -799,7 +815,7 @@ function renderService(serviceId) {
       <split-section
         bg="white"
         section-id="service-intro"
-        eyebrow="Service Details"
+        eyebrow="Service"
         title="${serviceCap.name}"
         body="${serviceCap.narrative?.intro || serviceCap.title}"
         image="${serviceCap.image}"
@@ -807,17 +823,17 @@ function renderService(serviceId) {
 
       <capabilities-section
         section-id="solutions"
-        eyebrow="Solutions"
-        title="What is included"
+        eyebrow=""
+        title=""
         items='${JSON.stringify([serviceCap])}'
         variant="narrative"
       ></capabilities-section>
 
       <pricing-section
         section-id="pricing"
-        eyebrow="Pricing"
-        title="Pricing for ${serviceCap.name}"
-        body="Concrete tiers help qualify scope early. Final pricing depends on market and complexity."
+        eyebrow=""
+        title=""
+        body=""
         services='${JSON.stringify([servicePrice])}'
       ></pricing-section>
 

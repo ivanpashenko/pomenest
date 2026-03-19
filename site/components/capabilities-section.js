@@ -4,7 +4,7 @@ class CapabilitiesSection extends HTMLElement {
     this.dataset.ready = 'true';
 
     const sectionId = this.getAttribute('section-id') || 'services';
-    const eyebrow = this.getAttribute('eyebrow') || 'Capabilities';
+    const eyebrow = this.getAttribute('eyebrow') || '';
     const title = this.getAttribute('title') || '';
     const items = JSON.parse(this.getAttribute('items') || '[]');
     const variant = this.getAttribute('variant') || 'default';
@@ -55,47 +55,189 @@ class CapabilitiesSection extends HTMLElement {
       }
     } else if (isNarrative) {
       const service = items[0];
+      const iconMap = {
+        'consumer interactions': 'groups',
+        'consumer testing': 'groups',
+        'product or concept testing': 'inventory_2',
+        'product testing': 'inventory_2',
+        'real purchase attempts or intent signals': 'shopping_cart',
+        'positioning and message testing': 'campaign',
+        'ugc-style feedback and reactions': 'smartphone',
+        'structured field insights': 'insights',
+        'a clearer yes / no / not yet signal': 'fork_right',
+        'customer reactions grounded in reality': 'chat',
+        'early pricing and positioning insights': 'sell',
+        'evidence of what resonates most': 'network_intelligence',
+        'a practical recommendation on next steps': 'explore',
+        'validation summary': 'description',
+        'key customer insights': 'lightbulb',
+        'traction indicators': 'monitoring',
+        'positioning observations': 'center_focus_strong',
+        'recommended next move': 'arrow_outward',
+        'a different way of seeing your business or idea': 'visibility',
+        'unexpected insights that don’t come from analysis': 'psychology',
+        'new angles on positioning, product or direction': 'explore',
+        'shared understanding within your team': 'groups_2',
+        'a shift in how you think about the market': 'sync_alt',
+        'access to real people in the market': 'handshake',
+        'unfiltered conversations': 'forum',
+        'first-hand perspective on how things work': 'visibility',
+        'early signals about opportunities or challenges': 'monitoring',
+        'a more grounded understanding of the ecosystem': 'account_tree'
+      };
+
+      const imageMap = {
+        '20–500 consumer interactions': './assets/images/service_val_interactions.png',
+        'Product or concept testing': './assets/images/service_val_product_testing.png',
+        'Real purchase attempts or intent signals': './assets/images/service_val_purchase.png',
+        'Positioning and message testing': './assets/images/service_val_messaging.png',
+        'UGC-style feedback and reactions': './assets/images/service_val_ugc.png',
+        'Structured field insights': './assets/images/service_val_insights.png',
+        'Guided movement through different locations': './assets/images/service_immersion_01.png',
+        'Staged or semi-scripted interactions': './assets/images/service_immersion_02.png',
+        'Situations that feel real, not performed': './assets/images/service_immersion_03.png',
+        'Moments that challenge your usual roles and reactions': './assets/images/for_whom_leadership_03.png',
+        'Space for informal reflection and conversation': './assets/images/for_whom_leadership_01.png',
+        'Introductions to people we know': './assets/images/partner_access_01_introduction.png',
+        'Connecting you with operators or ecosystem players': './assets/images/partner_access_02_followthrough.png',
+        'Joining meetings when useful': './assets/images/partner_access_03_preparation.png',
+        'Informal guidance before or after conversations': './assets/images/partner_access_04_debrief.png'
+      };
+
+      const getListImage = (item) => imageMap[String(item || '').trim()] || '';
+
+      const renderMaterialIcon = (name, extraClass = '') => `
+        <span class="material-symbols-outlined ${extraClass}" aria-hidden="true">${name}</span>
+      `;
+
+      const getListIcon = (item) => {
+        const key = String(item || '').toLowerCase();
+        return iconMap[key] || 'subdirectory_arrow_right';
+      };
+
+      const cleanStepTitle = (title) => String(title || '').replace(/^\d+\.\s*/, '');
+
       if (service && service.narrative) {
+        const sections = service.narrative.sections || [];
+        const intro = service.narrative.intro || '';
+
         gridHtml = `
-          <div class="mt-12 flex flex-col gap-12 md:gap-16">
-            ${(service.narrative.sections || []).map((section) => `
-              <article class="border-t border-brand-line pt-10 first:border-t-0 first:pt-0">
-                <div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${section.eyebrow || ''}</div>
-                ${section.title ? `<h3 class="mt-4 max-w-3xl text-3xl font-bold leading-tight text-brand-ink md:text-4xl">${section.title}</h3>` : ''}
-                ${section.body ? `<p class="mt-4 max-w-2xl text-lg leading-relaxed text-brand-muted">${section.body}</p>` : ''}
+          <div class="flex flex-col gap-14 md:gap-20">
+            ${sections.map((section, sectionIndex) => {
+              const isSteps = !!section.steps?.length;
+              const isDeliverables = (section.eyebrow || '').toLowerCase() === 'deliverables';
+              const hasList = !!section.list?.length;
 
-                ${section.list?.length ? `
-                  <ul class="mt-6 grid gap-4 md:grid-cols-2">
-                    ${section.list.map((item) => `
-                      <li class="flex gap-4 rounded-[24px] bg-white p-6 shadow-sm text-sm leading-relaxed text-brand-muted">
-                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary"></span>
-                        <span>${item}</span>
-                      </li>
-                    `).join('')}
-                  </ul>
-                ` : ''}
+              if (isSteps) {
+                return `
+                  <article class="${sectionIndex === 0 ? '' : 'border-t border-brand-line pt-12 md:pt-16'}">
+                    ${section.eyebrow ? `<div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${section.eyebrow}</div>` : ''}
+                    ${section.title ? `<h3 class="mt-4 max-w-3xl text-3xl font-bold leading-tight text-brand-ink md:text-[40px] md:leading-tight">${section.title}</h3>` : ''}
+                    ${section.body ? `<p class="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">${section.body}</p>` : ''}
+                    <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                      ${section.steps.map((step, index) => `
+                        <div class="relative rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-black/5 min-h-[220px] flex flex-col">
+                          <div class="flex items-start justify-end gap-4">
+                            <div class="text-4xl font-bold leading-none tracking-tight text-brand-line">0${index + 1}</div>
+                          </div>
+                          <div class="mt-8 text-lg font-bold leading-snug text-brand-ink">${cleanStepTitle(step.title)}</div>
+                          <p class="mt-3 text-sm leading-relaxed text-brand-muted">${step.body}</p>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </article>
+                `;
+              }
 
-                ${section.steps?.length ? `
-                  <div class="mt-6 grid gap-4 md:grid-cols-2">
-                    ${section.steps.map((step) => `
-                      <div class="rounded-[24px] bg-white p-6 shadow-sm">
-                        <div class="text-base font-bold text-brand-ink">${step.title}</div>
-                        <p class="mt-3 text-sm leading-relaxed text-brand-muted">${step.body}</p>
+              if (isDeliverables) {
+                return `
+                  <article class="${sectionIndex === 0 ? '' : 'border-t border-brand-line pt-12 md:pt-16'} grid gap-10 md:grid-cols-2 md:items-start lg:gap-16">
+                    <div>
+                      ${section.eyebrow ? `<div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${section.eyebrow}</div>` : ''}
+                      ${section.title ? `<h3 class="mt-4 max-w-[400px] text-3xl font-bold leading-tight text-brand-ink md:text-[40px] md:leading-tight">${section.title}</h3>` : ''}
+                      ${section.body ? `<p class="mt-4 max-w-[400px] text-base leading-relaxed text-brand-muted">${section.body}</p>` : ''}
+                    </div>
+                    <div class="rounded-[32px] bg-white p-8 md:p-10 shadow-sm ring-1 ring-black/5">
+                      <ul class="grid gap-4">
+                        ${section.list.map((item) => `
+                          <li class="flex items-center gap-4 rounded-[20px] border border-brand-line/70 bg-brand-canvas/30 px-5 py-4 text-base font-medium leading-relaxed text-brand-ink">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-white">
+                              ${renderMaterialIcon('check', 'text-[16px] leading-none')}
+                            </span>
+                            <span>${item}</span>
+                          </li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  </article>
+                `;
+              }
+
+              const eyebrowKey = (section.eyebrow || '').toLowerCase();
+              const isImageCardList = eyebrowKey === 'what we do' || eyebrowKey === 'what happens';
+              const isWhatYouGet = eyebrowKey === 'what you get' || eyebrowKey === 'what you take from it';
+
+              const renderImageTextCard = (item) => {
+                const bgImage = getListImage(item);
+                return `
+                  <li class="rounded-[32px] bg-white overflow-hidden shadow-sm ring-1 ring-black/5 min-h-[220px]">
+                    <div class="flex h-full flex-col sm:grid sm:min-h-[220px] sm:grid-cols-2">
+                      <div class="relative h-52 bg-brand-canvas sm:h-full">
+                        ${bgImage ? `<img src="${bgImage}" alt="${item}" class="absolute inset-0 h-full w-full object-cover" />` : ''}
                       </div>
-                    `).join('')}
-                  </div>
-                ` : ''}
-              </article>
-            `).join('')}
+                      <div class="flex items-center p-7 md:p-8">
+                        <div class="text-[17px] font-bold leading-snug text-brand-ink">${item}</div>
+                      </div>
+                    </div>
+                  </li>
+                `;
+              };
 
-            <article class="rounded-[32px] bg-white p-8 md:p-10 shadow-sm">
-              <h3 class="max-w-2xl text-3xl font-bold leading-tight text-brand-ink md:text-4xl">${service.narrative.closingTitle || ''}</h3>
-              <p class="mt-4 max-w-2xl text-lg leading-relaxed text-brand-muted">${service.narrative.closingBody || ''}</p>
-              ${service.narrative.ctaLabel ? `
-                <div class="mt-8">
-                  <a href="mailto:hello@pomenest.com" class="inline-flex rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">${service.narrative.ctaLabel}</a>
+              const renderIconCard = (item) => `
+                <li class="rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-black/5 flex flex-col items-start ${isWhatYouGet ? 'min-h-[160px]' : ''}">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-canvas text-brand-ink">
+                    ${renderMaterialIcon(getListIcon(item), 'text-[24px] leading-none')}
+                  </div>
+                  <div class="mt-6 text-base leading-relaxed text-brand-ink">${item}</div>
+                </li>
+              `;
+
+              let gridClasses = 'md:grid-cols-2';
+              if (isImageCardList) {
+                gridClasses = 'md:grid-cols-2';
+              } else if (isWhatYouGet) {
+                gridClasses = 'md:grid-cols-5';
+              }
+
+              return `
+                <article class="${sectionIndex === 0 ? '' : 'border-t border-brand-line pt-12 md:pt-16'}">
+                  ${section.eyebrow ? `<div class="text-xs font-semibold uppercase tracking-widest text-brand-muted">${section.eyebrow}</div>` : ''}
+                  ${section.title ? `<h3 class="mt-4 max-w-3xl text-3xl font-bold leading-tight text-brand-ink md:text-[40px] md:leading-tight">${section.title}</h3>` : ''}
+                  ${section.body ? `<p class="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">${section.body}</p>` : ''}
+                  ${hasList ? `
+                    <ul class="mt-8 grid gap-4 ${gridClasses}">
+                      ${section.list.map((item) => isImageCardList ? renderImageTextCard(item) : renderIconCard(item)).join('')}
+                    </ul>
+                  ` : ''}
+                </article>
+              `;
+            }).join('')}
+
+            <article class="relative overflow-hidden rounded-[36px] bg-white p-8 md:p-12 shadow-sm ring-1 ring-black/5">
+              <div class="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-brand-primary/10 blur-2xl"></div>
+              <div class="relative grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:items-end">
+                <div>
+                  <h3 class="max-w-3xl text-3xl font-bold leading-tight text-brand-ink md:text-5xl md:leading-tight">${service.narrative.closingTitle || ''}</h3>
                 </div>
-              ` : ''}
+                <div>
+                  <p class="text-base leading-relaxed text-brand-muted md:text-lg">${service.narrative.closingBody || ''}</p>
+                  ${service.narrative.ctaLabel ? `
+                    <div class="mt-8">
+                      <a href="mailto:hello@pomenest.com" class="inline-flex rounded-full bg-brand-primary px-7 py-3.5 text-base font-semibold text-white transition hover:bg-brand-primary/90">${service.narrative.ctaLabel}</a>
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
             </article>
           </div>
         `;
@@ -151,10 +293,10 @@ class CapabilitiesSection extends HTMLElement {
     this.innerHTML = `
       <section id="${sectionId}" class="${sectionClass}">
         <div class="mx-auto max-w-content px-6 md:px-10">
-          ${!isDetailed ? `
+          ${!isDetailed && (eyebrow || title) ? `
           <div class="max-w-3xl">
-            <div class="${eyebrowClass}">${eyebrow}</div>
-            <h2 class="${titleClass}">${title}</h2>
+            ${eyebrow ? `<div class="${eyebrowClass}">${eyebrow}</div>` : ''}
+            ${title ? `<h2 class="${titleClass}">${title}</h2>` : ''}
           </div>
           ` : ''}
           ${gridHtml}
