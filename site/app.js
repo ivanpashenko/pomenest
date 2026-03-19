@@ -18,9 +18,9 @@ const content = {
     { 
       label: 'Services', 
       items: [
-        { label: 'Early Market Validation', href: '#/service/early-market-validation' },
-        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions' },
-        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings' }
+        { label: 'Market Validation Sprint', href: '#/service/early-market-validation' },
+        { label: 'Strategic Immersion', href: '#/service/immersive-strategic-sessions' },
+        { label: 'Partner Access', href: '#/service/key-partner-meetings' }
       ]
     },
     { label: 'For whom', href: '#for-whom' },
@@ -28,17 +28,18 @@ const content = {
     { 
       label: 'Pricing', 
       items: [
-        { label: 'Early Market Validation', href: '#/service/early-market-validation#pricing' },
-        { label: 'Immersive Strategic Sessions', href: '#/service/immersive-strategic-sessions#pricing' },
-        { label: 'Key Partner Meetings', href: '#/service/key-partner-meetings#pricing' }
+        { label: 'Market Validation Sprint', href: '#/service/early-market-validation#pricing' },
+        { label: 'Strategic Immersion', href: '#/service/immersive-strategic-sessions#pricing' },
+        { label: 'Partner Access', href: '#/service/key-partner-meetings#pricing' }
       ]
     },
-    { label: 'Venture Studio', href: '#venture-studio' }
+    { label: 'Venture Studio', href: '#venture-studio' },
+    { label: 'FAQ', href: '#/faq' }
   ],
   hero: {
     eyebrow: 'Southeast Asia Market Entry',
-    title: 'Make your first market moves with structure, not guesswork',
-    body: 'POME Nest helps companies take their first market-entry steps in Southeast Asia: key partner meetings, early validation and strategic immersion.',
+    title: 'Your first customers, partners and strategy in Asia — built through real market experience',
+    body: 'POME Nest helps companies enter new markets through customer validation, strategic immersion and direct partner access.',
     primaryLabel: 'Book a strategy call',
     primaryHref: '#contact',
     secondaryLabel: 'See services',
@@ -53,55 +54,74 @@ const content = {
       {
         type: 'stat',
         eyebrow: 'Brands and ventures',
-        value: '6+',
+        value: '9+',
         title: 'Projects supported across market entry and validation',
-        body: 'Work across ventures and brands including Amma, Teleport, Buzzaar, Kilometer, Buzz and Canal Creatures.',
+        body: '',
         tone: 'blue'
       },
       {
-        type: 'facts',
-        eyebrow: 'Operating region',
-        title: 'Built for Southeast Asia market entry',
-        facts: ['Singapore', 'Indonesia', 'Thailand', 'Malaysia', 'Vietnam', 'Philippines']
+        type: 'featured-story',
+        eyebrow: 'Founder-level support',
+        image: './assets/images/for_whom_partners_01.png',
+        title: 'Move partner conversations forward with local context in the room',
+        body: 'POME supports early market-entry discussions with founder-level representation, sharper preparation and better follow-through after key meetings.',
+        meta: 'Key Partner Meetings',
+        ctaLabel: 'See use cases',
+        ctaHref: '#ventures'
       },
       {
-        type: 'logo-cloud',
-        eyebrow: 'Worked with',
-        title: 'Real brands, real ventures, real first steps',
-        logos: [
-          { image: './assets/images/amma.png', alt: 'Amma' },
-          { image: './assets/images/teleport.png', alt: 'Teleport' },
-          { image: './assets/images/buzzaar.png', alt: 'Buzzaar' },
-          { image: './assets/images/kilometer-studios.png', alt: 'Kilometer Studios' },
-          { image: './assets/images/buzz.png', alt: 'Buzz' },
-          { image: './assets/images/canal-creatures.png', alt: 'Canal Creatures' }
+        type: 'region',
+        eyebrow: 'Operating region',
+        title: 'Built for Southeast Asia, starting from Singapore',
+        body: 'Singapore is our active base today, with Indonesia, Thailand, Malaysia, Vietnam and the Philippines in focus.',
+        image: './assets/images/singapore_iconic_01.png'
+      },
+      {
+        type: 'testimonial',
+        eyebrow: 'Client reviews',
+        reviews: [
+          {
+            quote: 'POME helped us move from abstract market interest to concrete partner conversations much faster than we expected.',
+            author: 'Founder',
+            role: 'Consumer brand'
+          },
+          {
+            quote: 'What was most valuable was not just access, but the local context around every discussion and next step.',
+            author: 'Business Development Lead',
+            role: 'Regional expansion project'
+          },
+          {
+            quote: 'The process gave us clarity early. We could see where traction was real and where assumptions needed work.',
+            author: 'Strategy Director',
+            role: 'International brand team'
+          }
         ]
       },
       {
-        type: 'quote',
-        eyebrow: 'Why POME',
-        quote: 'Real meetings. Real feedback. Real movement before full expansion.',
-        author: 'POME Nest',
-        role: 'Point of Market Entry'
-      },
-      {
-        type: 'wide-image-quote',
-        eyebrow: 'Founder-level partner support',
-        image: './assets/images/for_whom_partners_01.png',
-        quote: 'Founder-level local representation helps move important conversations faster and with more context.',
-        author: 'Key Partner Meetings'
+        type: 'faq-teaser',
+        eyebrow: 'FAQ',
+        question: 'Do I need a local company or team before working with you?',
+        answer: 'No. The point is often to create first signals and conversations before you commit to a full setup in Southeast Asia.',
+        href: '#/faq',
+        linkLabel: 'See all FAQ'
       }
     ]
   },
   capabilities: {
     eyebrow: 'Services',
-    title: 'Three services to launch your first steps in Southeast Asia',
+    title: 'How we help you enter a new market',
     items: [
       {
         id: 'early-market-validation',
-        name: 'Early Market Validation',
-        title: 'Test real demand before you build local operations',
-        body: 'Validate your product with real consumers in Southeast Asia before committing to a full market launch. Generate early feedback, UGC and first buying signals.',
+        name: 'Market Validation Sprint',
+        title: 'Test real demand before committing to a full launch',
+        body: 'Test real demand before committing to a full launch.',
+        bullets: [
+          '20–500 consumer tests',
+          'UGC content and insights',
+          'Early traction signals with real purchase attempts'
+        ],
+        ctaLabel: 'Explore validation',
         image: './assets/images/service_validation_01.png',
         proof: {
           logos: [
@@ -109,195 +129,192 @@ const content = {
             { image: './assets/images/logo-nestle.png', alt: 'Nestlé' },
             { image: './assets/images/logo-alcon.png', alt: 'Alcon' }
           ],
-          caption: 'Consumer testing infrastructure proven with global brands.'
+          caption: 'Tested in projects with Procter & Gamble, Nestlé and Alcon.'
         },
-        buttons: [
-          {
-            label: 'Consumer Testing & Insights',
-            subtitle: 'Get direct product feedback from real consumers in Southeast Asia before committing to a full market launch.',
-            description: 'We recruit consumers that match your target audience, get your product or service into their hands and collect structured feedback on experience, perception, friction points and relevance for the local market.',
-            steps: [
-              'We define the target audience profile and select the right consumers from our local network using demographic, behavioral and category-specific filters.',
-              'Consumers test the product or service through the most realistic path available, either by accessing it online or by receiving it directly at home.',
-              'We collect structured feedback, observations and honest reactions to help you understand what works, what needs adaptation and what creates interest.'
-            ],
-            outputs: [
-              'Structured consumer feedback',
-              'Local market perception insights',
-              'Signals on product fit and friction points'
-            ],
-            idealFor: [
-              'Teams preparing for first market entry in Asia',
-              'Products already selling outside Asia',
-              'Brands that need feedback before larger investment'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          },
-          {
-            label: 'Product Seeding Campaign',
-            subtitle: 'Put your product into the hands of local consumers and generate feedback, reviews and UGC.',
-            description: 'We organize local product seeding with relevant consumers, helping you learn how the market reacts while also generating honest reviews, answers to your key questions and user-generated content.',
-            steps: [
-              'We select a focused group of local consumers that matches the core of your target audience.',
-              'Your product reaches them through a compensated online purchase flow or direct home delivery, depending on what is more realistic for the product.',
-              'Participants complete clear missions such as testing the product, answering questions, sharing honest feedback and creating photos, videos or written reviews.'
-            ],
-            outputs: [
-              'UGC from real consumers',
-              'Honest reviews and qualitative feedback',
-              'Early signals of local product appeal'
-            ],
-            idealFor: [
-              'Consumer products entering Asia',
-              'Brands that need authentic local content',
-              'Teams validating messaging and product experience'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          },
-          {
-            label: 'First Local Purchases',
-            subtitle: 'Test whether local consumers are ready to buy before you build full market infrastructure.',
-            description: 'We run small-scale purchase tests that show whether real consumers on the market are willing to act. This can happen through a limited real sales flow or through a controlled purchase-intent test, without requiring a full local setup from your side.',
-            steps: [
-              'We prepare a test sales setup using the most realistic local path available, such as a marketplace, a landing page or a lightweight online storefront.',
-              'We drive a small amount of local traffic through paid channels, influencer support or other relevant acquisition paths to test buying behavior.',
-              'Consumers either complete a real first purchase with local fulfillment, or join a controlled preorder-style test that validates demand before a bigger launch.'
-            ],
-            outputs: [
-              'First local purchase signals',
-              'Early conversion and demand data',
-              'Clearer view on launch readiness'
-            ],
-            idealFor: [
-              'Brands testing demand before opening local operations',
-              'Teams exploring first online sales in Asia',
-              'Products that need proof before scale'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          }
-        ]
+        narrative: {
+          intro: 'Entering a new market is expensive when decisions are based on assumptions. This service is designed to give you early evidence: how people respond, what attracts them, what confuses them, and whether there is enough traction to move forward.',
+          sections: [
+            {
+              eyebrow: 'What we do',
+              title: 'We design a focused validation sprint around your product, offer or concept',
+              list: [
+                '20–500 consumer interactions',
+                'Product or concept testing',
+                'Real purchase attempts or intent signals',
+                'Positioning and message testing',
+                'UGC-style feedback and reactions',
+                'Structured field insights'
+              ]
+            },
+            {
+              eyebrow: 'What you get',
+              title: 'At the end of the sprint, you receive:',
+              list: [
+                'A clearer yes / no / not yet signal',
+                'Customer reactions grounded in reality',
+                'Early pricing and positioning insights',
+                'Evidence of what resonates most',
+                'A practical recommendation on next steps'
+              ]
+            },
+            {
+              eyebrow: 'How it works',
+              title: 'A simple four-step process to move from assumption to signal',
+              steps: [
+                {
+                  title: '1. Alignment',
+                  body: 'We define what exactly needs to be validated: product, offer, message, audience or format.'
+                },
+                {
+                  title: '2. Market testing',
+                  body: 'We run live validation with relevant people in-market.'
+                },
+                {
+                  title: '3. Signal analysis',
+                  body: 'We review patterns, reactions and decision points.'
+                },
+                {
+                  title: '4. Strategic recommendation',
+                  body: 'You get a clear read on whether to refine, delay or move forward.'
+                }
+              ]
+            },
+            {
+              eyebrow: 'Deliverables',
+              title: 'A clear output package you can use for the next decision',
+              list: [
+                'Validation summary',
+                'Key customer insights',
+                'Traction indicators',
+                'Positioning observations',
+                'Recommended next move'
+              ]
+            }
+          ],
+          closingTitle: 'Real signals are more useful than early optimism',
+          closingBody: 'Use validation to reduce risk, sharpen your positioning and decide your next move with more confidence.',
+          ctaLabel: 'Explore market validation'
+        }
       },
       {
         id: 'immersive-strategic-sessions',
-        name: 'Immersive Sessions',
-        title: 'Create clarity, alignment and new perspective',
-        body: 'Create clarity, alignment and new perspective. Singapore-based strategic immersion sessions for founders and leadership teams unlock clearer strategic decisions.',
+        name: 'Strategic Immersion',
+        title: 'Shape your strategy through real-world experience',
+        body: 'Shape your strategy through real-world experience.',
+        bullets: [
+          '1-day immersive experience with staged real-life scenarios in Singapore',
+          'Founder-level discussion and reframing',
+          'Clear market entry direction'
+        ],
+        ctaLabel: 'Explore immersion',
         image: './assets/images/service_immersion_03.png',
         proof: {
           logos: [
             { image: './assets/images/logo-raw-fury.png', alt: 'Raw Fury' }
           ],
-          caption: 'Immersive brand experience built for emotionally resonant worlds.'
+          caption: 'Immersive work delivered for brands like Raw Fury.'
         },
-        buttons: [
-          {
-            label: 'Leadership Session',
-            subtitle: 'A Singapore-based immersive session for founders and leadership teams to reset vision, align around strategy and unlock sharper decisions.',
-            description: 'This is not a standard workshop in a meeting room. We design a cinematic real-world immersion that helps leadership teams step out of routine, confront new perspectives and move toward stronger clarity and alignment.',
-            steps: [
-              'We begin with a profiling phase, using interviews and preparation sessions to understand the team dynamic, business context and the core strategic question behind the session.',
-              'We design a tailored immersive scenario around the desired outcome, such as strategic alignment, renewed vision, team cohesion or a major decision point.',
-              'We design and run immersive strategic experiences across selected Singapore locations, combining guided movement, atmosphere and carefully staged interactions. Professional actors and realistic scenarios are woven into everyday environments, creating situations that feel indistinguishable from real life.'
-            ],
-            outputs: [
-              'Sharper leadership alignment',
-              'Clearer strategic direction',
-              'A more memorable and high-impact team experience'
-            ],
-            idealFor: [
-              'Founder teams planning a new regional chapter',
-              'Leadership groups needing a strategic reset',
-              'Companies that want more than a standard offsite'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          },
-          {
-            label: 'Partner Immersion Event',
-            subtitle: 'Use an immersive format to present your brand to local partners in a more memorable and trust-building way.',
-            description: 'We create immersive brand events designed for local partners, stakeholders or priority business contacts. Instead of a standard presentation, the audience experiences the brand, the context and the opportunity through a more engaging real-world format.',
-            steps: [
-              'We define the business goal and identify the right local partner audience for the event.',
-              'We design the immersive concept, narrative and participant journey around the brand, product and market-entry objective.',
-              'We produce and host the event in Singapore, shaping a more memorable setting for trust, discussion and next-step conversations.'
-            ],
-            outputs: [
-              'Stronger partner engagement',
-              'A more differentiated brand presentation',
-              'Better conversation quality after the event'
-            ],
-            idealFor: [
-              'Brands entering Asia that need partner trust',
-              'Teams presenting a product in a more experiential way',
-              'Companies opening local business conversations'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          }
-        ]
+        narrative: {
+          intro: 'Some insights don’t come from analysis. They emerge when you experience a place, its rhythm, its people and its dynamics directly. This is not a workshop and not consulting. It’s a curated experience that puts you into new situations, new roles and new ways of seeing.',
+          sections: [
+            {
+              eyebrow: 'What happens',
+              title: 'We design a one-day immersive experience around the city and its environment',
+              list: [
+                'Guided movement through different locations',
+                'Staged or semi-scripted interactions',
+                'Situations that feel real, not performed',
+                'Moments that challenge your usual roles and reactions',
+                'Space for informal reflection and conversation'
+              ]
+            },
+            {
+              eyebrow: 'What you take from it',
+              title: 'What stays with you after the session',
+              list: [
+                'A different way of seeing your business or idea',
+                'Unexpected insights that don’t come from analysis',
+                'New angles on positioning, product or direction',
+                'Shared understanding within your team',
+                'A shift in how you think about the market'
+              ]
+            }
+          ],
+          closingTitle: 'Some clarity only appears when you step into a different context',
+          closingBody: 'This experience is designed to create that shift.',
+          ctaLabel: 'Explore immersive experience'
+        }
       },
       {
         id: 'key-partner-meetings',
-        name: 'Key Partner Meetings',
-        title: 'Move partner conversations forward with local founder-level representation',
-        body: 'Identify the right partners, distributors and operators. We map the ecosystem and arrange key meetings locally with speed, context and trust.',
+        name: 'Partner Access',
+        title: 'Connect with the people who actually move markets',
+        body: 'Connect with the people who actually move markets.',
+        bullets: [
+          'Curated partner introductions',
+          'Distributor and operator meetings',
+          'Ecosystem access and real business conversations'
+        ],
+        ctaLabel: 'Explore partners',
         image: './assets/images/service_partners_02.png',
         proof: {
           logos: [
             { image: './assets/images/kilometer-studios.png', alt: 'Kilometer Studios' },
             { image: './assets/images/amma.png', alt: 'Amma' }
           ],
-          caption: 'Founder-led support for real products and real market conversations.'
+          caption: 'Founder-led support for brands like Kilometer and Amma.'
         },
-        buttons: [
-          {
-            label: 'Partner Mapping',
-            subtitle: 'Identify the right local partners before you spend time on outreach, travel or negotiation.',
-            description: 'We help you define the partner landscape that matters in Southeast Asia and focus attention on the contacts most relevant to your market-entry goal. This creates a more realistic and actionable starting point for live conversations.',
-            steps: [
-              'We clarify your entry objective, partnership model and the type of local counterpart you need, such as distributor, retailer, platform partner or strategic buyer.',
-              'We map relevant organizations and decision-maker profiles in the market, using local context to filter for fit and commercial relevance.',
-              'We shape a focused shortlist with recommendations on priority targets, conversation order and the strongest approach angle.'
-            ],
-            outputs: [
-              'A clearer partner target list',
-              'Stronger prioritization for outreach',
-              'Better focus before meetings begin'
-            ],
-            idealFor: [
-              'Brands exploring first commercial routes in Asia',
-              'Founders that need local market visibility fast',
-              'Teams preparing for business development in-region'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          },
-          {
-            label: 'Meeting Setup',
-            subtitle: 'Set up and support critical local partner meetings with founder-level context and representation.',
-            description: 'We organize and support important meetings with local partners in Southeast Asia, including cases where speed matters, travel is inefficient or a founder-level local presence can move the conversation forward more effectively.',
-            steps: [
-              'We run a strategy session with you to understand the opportunity, define the desired meeting outcome and align on how your business should be represented.',
-              'We approach the right contacts, coordinate the meeting and prepare the context needed to make the conversation meaningful.',
-              'We support or conduct the meeting locally and then debrief you with business, relational and human insights that are hard to capture remotely.'
-            ],
-            outputs: [
-              'Qualified local partner meetings',
-              'Founder-level representation on the ground',
-              'A deeper debrief after the conversation'
-            ],
-            idealFor: [
-              'Founders who cannot travel for every meeting',
-              'Sales teams needing trusted local support',
-              'Companies with time-sensitive partner opportunities'
-            ],
-            ctaLabel: 'Discuss this solution',
-            ctaHref: 'mailto:hello@pomenest.com'
-          }
-        ]
+        narrative: {
+          intro: 'Entering a new market often starts with conversations. Not all of them lead somewhere — but the right ones can change how you see the space. We don’t build your distribution strategy. We simply open doors where it makes sense.',
+          sections: [
+            {
+              eyebrow: 'What we do',
+              title: 'We help arrange meetings when there is a relevant fit',
+              list: [
+                'Introductions to people we know',
+                'Connecting you with operators or ecosystem players',
+                'Joining meetings when useful',
+                'Informal guidance before or after conversations'
+              ]
+            },
+            {
+              eyebrow: 'What you get',
+              title: 'Relevance over volume',
+              list: [
+                'Access to real people in the market',
+                'Unfiltered conversations',
+                'First-hand perspective on how things work',
+                'Early signals about opportunities or challenges',
+                'A more grounded understanding of the ecosystem'
+              ]
+            },
+            {
+              eyebrow: 'How it works',
+              title: 'A simple four-step flow from interest to real conversation',
+              steps: [
+                {
+                  title: '1. Brief',
+                  body: 'You share who you want to meet, what kind of partner you are looking for, or what market angle you want to explore.'
+                },
+                {
+                  title: '2. Fit check',
+                  body: 'We assess where relevant introductions are possible based on our network, context and the real fit on both sides.'
+                },
+                {
+                  title: '3. Meeting setup',
+                  body: 'We coordinate the conversation, align expectations and join when useful to help the discussion move forward.'
+                },
+                {
+                  title: '4. Next move',
+                  body: 'After the meeting, you leave with clearer signals, practical context and a better sense of what to do next.'
+                }
+              ]
+            }
+          ],
+          closingTitle: 'Markets are understood through people, not slides',
+          closingBody: 'We help you access those conversations.',
+          ctaLabel: 'Explore partner meetings'
+        }
       }
     ]
   },
@@ -566,6 +583,61 @@ const content = {
     secondaryLabel: 'Discuss your case',
     secondaryHref: 'mailto:hello@pomenest.com'
   },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Questions before entering a new market',
+    intro: 'A short guide to how POME Nest works, what to expect, and when our model is the right fit.',
+    items: [
+      {
+        question: 'What exactly is POME Nest?',
+        answer: 'POME Nest is a venture marketing studio that helps companies take their first market-entry steps in Southeast Asia through three focused services: early market validation, immersive strategic sessions and key partner meetings.'
+      },
+      {
+        question: 'Do you work like an agency or a consultancy?',
+        answer: 'Not exactly. We work through productized services with a founder-level, investor-minded approach. The goal is not endless advisory scope, but real movement: better conversations, better signals and better decisions before full expansion.'
+      },
+      {
+        question: 'Who is this for?',
+        answer: 'Usually for founders, leadership teams, consumer brands and product companies that want to test demand, access partners or sharpen strategy before committing to a larger Southeast Asia rollout.'
+      },
+      {
+        question: 'What markets do you cover?',
+        answer: 'POME Nest is based in Singapore and focused on Southeast Asia, especially Singapore, Indonesia, Thailand, Malaysia, Vietnam and the Philippines.'
+      },
+      {
+        question: 'What is Early Market Validation?',
+        answer: 'It is a focused sprint that helps you test how people respond to your product, offer or concept before a full launch. Depending on the case, it can include consumer testing, message testing, UGC-style feedback and first purchase or intent signals.'
+      },
+      {
+        question: 'What is an Immersive Strategic Session?',
+        answer: 'It is a one-day curated experience in Singapore designed to create strategic clarity through real-world situations, movement, atmosphere and reflection. It is not a workshop and not consulting in the usual sense.'
+      },
+      {
+        question: 'What are Key Partner Meetings?',
+        answer: 'This service helps create relevant conversations with operators, distributors and ecosystem players when there is a real fit. We focus on opening the right doors, not generating meeting volume for its own sake.'
+      },
+      {
+        question: 'Do I need a local company or team before working with you?',
+        answer: 'No. In many cases the point is to learn before you build local infrastructure. We help companies create their first signals and conversations before they commit to a full setup.'
+      },
+      {
+        question: 'Can we start with one service only?',
+        answer: 'Yes. The model is designed so you can start with a single service based on your immediate need: validation, strategic immersion or partner access.'
+      },
+      {
+        question: 'How do you price engagements?',
+        answer: 'Each service has starting packages and pricing logic on the site. Final scope depends on market, complexity and how tailored the engagement needs to be.'
+      },
+      {
+        question: 'Do you only work with large brands?',
+        answer: 'No. The same approach can work for ventures, scale-ups and established companies. The main requirement is that there is a real market-entry question to answer.'
+      },
+      {
+        question: 'What happens after the first step?',
+        answer: 'Depending on the case, the relationship can end with clear recommendations, continue into another productized service, or grow into a deeper strategic partnership.'
+      }
+    ]
+  },
   footer: {
     note: 'Point of Market Entry',
     company: '© Pome Nest Pte.Ltd.',
@@ -575,6 +647,68 @@ const content = {
 };
 
 const app = document.querySelector('#app');
+
+function renderFaq() {
+  app.innerHTML = `
+    <site-shell>
+      <site-header
+        brand="${content.brand}"
+        links='${JSON.stringify(content.nav)}'
+        cta-label="Book a strategy call"
+        logo-image="${content.hero.logoImage}"
+        bg="white"
+      ></site-header>
+
+      <split-section
+        bg="white"
+        section-id="faq-intro"
+        eyebrow="${content.faq.eyebrow}"
+        title="${content.faq.title}"
+        body="${content.faq.intro}"
+        image="./assets/images/for_whom_leadership_03.png"
+      ></split-section>
+
+      <pricing-section
+        section-id="faq-list"
+        eyebrow=""
+        title="Frequently Asked Questions"
+        body="A practical overview of how POME Nest works, what each service is designed to do, and what to expect before starting a conversation with us."
+        layout="stack"
+        services='${JSON.stringify([
+          {
+            name: '',
+            meta: '',
+            description: '',
+            tiers: content.faq.items.map((item) => ({
+              name: item.question,
+              price: '',
+              target: item.answer,
+              features: []
+            }))
+          }
+        ])}'
+      ></pricing-section>
+
+      <cta-section
+        eyebrow="Start the conversation"
+        title="Still have questions?"
+        body="Tell us what you are exploring and we will suggest the right first step into Southeast Asia."
+        primary-label="Book a strategy call"
+        primary-href="mailto:hello@pomenest.com"
+        secondary-label="Email us"
+        secondary-href="mailto:hello@pomenest.com"
+      ></cta-section>
+
+      <site-footer
+        brand="${content.brand}"
+        note="${content.footer.note}"
+        company="${content.footer.company}"
+        email="${content.footer.email}"
+        logo-image="${content.footer.logoImage}"
+      ></site-footer>
+    </site-shell>
+  `;
+}
 
 function renderHome() {
   app.innerHTML = `
@@ -633,8 +767,6 @@ function renderHome() {
         eyebrow="${content.proof.eyebrow}"
         title="${content.proof.title}"
         items='${JSON.stringify(content.proof.items)}'
-        style="display:none;"
-        hidden
       ></proof-section>
 
       <cta-section
@@ -670,11 +802,6 @@ function renderService(serviceId) {
   const serviceCap = content.capabilities.items[index];
   const servicePrice = content.pricing.services[index];
 
-  const introButtons = serviceCap.buttons.map(btn => ({
-    label: btn.label,
-    targetId: btn.label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  }));
-
   app.innerHTML = `
     <site-shell>
       <site-header
@@ -688,26 +815,25 @@ function renderService(serviceId) {
       <split-section
         bg="white"
         section-id="service-intro"
-        eyebrow="Service Details"
+        eyebrow="Service"
         title="${serviceCap.name}"
-        body="${serviceCap.title}. ${serviceCap.body}"
+        body="${serviceCap.narrative?.intro || serviceCap.title}"
         image="${serviceCap.image}"
-        buttons='${JSON.stringify(introButtons)}'
       ></split-section>
 
       <capabilities-section
         section-id="solutions"
-        eyebrow="Solutions"
-        title="What is included"
+        eyebrow=""
+        title=""
         items='${JSON.stringify([serviceCap])}'
-        variant="detailed"
+        variant="narrative"
       ></capabilities-section>
 
       <pricing-section
         section-id="pricing"
-        eyebrow="Pricing"
-        title="Pricing for ${serviceCap.name}"
-        body="Concrete tiers help qualify scope early. Final pricing depends on market and complexity."
+        eyebrow=""
+        title=""
+        body=""
         services='${JSON.stringify([servicePrice])}'
       ></pricing-section>
 
@@ -734,7 +860,10 @@ function renderService(serviceId) {
 
 function router() {
   const hash = window.location.hash;
-  if (hash.startsWith('#/service/')) {
+  if (hash === '#/faq') {
+    renderFaq();
+    window.scrollTo(0, 0);
+  } else if (hash.startsWith('#/service/')) {
     const parts = hash.split('#');
     const path = parts[1]; // /service/...
     const serviceId = path.split('/')[2];
