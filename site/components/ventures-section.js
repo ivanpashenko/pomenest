@@ -19,12 +19,11 @@ class VenturesSection extends HTMLElement {
 
           <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             ${items.map((item, index) => `
-              <article class="overflow-hidden rounded-[24px] bg-white p-8 md:p-10 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl border border-brand-line/50">
-                <button class="venture-open group flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
+              <article class="overflow-hidden rounded-[24px] bg-white p-6 md:p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl border border-brand-line/50">
+                <button class="venture-open group relative flex h-full w-full flex-col text-left" type="button" data-venture-index="${index}">
                   
-                  <div class="flex w-full justify-between items-start mb-8 md:mb-10 h-[48px]">
+                  <div class="flex w-full justify-start items-start mb-6 md:mb-7 h-[48px] pr-12">
                     ${item.logo ? `<img src="${item.logo}" alt="${item.name}" class="h-full w-auto max-w-[130px] object-contain object-left ${item.name === 'Canal Creatures' ? 'scale-[1.4] origin-left' : ''}" />` : `<h3 class="text-2xl font-bold">${item.name}</h3>`}
-                    <span class="text-blue-600 text-2xl leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
                   </div>
 
                   <div class="flex flex-1 flex-col">
@@ -32,13 +31,19 @@ class VenturesSection extends HTMLElement {
                     
                     ${item.brandDescription ? `<h4 class="text-base text-brand-ink font-medium mb-1">${item.brandDescription}</h4>` : ''}
                     
-                    <p class="text-base text-brand-muted leading-relaxed mb-6">${item.summary}</p>
+                    <p class="text-base text-brand-muted leading-relaxed mb-5">${item.summary}</p>
 
                     ${item.servicesUsed?.length ? `
-                      <div class="mt-auto flex flex-wrap gap-2">
+                      <div class="mt-auto flex flex-wrap gap-2 pr-12">
                         ${item.servicesUsed.map(service => `<ui-tag variant="active">${service}</ui-tag>`).join('')}
                       </div>
                     ` : ''}
+
+                    <span class="absolute bottom-0 right-0 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-ink bg-transparent text-brand-ink transition-colors group-hover:bg-brand-ink group-hover:text-white" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4">
+                        <path d="M6 14L14 6M8 6H14V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
                   </div>
                 </button>
               </article>
@@ -50,7 +55,11 @@ class VenturesSection extends HTMLElement {
           <div class="venture-backdrop fixed inset-0 bg-brand-ink/40 backdrop-blur-sm"></div>
           <div class="relative flex min-h-screen items-start justify-center p-4 md:p-8">
             <div class="venture-dialog relative my-8 w-full max-w-5xl overflow-hidden rounded-[34px] bg-white shadow-2xl">
-              <button class="venture-close absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-brand-canvas/50 text-xl text-brand-ink transition hover:bg-brand-canvas" type="button" aria-label="Close case">×</button>
+              <button class="venture-close absolute right-5 top-5 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-ink bg-transparent text-brand-ink transition-colors hover:bg-brand-ink hover:text-white" type="button" aria-label="Close case">
+                <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
+                  <path d="M6 6L14 14M14 6L6 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
               <div class="venture-modal-content"></div>
             </div>
           </div>
@@ -74,7 +83,7 @@ class VenturesSection extends HTMLElement {
               ${item.brandDescription ? `<h4 class="text-lg md:text-xl text-brand-ink font-medium">${item.brandDescription}</h4>` : ''}
             </div>
             
-            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:underline transition-all">Visit website <span class="text-[10px]">↗</span></a>` : ''}
+            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-brand-primary transition-opacity hover:opacity-80">${(() => { try { return new URL(item.link).hostname.replace(/^www\./, ''); } catch (e) { return item.link.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, ''); } })()}<svg viewBox="0 0 20 20" fill="none" class="h-3.5 w-3.5"><path d="M6 14L14 6M8 6H14V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>` : ''}
           </div>
 
           <div class="space-y-10">

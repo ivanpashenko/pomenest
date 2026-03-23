@@ -82,18 +82,18 @@ const content = {
         reviews: [
           {
             quote: 'POME helped us move from abstract market interest to concrete partner conversations much faster than we expected.',
-            author: 'Founder',
-            role: 'Consumer brand'
+            author: 'Founder & CEO Kilometer',
+            role: ''
           },
           {
-            quote: 'What was most valuable was not just access, but the local context around every discussion and next step.',
-            author: 'Business Development Lead',
-            role: 'Regional expansion project'
+            quote: 'They allowed us to travel into the future. To see all that we can be, made us fearless. I think we’re all changed by it.',
+            author: 'Jonas Antonsson',
+            role: ''
           },
           {
             quote: 'The process gave us clarity early. We could see where traction was real and where assumptions needed work.',
-            author: 'Strategy Director',
-            role: 'International brand team'
+            author: 'Marketing team Amma Family',
+            role: ''
           }
         ]
       },
@@ -746,6 +746,12 @@ function renderHome() {
         variant="audience"
       ></capabilities-section>
 
+      <proof-section
+        eyebrow="${content.proof.eyebrow}"
+        title="${content.proof.title}"
+        items='${JSON.stringify(content.proof.items)}'
+      ></proof-section>
+
       <ventures-section
         eyebrow="${content.ventures.eyebrow}"
         title="${content.ventures.title}"
@@ -762,12 +768,6 @@ function renderHome() {
         cta-href="${content.ventureStudio.ctaHref}"
         image="${content.ventureStudio.image}"
       ></split-section>
-
-      <proof-section
-        eyebrow="${content.proof.eyebrow}"
-        title="${content.proof.title}"
-        items='${JSON.stringify(content.proof.items)}'
-      ></proof-section>
 
       <cta-section
         eyebrow="${content.cta.eyebrow}"

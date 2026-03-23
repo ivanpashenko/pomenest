@@ -69,7 +69,7 @@ class ProofSection extends HTMLElement {
 
       if (item.type === 'faq-teaser') {
         return `
-          <article class="rounded-[28px] bg-white p-8 md:p-10 h-full shadow-sm border border-brand-line/60 flex flex-col">
+          <article class="rounded-[28px] bg-brand-softBlue p-8 md:p-10 h-full shadow-sm border border-brand-softBlueLine flex flex-col">
             <div class="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-muted">${item.eyebrow || ''}</div>
             <div class="mt-4 text-[24px] md:text-[28px] font-medium leading-[1.08] tracking-[-0.04em] text-brand-ink">${item.question || ''}</div>
             ${item.answer ? `<p class="mt-4 max-w-sm text-base leading-relaxed text-brand-muted">${item.answer}</p>` : ''}
@@ -84,7 +84,7 @@ class ProofSection extends HTMLElement {
         const reviews = item.reviews || [];
         const firstReview = reviews[0] || {};
         return `
-          <article class="rounded-[28px] bg-[#F1ECE5] p-8 md:p-10 h-full shadow-sm border border-[#E2D8CB] flex flex-col justify-between md:col-span-2 lg:col-span-1 js-testimonial-card" data-reviews='${JSON.stringify(reviews)}' data-index="0">
+          <article class="rounded-[28px] bg-white p-8 md:p-10 h-full shadow-sm border border-brand-line/60 flex flex-col justify-between md:col-span-2 lg:col-span-1 js-testimonial-card" data-reviews='${JSON.stringify(reviews)}' data-index="0">
             <div class="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-muted">${item.eyebrow || ''}</div>
             <div class="mt-6">
               <p class="text-[24px] lg:text-[26px] font-medium leading-[1.1] tracking-[-0.04em] text-brand-ink js-testimonial-quote">“${firstReview.quote || ''}”</p>
